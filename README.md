@@ -2,10 +2,6 @@
 
 A full-stack portfolio project focused on building a set of features such as user authentication loosely based on the UI, structure and functionality of tumblr, a platform designed to help bots and confused teenagers create a rich ecosystem of confusing content and interactions.
 
-## less awful than tumblr
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ## key features
 
 The basic features that the initial version of the project will include.
