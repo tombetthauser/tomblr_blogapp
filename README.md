@@ -2,7 +2,7 @@
 
 A full-stack portfolio project focused on building a set of features such as user authentication loosely based on the UI, structure and functionality of tumblr, a platform designed to help bots and confused teenagers create a rich ecosystem of confusing content and interactions.
 
-## key features
+### key features
 
 The basic features that the initial version of the project will include.
 
@@ -13,7 +13,7 @@ The basic features that the initial version of the project will include.
 • a main timeline / feed where user posts are displayed chronologically
 ```
 
-## possible features
+### possible features
 
 More features that should probably be included in the initial version of the project if possible.
 
@@ -25,7 +25,7 @@ More features that should probably be included in the initial version of the pro
 • ability to add location, subject matter etc tags on posts for searches
 ```
 
-## extra features
+### extra features
 
 Dream features that might be too time-consuming or complex to realistically employ in the near-term.
 
