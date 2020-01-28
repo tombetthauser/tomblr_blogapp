@@ -1,5 +1,5 @@
 {
-  "name": "testtom",
+  "name": "tomblr",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.8.3",
@@ -22,17 +22,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tombetthauser/tomblr.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tombetthauser/tomblr/issues"
-  },
-  "homepage": "https://github.com/tombetthauser/tomblr#readme"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
+  }
 }

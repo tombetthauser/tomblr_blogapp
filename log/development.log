@@ -1,0 +1,35 @@
+Started GET "/" for ::1 at 2020-01-27 15:57:18 -0800
+
+PG::ConnectionBad - FATAL:  database "testtom_development" does not exist
+:
+
+Started POST "/__better_errors/d8d5581cddcd2b3d/variables" for ::1 at 2020-01-27 15:57:18 -0800
+Started GET "/" for ::1 at 2020-01-27 15:58:27 -0800
+
+PG::ConnectionBad - FATAL:  database "testtom_development" does not exist
+:
+
+Started POST "/__better_errors/f17a9549a7f75ecb/variables" for ::1 at 2020-01-27 15:58:27 -0800
+Started GET "/" for ::1 at 2020-01-27 15:58:29 -0800
+
+PG::ConnectionBad - FATAL:  database "testtom_development" does not exist
+:
+
+Started POST "/__better_errors/5209ed4960bc982f/variables" for ::1 at 2020-01-27 15:58:30 -0800
+Started GET "/" for ::1 at 2020-01-27 16:00:17 -0800
+
+PG::ConnectionBad - FATAL:  database "testtom_development" does not exist
+:
+
+Started POST "/__better_errors/ea8f60160b453913/variables" for ::1 at 2020-01-27 16:00:17 -0800
+  [1m[35m (946.6ms)[0m  [1m[35mCREATE DATABASE "testtom_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (349.8ms)[0m  [1m[35mCREATE DATABASE "testtom_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-01-27 16:01:53 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/tombetthauser/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/tombetthauser/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.1/lib/rails/templates/rails/welcome/index.html.erb (7.0ms)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
