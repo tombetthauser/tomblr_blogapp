@@ -55,7 +55,6 @@ class SessionForm extends React.Component {
           </label>
           <button type="submit">{this.props.formType}</button>
         </form>
-        {/* <p className="signin-or-login" >{this.props.formType} or {this.props.navLink}</p> */}
       </div>
     )
   }
