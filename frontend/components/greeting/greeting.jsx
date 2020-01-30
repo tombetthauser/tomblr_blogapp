@@ -7,6 +7,10 @@ const GREETINGS = [
   ["nice to see you again ", ""],
   ["always a pleasure ", ""],
   ["howdy ", "!"],
+  ["low-key, I'm so happy to see you ", ""],
+  ["pog to see you again ", ""],
+  ["hi there jason (just kidding ", ")"],
+  ["hello again ", "sy"],
   ["hows it goin ", "?"]
 ]
 
