@@ -13,9 +13,11 @@ const App = () => (
         <h1>tomblr</h1>
         <p>Come for the blogs. Stay for the bots.</p>
       </Link>
-      <GreetingContainer />
-      <Route exact path="/login" component={LogInFormContainer} />
-      <Route exact path="/signup" component={SignUpFormContainer} />
+        <GreetingContainer />
+      <Switch>
+        <Route exact path="/login" component={LogInFormContainer} />
+        <Route exact path="/signup" component={SignUpFormContainer} />
+      </Switch>
     </header>
   </div>
 )

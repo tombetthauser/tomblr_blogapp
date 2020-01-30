@@ -1,6 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const GREETINGS = [
+  ["welcome back ", ""],
+  ["hello ", ", glad to see you're back"],
+  ["nice to see you again ", ""],
+  ["always a pleasure ", ""],
+  ["howdy ", "!"],
+  ["hows it goin ", "?"]
+]
+
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
@@ -9,9 +18,10 @@ const Greeting = ({ currentUser, logout }) => {
       <Link to="/signup">sign up!</Link>
     </nav>
   );
+  const randGreeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
   const personalGreeting = () => (
     <hgroup className="header-group">
-      <h2 className="header-name">whlelclolmele blackle {currentUser.username}lele</h2>
+      <h2 className="header-name">{randGreeting[0]}{currentUser.username.toLowerCase()}{randGreeting[1]}</h2>
       <button className="header-button" onClick={logout}>logout</button>
     </hgroup>
   );
