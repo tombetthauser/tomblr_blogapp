@@ -29,7 +29,7 @@ const Greeting = ({ currentUser, logout }) => {
       <button className="header-button" onClick={logout}>logout</button>
     </hgroup>
   );
-  return currentUser ? personalGreeting() : sessionLinks();
+    return currentUser ? personalGreeting() : sessionLinks();
 };
 
 export default Greeting;
