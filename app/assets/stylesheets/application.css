@@ -13,3 +13,117 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: url("https://images.unsplash.com/photo-1580184481690-5546bb513ae7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-left: 7.5%;
+}
+
+h1 {
+  font-family: 'Suez One', serif;
+  font-size: 50px;
+  color: #fff;
+  margin: 40px auto 7.5px;
+}
+
+p {
+  font-family: sans-serif;
+  color: #fff;
+  margin: 7.7px auto 10px;
+    text-shadow: 2px 2px 7.5px rgba(0,0,0,.3);
+    overflow: hidden;
+
+}
+
+.login-signup {
+  color: #fff;
+    text-shadow: 2px 2px 7.5px rgba(161, 37, 37, 0.3);
+
+  font-family: sans-serif;
+}
+
+.login-signup a {
+  color: skyblue;
+  text-shadow: 2px 2px 7.5px rgba(0,0,0,.2);
+  font-family: sans-serif;
+}
+
+.login-signup-link {
+  color: skyblue;
+  text-shadow: 2px 2px 7.5px rgba(0,0,0,.2);
+  font-family: sans-serif;
+}
+
+.header-name {
+  color: white;
+  text-shadow: 2px 2px 7.5px rgba(0,0,0,.2);
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+Link {
+  color: pink;
+}
+
+.login-form-container {
+  width: 275px;
+  padding: 35px 80px 45px 0px;
+  border-radius: 10px;
+  margin: 15px 0;
+  background-color: rgb(255, 255, 255, .7);
+  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.15);
+  text-align: right;
+}
+
+.login-form-container label {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.3);
+  font-family: sans-serif;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-form-container input {
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+    padding-left: 7px;
+    margin-left: 5px;
+    color: #777;
+}
+
+.signin-or-login {
+  text-align: left;
+  padding-left: 130px;
+  font-size: 13px;
+}
+
+.login-form-container button {
+  width: 100px;
+  margin-right: 53px;
+  margin-top: 5px;
+  background-color: skyblue;
+  border-radius: 3px;
+  border: none;
+  padding: 5px 15px;
+  color: white;
+  font-family: sans-serif;
+  cursor: pointer;
+  font-size: 13px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.1);
+  opacity: 1;
+  transition: .2s;
+}
+
+.login-form-container button:hover {
+  transition: .2s;
+  opacity: .8;
+}
