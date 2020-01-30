@@ -126,3 +126,18 @@ Link {
   transition: .2s;
   opacity: .8;
 }
+
+.login-form-container li {
+  text-align: center;
+  background-color: #e9555c;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px 8px;
+  font-family: sans-serif;
+  width: 150px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  list-style: none;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.3);
+  font-size: 12px;
+}
