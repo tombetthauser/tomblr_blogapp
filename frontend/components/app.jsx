@@ -14,8 +14,6 @@ const SUBHEADINGS = [
   "If it isn't on tomblr, it doesn't matter."
 ];
 
-
-
 const App = () => {
   const randSubHeading = SUBHEADINGS[Math.floor(Math.random() * SUBHEADINGS.length)];
   return (
@@ -34,6 +32,5 @@ const App = () => {
     </div>
   )
 }
-
 
 export default App;
