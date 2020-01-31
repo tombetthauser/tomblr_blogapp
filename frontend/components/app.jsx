@@ -34,5 +34,3 @@ const App = () => {
 }
 
 export default App;
-
-// rails generate model Article title: string text: text
