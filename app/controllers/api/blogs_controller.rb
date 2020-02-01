@@ -30,7 +30,7 @@ class Api::BlogsController < ApplicationController
 
     def index
         @blogs = Blog.all
-        render json: @blogs # <--- just an array of objects, needs id keys?
+        render json: @blogs
     end
 
     def show
