@@ -24,14 +24,14 @@ const App = () => {
           <h1>tomblr</h1>
           <p>{randSubHeading}</p>
         </Link>
-        <GreetingContainer />
         <Link className="blogs-index-link-button" to="/blogs">View All Blogs</Link>
-        <Switch>
-          <AuthRoute exact path="/login" component={LogInFormContainer} />
-          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-        </Switch>
-        <Route exact path="/blogs" component={BlogsIndexContainer}/>
+        <GreetingContainer />
       </header>
+      <Switch>
+        <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      </Switch>
+      <Route exact path="/blogs" component={BlogsIndexContainer}/>
     </div>
   )
 }

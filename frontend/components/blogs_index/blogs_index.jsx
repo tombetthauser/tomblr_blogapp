@@ -15,7 +15,7 @@ class BlogsIndex extends React.Component {
       <div>
           <ul className="mapped-blog-ul">
             {this.props.blogs.map(blog => (
-              <Link className="mapped-blog-link">
+              <Link to="#" className="mapped-blog-link">
                 <li className="mapped-blog-li">
                   <h3>{blog.title}</h3>
                   <p>{blog.description}</p>
