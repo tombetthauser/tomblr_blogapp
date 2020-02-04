@@ -28,6 +28,7 @@ h1 {
   font-size: 50px;
   color: #fff;
   margin: 40px auto 7.5px;
+  display: block;
 }
 
 p {
@@ -36,6 +37,7 @@ p {
   margin: 7.7px auto 10px;
   text-shadow: 2px 2px 7.5px rgba(0,0,0,0.3);
   overflow: hidden;
+  display: block;
 }
 
 .login-signup {
@@ -143,18 +145,113 @@ Link {
 
 .header-group button {
   color: #fff;
+  padding: 10px 8px;
   text-align: center;
   border-radius: 5px;
-  padding: 10px 8px;
   font-family: sans-serif;
   width: 150px;
+  list-style: none;
   margin-left: 0px;
   margin-bottom: 10px;
-  list-style: none;
   text-shadow: 2px 2px 5px rgba(0,0,0,.2);
   box-shadow: 3px 3px 7px rgba(0,0,0,.1);
   background-color: rgb(105, 188, 221);
   font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.test {
+  display: none;
+}
+
+.test-two {
+  display: none;
+}
+
+.mapped-blog-li {
+  width: 275px;
+  border-radius: 10px;
+  margin: 15px 0;
+  background-color: white;
+  border: 15px solid #d5d5d5;
+  list-style: none;
+  opacity: .85;
+  padding: 10px 10px 20px 20px;
+  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
+}
+
+.mapped-blog-li p, .mapped-blog-li h3 {
+  color: black;
+  font-family: sans-serif;
+  text-shadow: none;
+}
+
+.mapped-blog-ul {
+  margin-top: 35px;
+}
+
+.mapped-blog-link {
+  width: 335px;
+  display: block;
+}
+
+.blogs-index-link-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+  text-align: center;
+  margin-left: -10px;
+  background-color: rgb(105, 188, 221);
+  color: #fff;
+  padding: 7px 7px 5px;
+  border-radius: 10px;
+  font-family: sans-serif;
+  display: block;
+  font-size: 15px;
+}
+
+.new-blog-container {
+  width: 275px;
+  border-radius: 10px;
+  margin: 15px 0;
+  background-color: white;
+  border: 15px solid #d5d5d5;
+  list-style: none;
+  opacity: .85;
+  padding: 10px 10px 20px 20px;
+  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
+  font-family: sans-serif;
+}
+
+.new-blog-container label {
+  margin-bottom: 10px;
+  text-align: right;
+  display: block;
+  font-size: 15px;
+}
+
+.new-blog-container input {
+  width: 150px;
+  margin-right: 25px;
+  margin-left: 7.5px;
+}
+
+.new-blog-container button {
+  display: block;  
+  margin: auto;
+  color: #fff;
+  padding: 10px 8px;
+  text-align: center;
+  border-radius: 5px;
+  font-family: sans-serif;
+  width: 150px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.2);
+  box-shadow: 3px 3px 7px rgba(0,0,0,.1);
+  background-color: rgb(105, 188, 221);
+  font-size: 13px;
   cursor: pointer;
   border: none;
 }
