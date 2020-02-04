@@ -19,7 +19,6 @@ const removeBlog = blogId => ({
   blogId: blogId
 });
 
-
 export const fetchBlogs = () => dispatch => (
   APIUtil.fetchBlogs()
     .then(blogs => dispatch(receiveAllBlogs(blogs)))

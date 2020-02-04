@@ -1,5 +1,8 @@
 import React from 'react';
+import BlogFormContainer from '../blogs_form/blog_form_container';
 import { Link } from 'react-router-dom';
+import { AuthRoute } from '../../util/route_util';
+
 
 class BlogsIndex extends React.Component {
   constructor(props) {
@@ -22,6 +25,7 @@ class BlogsIndex extends React.Component {
                 </li>
               </Link>
             ))}
+            <BlogFormContainer />
           </ul>
       </div>
     )

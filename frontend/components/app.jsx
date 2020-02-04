@@ -24,7 +24,7 @@ const App = () => {
           <h1>tomblr</h1>
           <p>{randSubHeading}</p>
         </Link>
-        <Link className="blogs-index-link-button" to="/blogs">View All Blogs</Link>
+        <Link className="blogs-index-link-button" to="/blogs">view all blogs</Link>
         <GreetingContainer />
       </header>
       <Switch>
