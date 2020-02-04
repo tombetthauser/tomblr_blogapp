@@ -3,7 +3,7 @@ import GreetingContainer from './greeting/greeting_container';
 import { Link, Switch, Route } from 'react-router-dom';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
-import BlogsComponent from './blogs_map/blogs_map';
+import BlogsIndexContainer from './blogs_index/blogs_index_container';
 
 import { AuthRoute } from '../util/route_util';
 
@@ -24,12 +24,13 @@ const App = () => {
           <h1>tomblr</h1>
           <p>{randSubHeading}</p>
         </Link>
-          <GreetingContainer />
+        <GreetingContainer />
+        <Link className="blogs-index-link-button" to="/blogs">View All Blogs</Link>
         <Switch>
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         </Switch>
-        <Route exact path="/blogs" component={BlogsComponent}/>
+        <Route exact path="/blogs" component={BlogsIndexContainer}/>
       </header>
     </div>
   )

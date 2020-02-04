@@ -166,3 +166,38 @@ Link {
 .test-two {
   display: none;
 }
+
+.mapped-blog-li {
+  width: 275px;
+  border-radius: 10px;
+  margin: 15px 0;
+  background-color: white;
+  border: 15px solid #d5d5d5;
+  list-style: none;
+  opacity: .85;
+  padding: 10px 10px 20px 20px;
+  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
+}
+
+.mapped-blog-li p, .mapped-blog-li h3 {
+  color: black;
+  font-family: sans-serif;
+  text-shadow: none;
+}
+
+.mapped-blog-ul {
+  margin-top: 35px;
+}
+
+.mapped-blog-link {
+  width: 335px;
+}
+
+.blogs-index-link-button {
+  background-color: rgb(105, 188, 221);
+  color: #fff;
+  padding: 7px 7px 5px;
+  border-radius: 15px;
+  font-family: sans-serif;
+  margin-top: 100px;
+}
