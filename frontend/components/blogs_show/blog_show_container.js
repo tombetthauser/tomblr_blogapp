@@ -4,25 +4,9 @@ import BlogsShow from './blog_show';
 
 import { selectBlog } from '../../reducers/selectors';
 
-const mapStateToProps = (state, { match }) => {
-  const blogId = parseInt(match.params.blogId)
-  // const blog = selectBlog()
-  return {
-    blogId: blogId
-  }
-};
-// blog: state.entities.blogs
-
-// const mapStateToProps = (state, { match }) => {
-//   const blogId = parseInt(match.params.blogId);
-//   const blog = selectBlog(state.entities, blogId);
-//   // const posts = selectReviewsForBench(state.entities, blog);
-//   return {
-//     blogId: blogId,
-//     blog: blog
-//     // posts
-//   };
-// };
+const mapStateToProps = (state, { match }) => ({
+  blog: selectBlog(state, match.params.blogId)
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchBlog: id => dispatch(fetchBlog(id))
