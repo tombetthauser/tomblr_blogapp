@@ -264,7 +264,7 @@ Link {
   border: 15px solid #d5d5d5;
   list-style: none;
   opacity: .85;
-  padding: 10px 10px 20px 27.5px;
+  padding: 10px 10px 27.5px 27.5px;
   box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
   font-family: sans-serif;
 }
@@ -293,7 +293,6 @@ Link {
 .single-blog-show a {
   display: block;
   margin-top: 25px;
-  margin-bottom: 17.5px;
   color: rgb(105, 188, 221);
   font-size: 14px;
 }

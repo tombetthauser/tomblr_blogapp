@@ -22,7 +22,7 @@ class BlogsShow extends React.Component {
           <h3>by somebody, date</h3>
           <p>blog description</p>
         </div>
-        <Link to="/">Back to Blogs Index</Link>
+        <Link to="/blogs">Back to Blogs Index</Link>
       </div>
     );
   }
