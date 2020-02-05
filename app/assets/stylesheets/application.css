@@ -255,3 +255,45 @@ Link {
   cursor: pointer;
   border: none;
 }
+
+.single-blog-show {
+  width: 500px;
+  border-radius: 10px;
+  margin: 15px 0;
+  background-color: white;
+  border: 15px solid #d5d5d5;
+  list-style: none;
+  opacity: .85;
+  padding: 10px 10px 20px 27.5px;
+  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
+  font-family: sans-serif;
+}
+
+.single-blog-show p {
+  color: black;
+  text-shadow: none;
+}
+
+.single-blog-show button {
+  display: block;  
+  margin: auto;
+  color: #fff;
+  padding: 10px 8px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  width: 150px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  color: rgb(105, 188, 221);
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+}
+
+.single-blog-show a {
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 17.5px;
+  color: rgb(105, 188, 221);
+  font-size: 14px;
+}

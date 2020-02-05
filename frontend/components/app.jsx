@@ -4,6 +4,7 @@ import { Link, Switch, Route } from 'react-router-dom';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import BlogsIndexContainer from './blogs_index/blogs_index_container';
+import BlogShowContainer from './blogs_show/blog_show_container';
 
 import { AuthRoute } from '../util/route_util';
 
@@ -30,6 +31,7 @@ const App = () => {
       <Switch>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <Route path="/blogs/:blogId" component={BlogShowContainer} />
       </Switch>
       <Route exact path="/blogs" component={BlogsIndexContainer}/>
     </div>
