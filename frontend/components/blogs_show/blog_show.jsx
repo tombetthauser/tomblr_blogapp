@@ -7,33 +7,32 @@ class BlogsShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBlog(this.props.match.params.blogId)
+    this.props.fetchBlog(this.props.match.params.blogId);
   }
   
   render() {
-    console.log("~~~~~~~~~~~~")
-    console.log(this.props.blog)
-    // console.log(this.props.blog.author_id)
-    console.log("~~~~~~~~~~~~")
-
-    // const { title, description } = this.props.blog
+    let title, description, authorId, author;
     
-    // const blogId = this.state.match.params.blogId;
+    if (this.props.blog) {
+      title = this.props.blog.title;
+      description = this.props.blog.description;
+      authorId = this.props.blog.author_id;
+      
+      this.props.fetchUser(authorId)
+      
+      console.log("~~~~~~~~~~~~")
+      console.log(this.props)
+      console.log("~~~~~~~~~~~~")
 
-    // if (this.props.blog) {
-    //   let { title, description, authorId } = this.props.blog;
-    // } else {
-    //   let title = "";
-    //   let description = "";
-    //   let authorId = "";
-    // }
+      author = null;
+    }
 
     return (
       <div className="single-blog-show">
         <div className="blog-header">
-          <h2>{this.props.blog ? this.props.blog.title : ""}</h2>
-          <h3>by somebody, date</h3>
-          <p>blog description</p>
+          <h2>{title}</h2>
+          <h3>By blogger No.{authorId}</h3>
+          <p>{description}</p>
         </div>
         <Link to="/blogs">Back to Blogs Index</Link>
       </div>

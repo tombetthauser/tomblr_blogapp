@@ -20,3 +20,12 @@ export const logout = () => (
     method: "DELETE"
   })
 );
+
+export const fetchUser = userId => (
+  // alert(`fetchUser triggered for userId: ${userId}`)
+  $.ajax({
+    url: `/api/user/${userId}/`,
+    method: 'GET',
+    data: null
+  })
+);

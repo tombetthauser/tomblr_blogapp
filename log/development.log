@@ -13136,3 +13136,5 @@ Processing by Api::BlogsController#index as JSON
 Completed 200 OK in 57ms (Views: 33.5ms | ActiveRecord: 20.5ms)
 
 
+  [1m[36mUser Load (58.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
