@@ -18,11 +18,11 @@ class BlogsShow extends React.Component {
       description = this.props.blog.description;
       authorId = this.props.blog.author_id;
       
-      this.props.fetchUser(authorId)
+      this.props.requestUser(authorId)
       
       console.log("~~~~~~~~~~~~")
       console.log(this.props)
-      console.log("~~~~~~~~~~~~")
+      console.log("~~~~~^^~~~~~")
 
       author = null;
     }

@@ -10,10 +10,10 @@ import { AuthRoute } from '../util/route_util';
 
 const SUBHEADINGS = [
   "Come for the blogs. Stay for the bots.",
-  "It's like tumblr, but it's not tumblr.",
-  "Blogs, posts, cats, tomblr has it all.",
-  "A lot like tumblr, but made by Tom.",
-  "If it isn't on tomblr, it doesn't matter."
+  // "It's like tumblr, but it's not tumblr.",
+  // "Blogs, posts, cats, tomblr has it all.",
+  // "A lot like tumblr, but made by Tom.",
+  // "If it isn't on tomblr, it doesn't matter."
 ];
 
 const App = () => {

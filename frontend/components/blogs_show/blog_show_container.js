@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions/blog_actions';
-import { fetchUser } from '../../actions/session_actions';
+import { requestUser } from '../../actions/user_actions';
 import BlogsShow from './blog_show';
 
 import { selectBlog } from '../../reducers/selectors';
@@ -11,8 +11,7 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchBlog: id => dispatch(fetchBlog(id)),
-  // fetchUser: userId => alert(userId)
-  fetchUser: (userId) => dispatch(fetchUser(userId))
+  requestUser: (userId) => dispatch(requestUser(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlogsShow);

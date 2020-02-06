@@ -24,7 +24,7 @@ export const logout = () => (
 export const fetchUser = userId => (
   // alert(`fetchUser triggered for userId: ${userId}`)
   $.ajax({
-    url: `/api/user/${userId}/`,
+    url: `/api/users/${userId}/`,
     method: 'GET',
     data: null
   })

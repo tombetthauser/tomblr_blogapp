@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const GREETINGS = [
   ["welcome back ", ""],
-  ["hello ", ", glad to see you're back"],
-  ["nice to see you again ", ""],
-  ["always a pleasure ", ""],
-  ["howdy ", "!"],
-  ["low-key, I'm so happy to see you ", ""],
-  ["pog to see you again ", ""],
-  ["hi there jason (just kidding ", ")"],
-  ["hello again ", "sy"],
-  ["hows it goin ", "?"]
+  // ["hello ", ", glad to see you're back"],
+  // ["nice to see you again ", ""],
+  // ["always a pleasure ", ""],
+  // ["howdy ", "!"],
+  // ["low-key, I'm so happy to see you ", ""],
+  // ["pog to see you again ", ""],
+  // ["hi there jason (just kidding ", ")"],
+  // ["hello again ", "sy"],
+  // ["hows it goin ", "?"]
 ]
 
 const Greeting = ({ currentUser, logout }) => {
@@ -29,7 +29,7 @@ const Greeting = ({ currentUser, logout }) => {
       <button className="header-button" onClick={logout}>logout</button>
     </hgroup>
   );
-    return currentUser ? personalGreeting() : sessionLinks();
+  return currentUser === undefined ? sessionLinks() : personalGreeting();
 };
 
 export default Greeting;
