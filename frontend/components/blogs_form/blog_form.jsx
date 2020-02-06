@@ -17,7 +17,6 @@ class BlogForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    alert("clicked!");
     const newState = this.state;
     newState.userId = this.props.currentUser.id;
     this.props.createBlog(newState);

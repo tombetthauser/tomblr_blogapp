@@ -29,7 +29,7 @@ class Api::BlogsController < ApplicationController
     end
 
     def index
-        @blogs = Blog.all
+        @blogs = Blog.all.includes(:user)
     end
 
     def show

@@ -4,7 +4,8 @@ import { fetchBlogs } from '../../actions/blog_actions';
 
 
 const mapStateToProps = state => ({
-  blogs: Object.values(state.entities.blogs)
+  blogs: Object.values(state.entities.blogs),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

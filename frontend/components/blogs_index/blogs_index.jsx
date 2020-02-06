@@ -9,10 +9,16 @@ class BlogsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBlogs()
+    this.props.fetchBlogs();
   }
   
   render() {
+    let newBlogForm = null;
+    
+    if (this.props.currentUser) {
+      newBlogForm = <BlogFormContainer />;
+    }
+
     return (
       <div>
           <ul className="mapped-blog-ul">
@@ -24,7 +30,7 @@ class BlogsIndex extends React.Component {
                 </li>
               </Link>
             ))}
-            <BlogFormContainer />
+            { newBlogForm }
           </ul>
       </div>
     )
