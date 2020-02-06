@@ -7,7 +7,7 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { [action.user.id]: action.user });
     default:
       return state;
-  }
+  }a
 };
 
 export default usersReducer;
