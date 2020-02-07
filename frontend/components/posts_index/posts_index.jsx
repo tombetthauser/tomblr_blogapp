@@ -1,5 +1,6 @@
 import React from 'react';
 import PostFormContainer from '../posts_form/post_form_container';
+import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { AuthRoute } from '../../util/route_util';
 
@@ -13,26 +14,32 @@ class PostsIndex extends React.Component {
   }
   
   render() {
+    let thisBlog = this.props.blogs[this.props.match.params.blogId];
+    let deleteButtonText = null;
     let newPostForm = null;
-    if (this.props.currentUser) {
-      newPostForm = <PostFormContainer />;
+
+    if (thisBlog && this.props.currentUser) {
+      if (thisBlog.author_id === this.props.currentUser.id) {
+        newPostForm = <PostFormContainer />;
+        deleteButtonText = "delete post"
+      }
     }
-    
+
     return (
       <div>
           {newPostForm}
           <ul className="mapped-post-ul">
             {this.props.posts.map(post => {
-              if (post.blog_id === post.blog_id) {
+              if (parseInt(post.blog_id) === parseInt(this.props.match.params.blogId)) {
                 return (
                     <li className="mapped-post-li">
                       <h3>{post.title}</h3>
                       {console.log(post)}
                       <img src={post.pic_url} alt=""/>
                       <p>{post.text}</p>
-                      <button onClick={() => this.props.deletePost(post.id)}>
-                        delete post
-                      </button>
+                      <a onClick={() => this.props.deletePost(post.id)}>
+                        { deleteButtonText }
+                      </a>
                     </li>
                 )
               } else {
@@ -45,4 +52,4 @@ class PostsIndex extends React.Component {
   }
 }
 
-export default PostsIndex;
+export default withRouter(PostsIndex);

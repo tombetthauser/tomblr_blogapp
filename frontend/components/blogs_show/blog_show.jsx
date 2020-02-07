@@ -57,7 +57,7 @@ class BlogsShow extends React.Component {
           <p>{description}</p>
         </div>
         {/* <PostsIndexContainer blogId={this.props.match.params.blogId} /> */}
-        <PostsFormContainer />
+        {/* <PostsFormContainer /> */}
         <PostsIndexContainer />
         <Link to="/blogs">Back to Blogs Index</Link>
         { deleteButton }

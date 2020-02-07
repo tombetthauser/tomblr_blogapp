@@ -3,10 +3,10 @@ import PostsIndex from './posts_index';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state, { match }) => ({
   posts: Object.values(state.entities.posts),
-  currentUser: state.session.currentUser,
-  // blogId: props.match.params.blogId
+  blogs: state.entities.blogs,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
