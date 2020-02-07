@@ -1,45 +1,45 @@
-import * as APIUtil from '../util/post_api_util';
+import * as APIUtil from '../util/blog_api_util';
 
-export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
-export const RECEIVE_POST = 'RECEIVE_POST';
-export const REMOVE_POST = 'DESTROY_POST';
+export const RECEIVE_ALL_BLOGS = 'RECEIVE_ALL_BLOGS';
+export const RECEIVE_BLOG = 'RECEIVE_BLOG';
+export const REMOVE_BLOG = 'DESTROY_BLOG';
 
-const receiveAllPosts = posts => ({
-  type: RECEIVE_ALL_POSTS,
-  posts: posts
+const receiveAllBlogs = blogs => ({
+  type: RECEIVE_ALL_BLOGS,
+  blogs: blogs
 });
 
-const receivePost = post => ({
-  type: RECEIVE_POST,
-  post: post
+const receiveBlog = blog => ({
+  type: RECEIVE_BLOG,
+  blog: blog
 });
 
-const removePost = postId => ({
-  type: REMOVE_POST,
-  postId: postId
+const removeBlog = blogId => ({
+  type: REMOVE_BLOG,
+  blogId: blogId
 });
 
-export const fetchPosts = () => dispatch => (
-  APIUtil.fetchPosts()
-    .then(posts => dispatch(receiveAllPosts(posts)))
+export const fetchBlogs = () => dispatch => (
+  APIUtil.fetchBlogs()
+    .then(blogs => dispatch(receiveAllBlogs(blogs)))
 );
 
-export const fetchPost = postId => dispatch => (
-  APIUtil.fetchPost(postId)
-    .then(post => dispatch(receivePost(post)))
+export const fetchBlog = blogId => dispatch => (
+  APIUtil.fetchBlog(blogId)
+    .then(blog => dispatch(receiveBlog(blog)))
 );
 
-export const createPost = post => dispatch => (
-  APIUtil.createPost(post)
-    .then(post => dispatch(receivePost(post)))
+export const createBlog = blog => dispatch => (
+  APIUtil.createBlog(blog)
+    .then(blog => dispatch(receiveBlog(blog)))
 );
 
-export const updatePost = post => dispatch => (
-  APIUtil.updatePost(post)
-    .then(post => dispatch(receivePost(post)))
+export const updateBlog = blog => dispatch => (
+  APIUtil.updateBlog(blog)
+    .then(blog => dispatch(receiveBlog(blog)))
 );
 
-export const deletePost = postId => dispatch => (
-  APIUtil.deletePost(postId)
-    .then(post => dispatch(removePost(post.id)))
+export const deleteBlog = blogId => dispatch => (
+  APIUtil.deleteBlog(blogId)
+    .then(blog => dispatch(removeBlog(blog.id)))
 );
