@@ -17,6 +17,9 @@ const GREETINGS = [
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
+      {/* <Link to="/" className="header-link"> */}
+        <p>Come for what you love.<br />Stay for what you discover.</p>
+      {/* </Link> */}
       <Link to="/signup">Get Started</Link>
       <Link to="/login">Log In</Link>
     </nav>
