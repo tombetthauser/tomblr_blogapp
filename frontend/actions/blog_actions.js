@@ -41,5 +41,5 @@ export const updateBlog = blog => dispatch => (
 
 export const deleteBlog = blogId => dispatch => (
   APIUtil.deleteBlog(blogId)
-    .then(() => dispatch(removeBlog(blogId)))
+    .then(blog => dispatch(removeBlog(blog.id)))
 );

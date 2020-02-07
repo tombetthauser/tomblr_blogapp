@@ -9,15 +9,12 @@ const blogsReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_ALL_BLOGS:
       return Object.assign({}, state, action.blogs)
-      // const tacos = Object.assign({}, state, action.blogs)
-      // tacos.blogs = action.blogs;
-      // return tacos;
     case RECEIVE_BLOG:
       const newBlog = { [action.blog.id]: action.blog };
       return Object.assign({}, state, newBlog);
     case REMOVE_BLOG:
       const newState = Object.assign({}, state);
-      delete newState[action.blog.id];
+      delete newState[action.blogId];
       return newState;
     default:
       return state;

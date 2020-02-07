@@ -43,7 +43,6 @@ class BlogsShow extends React.Component {
       if (this.props.currentUser && (authorId === this.props.currentUser.id)) {
         deleteButton = <Link onClick={() => {
           this.props.deleteBlog(this.props.match.params.blogId);
-          this.props.fetchBlogs();
         }} to="/">delete blog</Link>
       }
     }
