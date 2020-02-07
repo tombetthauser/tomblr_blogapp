@@ -33,7 +33,7 @@ class PostsIndex extends React.Component {
                     <li className="mapped-post-li">
                       <h3>{post.title}</h3>
                       {console.log(post)}
-                      <img src={post.pic_url} alt="?"/>
+                      <img src={post.pic_url} alt=""/>
                       <p>{post.description}</p>
                       <button onClick={() => this.props.deletePost(post.id)}>
                         delete post

@@ -296,3 +296,7 @@ Link {
   color: rgb(105, 188, 221);
   font-size: 14px;
 }
+
+img {
+  max-width: 87.5%;
+}
