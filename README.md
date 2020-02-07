@@ -8,7 +8,7 @@
 # Tomblr
 
   <a href="https://tomblr.herokuapp.com/#/">
-    <img src="https://raw.githubusercontent.com/applecidera/dreamr/master/app/assets/images/dreamr_splash.PNG">
+    <img src="https://raw.githubusercontent.com/tombetthauser/tomblr/master/tomblr.png">
   </a>
 
 ---
