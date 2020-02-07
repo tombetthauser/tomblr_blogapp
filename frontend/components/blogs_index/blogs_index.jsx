@@ -21,6 +21,7 @@ class BlogsIndex extends React.Component {
 
     return (
       <div>
+          <button className="home-link-button" ><Link to="/">home</Link></button>
           <ul className="mapped-blog-ul">
             {this.props.blogs.map(blog => (
               <Link to={`/blogs/${blog.id}`} className="mapped-blog-link">

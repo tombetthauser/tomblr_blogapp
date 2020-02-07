@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
     event.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-    this.props.requestUser(this.props.currenUser) // <~~~~~~~~~~
+    this.props.requestUser(this.props.currenUser)
   }
 
   renderErrors() {
@@ -44,18 +44,25 @@ class SessionForm extends React.Component {
     ) : "";
 
     return (
-      <div className="login-form-container">
-        {this.renderErrors()}
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <label>username:
-            <input type="text" onChange={this.update('username')} value={this.state.username}/>
-          </label>
-          { emailInput }
-          <label>password:
-            <input type="password" onChange={this.update('password')} value={this.state.password}/>
-          </label>
-          <button type="submit">{this.props.formType}</button>
-        </form>
+      <div>
+        <header>
+          <Link to="/" className="header-link">
+            <h1>tomblr</h1>
+          </Link>
+        </header>
+        <div className="login-form-container">
+          {this.renderErrors()}
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <label>username:
+              <input type="text" onChange={this.update('username')} value={this.state.username}/>
+            </label>
+            { emailInput }
+            <label>password:
+              <input type="password" onChange={this.update('password')} value={this.state.password}/>
+            </label>
+            <button type="submit">{this.props.formType}</button>
+          </form>
+        </div>
       </div>
     )
   }

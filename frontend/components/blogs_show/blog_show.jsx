@@ -50,17 +50,21 @@ class BlogsShow extends React.Component {
     }
 
     return (
-      <div className="single-blog-show">
-        <div className="blog-header">
-          <h2>{title}</h2>
-          <h3>Created by {author} on {month}/{day}/{year}</h3>
-          <p>{description}</p>
+      <div>
+        {/* <button className="home-link-button" ><Link to="/">home</Link></button> */}
+        <button className="home-link-button" ><Link to="/blogs">blogs index</Link></button>
+        <div className="single-blog-show">
+          <div className="blog-header">
+            <h2>{title}</h2>
+            <h3>Created by {author} on {month}/{day}/{year}</h3>
+            <p>{description}</p>
+          </div>
+          {/* <PostsIndexContainer blogId={this.props.match.params.blogId} /> */}
+          {/* <PostsFormContainer /> */}
+          <PostsIndexContainer />
+          {/* <Link to="/blogs">Back to Blogs Index</Link> */}
+          { deleteButton }
         </div>
-        {/* <PostsIndexContainer blogId={this.props.match.params.blogId} /> */}
-        {/* <PostsFormContainer /> */}
-        <PostsIndexContainer />
-        <Link to="/blogs">Back to Blogs Index</Link>
-        { deleteButton }
       </div>
     );
   }

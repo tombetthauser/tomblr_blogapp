@@ -22,12 +22,40 @@ body {
   background-size: cover;
 }
 
+a {
+  color: #fff;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:visited {
+  color: #fff;
+}
+
+button {
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:visited {
+  color: #fff;
+}
+
+.home-link-button a:visited {
+  color: #fff;
+}
+
 h1 {
   font-family: 'Suez One', serif;
   font-size: 60px;
   color: #fff;
   /* margin: 40px auto 7.5px; */
-  margin-bottom: -20px;
+  margin-bottom: -10px;
   margin-top: 190px;
   display: block;
 }
@@ -37,7 +65,7 @@ h1 {
   color: #fff;
   margin: 7.7px auto 10px;
   text-shadow: 2px 2px 7.5px rgba(0,0,0,0.3);
-  overflow: hidden;
+  /* overflow: hidden; */
   /* display: block; */
   line-height: 22.5px;
 }
@@ -242,11 +270,12 @@ Link {
 }
 
 .mapped-blog-ul {
-  margin-top: 35px;
+  padding-top: 100px;
+  padding-bottom: 25px;
   display: block;
   margin: auto;
   width: 350px;
-  padding-left: 0px;
+  padding-left: 10px;
 }
 
 .mapped-blog-link {
@@ -274,12 +303,12 @@ Link {
 
 .new-blog-container {
   width: 275px;
-  border-radius: 10px;
+  border-radius: 2px;
   margin: 15px 0;
   background-color: white;
-  border: 15px solid #d5d5d5;
+  border: 20px solid #fff;
   list-style: none;
-  opacity: .85;
+  /* opacity: .85; */
   padding: 10px 10px 20px 20px;
   box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
   font-family: sans-serif;
@@ -330,7 +359,7 @@ Link {
   font-family: sans-serif;
 
   border-radius: 2px;
-  margin: 15px 0;
+  margin: 35px 0;
   background-color: white;
   /* border: 15px solid #d5d5d5; */
   list-style: none;
@@ -350,24 +379,24 @@ Link {
   text-shadow: none;
 }
 .single-blog-show h2 {
-  border-bottom: 1px solid rgb(231, 231, 231);
+  border-bottom: 1px solid rgb(199, 199, 199);
   padding-bottom: 7.5px;
   margin-bottom: 12.5px;
 }
 
 .single-blog-show h3 {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-top: 0px;
   font-size: 14px;
   font-weight: 400;
 }
 
-
-
-
 .single-blog-show p {
   color: black;
   text-shadow: none;
+  border-bottom: 1px solid rgb(231, 231, 231);
+  padding-bottom: 7.5px;
+  font-size: 14px;
 }
 
 .single-blog-show button {
@@ -399,4 +428,80 @@ img {
 
 .header-link {
   text-align: center;
+}
+
+a.header-link {
+  background-color: rgba(0,0,0,0);
+  font-weight: 100;
+}
+
+.mapped-post-li {
+  /* border: 2px solid pink; */
+  padding-top: 20px;
+
+}
+
+.mapped-post-ul {
+  list-style: none;
+}
+
+.mapped-blog-li p {
+}
+
+.home-link-button {
+  background-color:#aaa;
+  width: 100px;
+  height: 25px;
+  color: #fff;
+  font-family: sans-serif;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 7.5px;
+  border-radius: 2px;
+  font-size: 12px;
+  border: none;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 10px;
+  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.15);
+  margin-bottom: 10px;
+}
+
+.new-post-form {
+  background-color: #eee;
+  padding: 15px 25px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  text-align: right;
+  padding-right: 100px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.new-post-form label {
+  background-color: #eee;
+  padding: 7.5px 25px;
+  display: block;
+  font-weight: 100;
+}
+
+.new-post-form input {
+  margin-left: 5px;
+}
+
+.new-post-form h3 {
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.new-post-form button {
+    margin-right: 80px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    background-color: #fff;
+    display: inline;
 }

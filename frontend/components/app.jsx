@@ -22,12 +22,11 @@ const App = () => {
   const randSubHeading = SUBHEADINGS[Math.floor(Math.random() * SUBHEADINGS.length)];
   return (
     <div>
-      <header>
+      {/* <header>
         <Link to="/" className="header-link">
           <h1>tomblr</h1>
-          {/* <p>Come for what you love.<br />Stay for what you discover.</p> */}
         </Link>
-      </header>
+      </header> */}
       <Switch>
         <Route exact path="/" component={GreetingContainer} />
         <AuthRoute exact path="/login" component={LogInFormContainer} />

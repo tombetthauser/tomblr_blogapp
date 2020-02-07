@@ -36,10 +36,12 @@ class PostsIndex extends React.Component {
                       <h3>{post.title}</h3>
                       {console.log(post)}
                       <img src={post.pic_url} alt=""/>
-                      <p>{post.text}</p>
-                      <a onClick={() => this.props.deletePost(post.id)}>
-                        { deleteButtonText }
-                      </a>
+                      <p className="blog-post-p">
+                        {post.text}
+                        <a onClick={() => this.props.deletePost(post.id)}>
+                          { deleteButtonText }
+                        </a>
+                      </p>
                     </li>
                 )
               } else {

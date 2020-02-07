@@ -29,7 +29,7 @@ class PostForm extends React.Component {
 
         <div className="new-post-container">
           <div className="new-post-form">
-            <h3 className="new-post-title">Create A New Post</h3>
+            <h3 className="new-post-title">Create a New Post</h3>
 
             <form onSubmit={this.handleSubmit}>
               <label className="post-field">title:
