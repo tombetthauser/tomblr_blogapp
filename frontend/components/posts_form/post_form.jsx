@@ -6,8 +6,8 @@ class PostForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      pic_url: "", //                                                 <~~~~~~~~~~~~~
-      text: "" //                                                     <~~~~~~~~~~~~~
+      pic_url: "",
+      text: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
