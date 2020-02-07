@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PostsIndexContainer from '../posts_index/posts_index_container';
+import PostsFormContainer from '../posts_form/post_form_container';
 
 class BlogsShow extends React.Component {
   constructor(props) {
@@ -54,6 +56,8 @@ class BlogsShow extends React.Component {
           <h3>Created by {author} on {month}/{day}/{year}</h3>
           <p>{description}</p>
         </div>
+        <PostsIndexContainer />
+        <PostsFormContainer />
         <Link to="/blogs">Back to Blogs Index</Link>
         { deleteButton }
       </div>
