@@ -16,6 +16,8 @@ const SUBHEADINGS = [
   // "If it isn't on tomblr, it doesn't matter."
 ];
 
+// import icon from '../../app/assets/images/compass.svg';
+
 const App = () => {
   const randSubHeading = SUBHEADINGS[Math.floor(Math.random() * SUBHEADINGS.length)];
   return (
@@ -23,17 +25,17 @@ const App = () => {
       <header>
         <Link to="/" className="header-link">
           <h1>tomblr</h1>
-          <p>{randSubHeading}</p>
+          <p>Come for what you love.<br />Stay for what you discover.</p>
         </Link>
-        <Link className="blogs-index-link-button" to="/blogs">view all blogs</Link>
-        <GreetingContainer />
       </header>
       <Switch>
+        <Route exact path="/" component={GreetingContainer} />
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route path="/blogs/:blogId" component={BlogShowContainer} />
       </Switch>
       <Route exact path="/blogs" component={BlogsIndexContainer}/>
+      <Link className="blogs-index-link-button" to="/blogs">⎈ here's whats trending</Link>
     </div>
   )
 }

@@ -20,36 +20,66 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-left: 7.5%;
 }
 
 h1 {
   font-family: 'Suez One', serif;
-  font-size: 50px;
+  font-size: 60px;
   color: #fff;
-  margin: 40px auto 7.5px;
+  /* margin: 40px auto 7.5px; */
+  margin-bottom: -15px;
+  margin-top: 190px;
   display: block;
 }
 
-p {
+.header-link p {
   font-family: sans-serif;
   color: #fff;
   margin: 7.7px auto 10px;
   text-shadow: 2px 2px 7.5px rgba(0,0,0,0.3);
   overflow: hidden;
-  display: block;
+  /* display: block; */
+  line-height: 22.5px;
 }
 
 .login-signup {
   color: #fff;
-  text-shadow: 2px 2px 7.5px rgba(161, 37, 37, 0.3);
+  /* text-shadow: 2px 2px 7.5px rgba(161, 37, 37, 0.3); */
   font-family: sans-serif;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.login-signup a:nth-child(1) {
+  background-color:#00b8ff;
+  width: 300px;
+  height: 45px;
+  color: #fff;
+  /* text-shadow: 2px 2px 7.5px rgba(0,0,0,0.2); */
+  font-family: sans-serif;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 12px auto;
+  border-radius: 2px;
 }
 
 .login-signup a {
-  color: skyblue;
-  text-shadow: 2px 2px 7.5px rgba(0,0,0,0.2);
+  background-color:#fff;
+  width: 300px;
+  height: 45px;
+  color: #00b8ff;
+  /* text-shadow: 2px 2px 7.5px rgba(0,0,0,0.2); */
   font-family: sans-serif;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 12px auto;
+  border-radius: 2px;
 }
 
 .login-signup-link {
@@ -199,16 +229,19 @@ Link {
 .blogs-index-link-button {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 120px;
+  width: 175px;
   text-align: center;
-  margin-left: -10px;
-  background-color: rgb(105, 188, 221);
+  /* margin-left: -10px; */
+  /* background-color: rgb(105, 188, 221); */
   color: #fff;
   padding: 7px 7px 5px;
   border-radius: 10px;
   font-family: sans-serif;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 15px;
+  font-weight: 800;
 }
 
 .new-blog-container {
@@ -299,4 +332,8 @@ Link {
 
 img {
   max-width: 87.5%;
+}
+
+.header-link {
+  text-align: center;
 }

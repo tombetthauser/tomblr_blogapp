@@ -17,9 +17,8 @@ const GREETINGS = [
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
-      <Link to="/login">login</Link>
-      &nbsp;or&nbsp;
-      <Link to="/signup">sign up!</Link>
+      <Link to="/signup">Get Started</Link>
+      <Link to="/login">Log In</Link>
     </nav>
   );
   const randGreeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
