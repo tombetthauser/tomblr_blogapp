@@ -6,7 +6,8 @@ class PostForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      description: ""
+      pic_url: "", //                                                 <~~~~~~~~~~~~~
+      text: "" //                                                     <~~~~~~~~~~~~~
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,7 +19,7 @@ class PostForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const newState = this.state;
-    newState.userId = this.props.currentUser.id;
+    newState.blog_id = this.props.match.params.blogId
     this.props.createPost(newState);
   }
 
@@ -39,13 +40,21 @@ class PostForm extends React.Component {
                   className="post-field"
                 />
               </label>
-              <label className="post-field">description:
-              <input
-                type="text"
-                value={this.state.description}
-                onChange={this.update('description')}
-                className="post-field"
-              />
+              <label className="post-field">image url (optional):
+                <input
+                  type="text"
+                  value={this.state.pic_url}
+                  onChange={this.update('pic_url')}
+                  className="post-field"
+                />
+              </label>
+              <label className="post-field">post text (optional):
+                <input
+                  type="text"
+                  value={this.state.text}
+                  onChange={this.update('text')}
+                  className="post-field"
+                />
               </label>
               <button type="submit">create post</button>
             </form>

@@ -56,6 +56,7 @@ class BlogsShow extends React.Component {
           <h3>Created by {author} on {month}/{day}/{year}</h3>
           <p>{description}</p>
         </div>
+        {/* <PostsIndexContainer blogId={this.props.match.params.blogId} /> */}
         <PostsIndexContainer />
         <PostsFormContainer />
         <Link to="/blogs">Back to Blogs Index</Link>
