@@ -23,18 +23,13 @@ class PostsIndex extends React.Component {
           {newPostForm}
           <ul className="mapped-post-ul">
             {this.props.posts.map(post => {
-              console.log("~~~~~~~~~~~~~~")
-              console.log(this.props)
-              // console.log(this.props.match.params.blogId)
-              console.log("~~~~~~~~~~~~~~")
-              // if (post.blog_id === this.props.match.params.blogId) {
               if (post.blog_id === post.blog_id) {
                 return (
                     <li className="mapped-post-li">
                       <h3>{post.title}</h3>
                       {console.log(post)}
                       <img src={post.pic_url} alt=""/>
-                      <p>{post.description}</p>
+                      <p>{post.text}</p>
                       <button onClick={() => this.props.deletePost(post.id)}>
                         delete post
                       </button>
