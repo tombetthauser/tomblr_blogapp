@@ -11,6 +11,7 @@ const mapState = state => ({
     formType: 'login',
     navLink: <Link class="login-signup-link" to="/signup">sign up</Link>,
     // user: selectUser(state, state.session.id)
+    // currentUser: state.entities.session.currentUser
 });
 
 const mapDisp = dispatch => ({

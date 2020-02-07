@@ -33,10 +33,17 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const randGreeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
   const personalGreeting = () => (
-    <hgroup className="header-group">
-      {/* <h2 className="header-name">{randGreeting[0]}{currentUser.username.toLowerCase()}{randGreeting[1]}</h2> */}
-      <Link to="/"><button className="header-button" onClick={logout}>logout</button></Link>
-    </hgroup>
+    <div>
+      <header>
+        <Link to="/" className="header-link">
+          <h1>tomblr</h1>
+        </Link>
+      </header>
+      <hgroup className="header-group">
+        <h2 className="header-name">{randGreeting[0]}{currentUser.username.toLowerCase()}{randGreeting[1]}</h2>
+        <Link to="/"><button className="header-button" onClick={logout}>logout</button></Link>
+      </hgroup>
+    </div>
   );
   return currentUser ? personalGreeting() : sessionLinks();
 };

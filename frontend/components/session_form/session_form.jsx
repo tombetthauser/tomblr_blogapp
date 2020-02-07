@@ -22,6 +22,13 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
     this.props.requestUser(this.props.currenUser)
+
+    // if (this.props.currentUser) {
+    //   alert('LOGGED IN')
+    // } else {
+    //   alert('NOT LOGGED IN')
+    //   console.log(state)
+    // }
   }
 
   renderErrors() {

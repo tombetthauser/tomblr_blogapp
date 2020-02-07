@@ -270,7 +270,7 @@ Link {
 }
 
 .mapped-blog-ul {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 25px;
   display: block;
   margin: auto;
@@ -504,4 +504,15 @@ a.header-link {
     padding-bottom: 7.5px;
     background-color: #fff;
     display: inline;
+}
+
+.header-group {
+  width: 215px;
+  display: block;
+  margin: auto;
+}
+
+.header-group button {
+  display: block;
+  margin: auto;
 }
