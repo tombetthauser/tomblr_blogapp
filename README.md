@@ -1,6 +1,6 @@
 ### Live Website
 
-[Click Here](https://tomblr.herokuapp.com/#/) to try out Dreamr
+[Click Here](https://tomblr.herokuapp.com/#/) to try out Tomblr
 
 ---
 
@@ -41,7 +41,7 @@ Tomblr is created with:
 * Back-End: Rails/PostgresSQL
 
   <a href="https://tomblr.herokuapp.com/#/">
-    <img src="https://raw.githubusercontent.com/tombetthauser/tomblr/master/tomblr2.png" alt="">
+    <img src="https://raw.githubusercontent.com/tombetthauser/tomblr/master/tumblr2.png" alt="">
   </a>
 
 ---
