@@ -8,7 +8,7 @@
 # Tomblr
 
   <a href="https://tomblr.herokuapp.com/#/">
-    <img src="https://raw.githubusercontent.com/tombetthauser/tomblr/master/tomblr.png">
+    <img src="https://raw.githubusercontent.com/tombetthauser/tomblr/master/tomblr.png" alt="">
   </a>
 
 ---
@@ -40,9 +40,20 @@ Tomblr is created with:
 * Front-End: React/Redux 
 * Back-End: Rails/PostgresSQL
 
+  <a href="https://tomblr.herokuapp.com/#/">
+    <img src="https://raw.githubusercontent.com/tombetthauser/tomblr/master/tomblr2.png" alt="">
+  </a>
+
 ---
 
-### Todos
+## Challanges
+* effeciently fetching posts for specific blogs
+* making edit buttons appear only for the creator of a blog
+* redirecting page to index on successful login
+
+---
+
+## Todos
 * manage images and other content with AWS
 * optimize the blogs index to be in a responsive grid
 * create timed background image switch
