@@ -20,6 +20,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  margin: 0;
 }
 
 a {
@@ -526,4 +527,5 @@ a.header-link {
   height: 100px;
   width: 100px;
   background-color: #e9555c;
+  margin: 0;
 }
