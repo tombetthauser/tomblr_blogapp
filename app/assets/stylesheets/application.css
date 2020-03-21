@@ -516,3 +516,14 @@ a.header-link {
   display: block;
   margin: auto;
 }
+
+
+
+
+/* ————— New CSS added during job search. ————— */
+
+.background-animation-div {
+  height: 100px;
+  width: 100px;
+  background-color: #e9555c;
+}
