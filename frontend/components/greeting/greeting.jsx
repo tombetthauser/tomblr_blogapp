@@ -19,6 +19,10 @@ const Greeting = ({ currentUser, logout }) => {
         <a className="tom-links-link" target="new" href="https://github.com/tombetthauser">• GitHub</a>
         <a className="tom-links-link" target="new" href="https://www.linkedin.com/in/tombetthauser/">• LinkedIn</a>
       </div>
+      <form className="splashpage-searchbox-div">
+        <label className="splashpage-searchbox-t">t</label>
+        <input className="splashpage-searchbox-input" type="text" placeholder="Search Tomblr"></input>
+      </form>
       {/* <div className="background-animation-div-3"></div> */}
       <header>
         <Link to="/" className="header-link">
