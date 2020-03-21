@@ -531,24 +531,27 @@ a.header-link {
   background-size: cover;
   position: absolute;
   top: 0;
-  opacity: 1;
+  opacity: 0;
   z-index: -1;
 }
 
 .background-animation-div-2 {
   height: 100vh;
   width: 100%;
-background-image: url("");
+  background-image: url("https://images.unsplash.com/photo-1501959181532-7d2a3c064642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=2140&q=80");
+  background-position: center;
+  background-size: cover;
   position: absolute;
   top: 0;
-  opacity: 0;
+  opacity: 1;
   z-index: -2;
 }
 
 .background-animation-div-3 {
   height: 100vh;
   width: 100%;
-background-image: url("");
+  background-image: url("https://images.unsplash.com/photo-1513135467880-6c41603bbb5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2098&q=80");
+  
   position: absolute;
   top: 0;
   opacity: 0;
