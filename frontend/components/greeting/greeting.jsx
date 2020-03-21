@@ -8,7 +8,18 @@ const Greeting = ({ currentUser, logout }) => {
     <div>
       <div className="background-animation-div-1"></div>
       <div className="background-animation-div-2"></div>
-      <div className="background-animation-div-3"></div>
+      <div className="background-author-div">
+        Posted by <strong className="background-author-name-span">Tom</strong>
+        <div className="background-author-image-div"></div>
+      </div>
+      <div className="tom-links-div">
+        <p>
+          Site built by <strong>Tom Betthauser</strong>
+        </p>
+        <a className="tom-links-link" target="new" href="https://github.com/tombetthauser">• GitHub</a>
+        <a className="tom-links-link" target="new" href="https://www.linkedin.com/in/tombetthauser/">• LinkedIn</a>
+      </div>
+      {/* <div className="background-animation-div-3"></div> */}
       <header>
         <Link to="/" className="header-link">
           <h1>tomblr</h1>

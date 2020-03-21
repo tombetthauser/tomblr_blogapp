@@ -15,11 +15,7 @@
  */
 
 body {
-  background: url("https://images.unsplash.com/photo-1580184481690-5546bb513ae7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #60747c;
   margin: 0;
 }
 
@@ -526,35 +522,82 @@ a.header-link {
 .background-animation-div-1 {
   height: 100vh;
   width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1476763752342-d5cf7e5eb6cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80");
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  z-index: -1;
-}
-
-.background-animation-div-2 {
-  height: 100vh;
-  width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1501959181532-7d2a3c064642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=2140&q=80");
   background-position: center;
   background-size: cover;
   position: absolute;
   top: 0;
   opacity: 0;
   z-index: -2;
+  transition: 2s;
 }
 
-.background-animation-div-3 {
+.background-animation-div-2 {
   height: 100vh;
   width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1513135467880-6c41603bbb5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2098&q=80");
   background-position: center;
   background-size: cover;
   position: absolute;
   top: 0;
-  opacity: 1;
-  z-index: -3;
+  opacity: 0;
+  z-index: -1;
+  transition: 2s;
+}
+
+.background-author-div {
+  height: 30px;
+  width: 200px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  text-align: right;
+  cursor: default;
+}
+
+.background-author-div::selection { color: none; }
+
+.background-author-image-div {
+  background-color: #666;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-image: url("https://avatars1.githubusercontent.com/u/28816983?s=460&u=1fbab87b577eec513afe0aec18389f2d04f1e8d6&v=4");
+  background-position: center;
+  background-size: cover;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.background-author-name-span::selection { color: none; }
+
+.background-author-name-span {
+  margin-left: 5px;
+}
+
+.tom-links-div {
+  color: #fff;
+  width: 500px;
+  height: 30px;
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  /* justify-content: left; */
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.tom-links-link {
+  margin-left: 15px;
+  transition: .2s;
+}
+
+.tom-links-link:hover {
+  transition: .2s;
 }
