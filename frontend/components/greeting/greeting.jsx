@@ -6,9 +6,10 @@ const GREETINGS = [["welcome back ", ""]];
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <div>
-      <div className="background-animation-div-1"></div>
-      <div className="background-animation-div-2"></div>
+      <div className="background-animation-div-1 background-animation-div-shared"></div>
+      <div className="background-animation-div-2 background-animation-div-shared"></div>
       <div className="background-author-div">
+      <div className="background-demo-user-button">
         Posted by <strong className="background-author-name-span">Tom</strong>
         <div className="background-author-image-div"></div>
       </div>

@@ -15142,3 +15142,299 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 157ms (Views: 149.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-03-21 01:04:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 150ms (Views: 142.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 01:05:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 176ms (Views: 162.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users/undefined/" for ::1 at 2020-03-21 12:24:53 -0700
+Started POST "/api/session/" for ::1 at 2020-03-21 12:24:53 -0700
+
+LoadError - Unable to autoload constant Api::SessionsController, expected /Users/tombetthauser/Desktop/app_academy/aa_october_cohort_projects/tomblr/app/controllers/api/sessions_controller.rb to define it:
+
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:13
+Completed 404 Not Found in 90ms (ActiveRecord: 46.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=undefined:
+  app/controllers/api/users_controller.rb:13:in `show'
+
+Started POST "/api/session/" for ::1 at 2020-03-21 12:24:55 -0700
+Started GET "/api/users/undefined/" for ::1 at 2020-03-21 12:24:55 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"tom", "password"=>"[FILTERED]", "email"=>""}}
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "tom"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:13
+Completed 404 Not Found in 15ms (ActiveRecord: 11.7ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=undefined:
+  app/controllers/api/users_controller.rb:13:in `show'
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:43
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "tom"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:43
+  [1m[36mUser Update (9.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YnB3xpGElS2kGpyrW1cxwQ"], ["updated_at", "2020-03-21 19:24:55.616932"], ["id", 2]]
+  ↳ app/models/user.rb:43
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:43
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (7.0ms)
+Completed 200 OK in 318ms (Views: 20.9ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/api/blogs/" for ::1 at 2020-03-21 12:24:56 -0700
+Processing by Api::BlogsController#index as JSON
+  Rendering api/blogs/index.json.jbuilder
+  [1m[36mBlog Load (7.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/api/blogs/index.json.jbuilder:1
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 17]]
+  ↳ app/views/api/blogs/index.json.jbuilder:1
+  Rendered api/blogs/_blog.json.jbuilder (0.7ms)
+  Rendered api/blogs/_blog.json.jbuilder (0.3ms)
+  Rendered api/blogs/_blog.json.jbuilder (0.1ms)
+  Rendered api/blogs/_blog.json.jbuilder (0.1ms)
+  Rendered api/blogs/index.json.jbuilder (52.6ms)
+Completed 200 OK in 98ms (Views: 66.4ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/api/users/2/" for ::1 at 2020-03-21 12:24:59 -0700
+Started GET "/api/posts/" for ::1 at 2020-03-21 12:24:59 -0700
+Started GET "/api/blogs/27/" for ::1 at 2020-03-21 12:24:59 -0700
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:13
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.7ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 0.8ms)
+
+
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (3.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+Processing by Api::BlogsController#show as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/blogs_controller.rb:36
+  Rendering api/blogs/show.json.jbuilder
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/blogs/_blog.json.jbuilder:1
+  Rendered api/blogs/_blog.json.jbuilder (25.1ms)
+  Rendered api/blogs/show.json.jbuilder (28.9ms)
+Completed 200 OK in 58ms (Views: 35.6ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/api/users/2/" for ::1 at 2020-03-21 12:24:59 -0700
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (41.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.8ms)
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:13
+  Rendered api/posts/_post.json.jbuilder (3.6ms)
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (4.0ms)
+Completed 200 OK in 19ms (Views: 11.6ms | ActiveRecord: 0.6ms)
+
+
+  Rendered api/posts/_post.json.jbuilder (12.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.2ms)
+  Rendered api/posts/index.json.jbuilder (129.0ms)
+Completed 200 OK in 154ms (Views: 101.8ms | ActiveRecord: 37.5ms)
+
+
+Started POST "/api/posts/" for ::1 at 2020-03-21 12:25:07 -0700
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"New Post", "pic_url"=>"", "text"=>"", "blog_id"=>"27"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:9
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/posts_controller.rb:9
+  [1m[36mPost Create (7.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "pic_url", "blog_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "New Post"], ["text", ""], ["pic_url", ""], ["blog_id", 27], ["created_at", "2020-03-21 19:25:07.688879"], ["updated_at", "2020-03-21 19:25:07.688879"]]
+  ↳ app/controllers/api/posts_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:9
+  Rendering api/posts/show.json.jbuilder
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.7ms)
+  Rendered api/posts/show.json.jbuilder (6.3ms)
+Completed 200 OK in 38ms (Views: 16.9ms | ActiveRecord: 10.6ms)
+
+
+Started DELETE "/api/posts/38/" for ::1 at 2020-03-21 12:25:10 -0700
+Processing by Api::PostsController#destroy as JSON
+  Parameters: {"id"=>"38"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/api/posts_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:27
+  [1m[36mPost Destroy (1.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 38]]
+  ↳ app/controllers/api/posts_controller.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:27
+  Rendering api/posts/show.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.7ms)
+  Rendered api/posts/show.json.jbuilder (4.4ms)
+Completed 200 OK in 20ms (Views: 11.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/blogs/" for ::1 at 2020-03-21 12:25:17 -0700
+Processing by Api::BlogsController#index as JSON
+  Rendering api/blogs/index.json.jbuilder
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/api/blogs/index.json.jbuilder:1
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 2], ["id", 3], ["id", 17]]
+  ↳ app/views/api/blogs/index.json.jbuilder:1
+  Rendered api/blogs/_blog.json.jbuilder (0.5ms)
+  Rendered api/blogs/_blog.json.jbuilder (0.2ms)
+  Rendered api/blogs/_blog.json.jbuilder (0.1ms)
+  Rendered api/blogs/_blog.json.jbuilder (0.1ms)
+  Rendered api/blogs/index.json.jbuilder (12.7ms)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/api/session/" for ::1 at 2020-03-21 12:26:32 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YnB3xpGElS2kGpyrW1cxwQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:43
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "tom"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:43
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ikMGt3dwXwKe_-kSP5Fs3Q"], ["updated_at", "2020-03-21 19:26:32.292162"], ["id", 2]]
+  ↳ app/models/user.rb:43
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:43
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 26ms (Views: 8.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:26:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 400ms (Views: 397.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:26:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:26:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:27:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:27:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:31:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:36:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 656ms (Views: 650.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:36:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:36:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 67ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 12:37:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 58ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 16:17:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 82ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-21 16:17:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
