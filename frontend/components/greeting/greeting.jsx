@@ -19,7 +19,7 @@ const Greeting = ({ currentUser, logout }) => {
     <div>
       <header>
         <Link to="/" className="header-link">
-          <h1>tomblr</h1>
+          <h1>hello</h1>
         </Link>
       </header>
       <nav className="login-signup">
