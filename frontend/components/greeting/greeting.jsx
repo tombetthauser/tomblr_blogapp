@@ -6,7 +6,9 @@ const GREETINGS = [["welcome back ", ""]];
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <div>
-      <div className="background-animation-div"></div>
+      <div className="background-animation-div-1"></div>
+      <div className="background-animation-div-2"></div>
+      <div className="background-animation-div-3"></div>
       <header>
         <Link to="/" className="header-link">
           <h1>tomblr</h1>
