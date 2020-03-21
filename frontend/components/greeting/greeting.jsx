@@ -8,8 +8,8 @@ const Greeting = ({ currentUser, logout }) => {
     <div>
       <div className="background-animation-div-1 background-animation-div-shared"></div>
       <div className="background-animation-div-2 background-animation-div-shared"></div>
+      <div className="background-demo-user-button">Demo User</div>
       <div className="background-author-div">
-      <div className="background-demo-user-button">
         Posted by <strong className="background-author-name-span">Tom</strong>
         <div className="background-author-image-div"></div>
       </div>

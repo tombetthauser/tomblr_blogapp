@@ -631,3 +631,11 @@ a.header-link {
   color: black;
   transition: .2s;
 }
+
+.background-demo-user-button {
+  background-color: #fff;
+  color: #000;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
