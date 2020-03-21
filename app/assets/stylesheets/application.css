@@ -524,8 +524,10 @@ a.header-link {
 /* ————— New CSS added during job search. ————— */
 
 .background-animation-div {
-  height: 100px;
-  width: 100px;
+  height: 100vh;
+  width: 100%;
   background-color: #e9555c;
-  margin: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
