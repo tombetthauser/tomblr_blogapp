@@ -17,6 +17,9 @@
 body {
   background-color: #60747c;
   margin: 0;
+  overflow-x: hidden;
+  white-space: nowrap;
+  min-width: 400px;
 }
 
 a {
@@ -661,4 +664,8 @@ a.header-link {
 
 .background-demo-user-button:hover {
   /* opacity: 1; */
+}
+
+@media only screen and (max-width: 650px) {
+  .splashpage-searchbox-div, .background-author-div{ display: none; }
 }
