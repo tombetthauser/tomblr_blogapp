@@ -7,6 +7,9 @@ import { AuthRoute } from '../../util/route_util';
 class PostsSearch extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      searchTerm: "cats"
+    }
   }
 
   componentDidMount() {
@@ -33,21 +36,32 @@ class PostsSearch extends React.Component {
           <div className="search-header-div"></div>
           <div className="search-header-links-div">
             <ul className="search-header-links-ul">
-              <li className="search-header-link-li">Trending</li>
-              <li className="search-header-link-li">Staff picks</li>
-              <li className="search-header-link-li">Text</li>
-              <li className="search-header-link-li">Photos</li>
-              <li className="search-header-link-li">GIFs</li>
-              <li className="search-header-link-li">Quotes</li>
-              <li className="search-header-link-li">Chats</li>
-              <li className="search-header-link-li">Audio</li>
-              <li className="search-header-link-li">Video</li>
-              <li className="search-header-link-li">Asks</li>
+              <li>Trending</li>
+              <li>Staff picks</li>
+              <li>Text</li>
+              <li>Photos</li>
+              <li>GIFs</li>
+              <li>Quotes</li>
+              <li>Chats</li>
+              <li>Audio</li>
+              <li>Video</li>
+              <li>Asks</li>
+            </ul>
+          </div>
+          <div className="search-header-searchterms-div">
+            <h3 class="search-header-searchterms-title">{this.state.searchTerm.toUpperCase()}</h3>
+            <span class="search-header-searchterms-related">RELATED:</span>
+            <ul class="search-header-searchterms-ul">
+              <li>ANIMALS</li>
+              <li>VIDEO</li>
+              <li>DOGS</li>
+              <li>KITTENS</li>
+              <li>CUTE</li>
             </ul>
           </div>
           <ul className="search-post-ul">
             {this.props.posts.map(post => {
-              if (post.text.includes("hi") || post.title.includes("hi")) {
+              if (post.text.includes(this.state.searchTerm) || post.title.includes(this.state.searchTerm)) {
                 return (
                     <li className="search-post-li">
                       <h3 className="search-post-h3">{post.title}</h3>
