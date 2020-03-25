@@ -25,7 +25,6 @@ class BlogForm extends React.Component {
   render() {
     return (
       <div>
-
         <div className="new-blog-container">
           <div className="new-blog-form">
             <h3 className="new-blog-title">Create A New Blog</h3>

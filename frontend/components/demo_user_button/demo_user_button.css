@@ -1,0 +1,25 @@
+/*  */
+/* 
+.test {
+  color: black;
+} 
+
+ */
+
+
+/* Causing a webpack crash */
+
+/* found this on stack overflow - didnt seem to work */
+
+/* module.exports = {
+    debug: true,
+    entry: [ './sdocs.js' ],
+    output: {
+        filename: './[name].bundle.js'
+    },
+    module: {
+      loaders: [
+        { test: /\.css$/, loader: "style-loader!css-loader" },
+      ],
+    }
+} */
