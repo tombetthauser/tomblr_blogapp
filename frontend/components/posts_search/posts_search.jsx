@@ -31,7 +31,20 @@ class PostsSearch extends React.Component {
       <div>
           {newPostForm}
           <div className="search-header-div"></div>
-          <div className="search-header-links-div"></div>
+          <div className="search-header-links-div">
+            <ul className="search-header-links-ul">
+              <li className="search-header-link-li">Trending</li>
+              <li className="search-header-link-li">Staff picks</li>
+              <li className="search-header-link-li">Text</li>
+              <li className="search-header-link-li">Photos</li>
+              <li className="search-header-link-li">GIFs</li>
+              <li className="search-header-link-li">Quotes</li>
+              <li className="search-header-link-li">Chats</li>
+              <li className="search-header-link-li">Audio</li>
+              <li className="search-header-link-li">Video</li>
+              <li className="search-header-link-li">Asks</li>
+            </ul>
+          </div>
           <ul className="search-post-ul">
             {this.props.posts.map(post => {
               if (post.text.includes("hi") || post.title.includes("hi")) {
