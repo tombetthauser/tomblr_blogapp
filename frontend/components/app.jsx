@@ -4,6 +4,7 @@ import { Link, Switch, Route } from 'react-router-dom';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import BlogsIndexContainer from './blogs_index/blogs_index_container';
+import PostsSearchContainer from './posts_search/posts_search_container';
 import BlogShowContainer from './blogs_show/blog_show_container';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Route exact path="/login" component={LogInFormContainer} />
       <Route exact path="/signup" component={SignUpFormContainer} />
       <Route exact path="/blogs" component={BlogsIndexContainer}/>
+      <Route exact path="/search" component={PostsSearchContainer}/>
       <Route path="/blogs/:blogId" component={BlogShowContainer} />
     </div>
   )

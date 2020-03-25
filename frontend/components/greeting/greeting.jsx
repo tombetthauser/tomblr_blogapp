@@ -31,7 +31,7 @@ const Greeting = ({ currentUser, logout }) => {
       </hgroup>
     </div>
   );
-
+  
   return (
     <div>
       <BackgroundImages />

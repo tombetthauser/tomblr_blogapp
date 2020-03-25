@@ -702,6 +702,22 @@ a.header-link {
   border: none;
 }
 
+.search-header-div {
+  width: 100%;
+  height: 54px;
+  border-bottom: 1px solid #133357;
+}
+
+.search-header-links-div {
+  width: 100%;
+  height: 35px;
+  border-bottom: 1px solid #133357;
+}
+
+.search-post-ul {
+  max-width: 500px;
+}
+
 @media only screen and (max-width: 650px) {
   .splashpage-searchbox-div, .background-author-div{ display: none; }
 }
