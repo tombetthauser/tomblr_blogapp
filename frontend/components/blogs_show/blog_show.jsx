@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PostsIndexContainer from '../posts_index/posts_index_container';
 import PostsFormContainer from '../posts_form/post_form_container';
+import SearchField from '../search_field/search_field_container';
+import DemoButton from '../demo_user_button/demo_user_container';
+import LogoutButton from '../logout_button/logout_button_container';
+
 
 class BlogsShow extends React.Component {
   constructor(props) {
@@ -11,7 +15,15 @@ class BlogsShow extends React.Component {
   componentDidMount() {
     this.props.fetchBlog(this.props.match.params.blogId);
   }
-  
+
+  renderLogoutDemoButton() {
+    if (this.props.currentUser) {
+      return (<LogoutButton />)
+    } else {
+      return (<DemoButton />)
+    }
+  }
+
   render() {
     
     console.log("~~~~~~~~~~~~~~~~~~~~~")
@@ -56,6 +68,8 @@ class BlogsShow extends React.Component {
 
     return (
       <div className="blog-show-main-div">
+        { this.renderLogoutDemoButton() }
+        < SearchField />
         <div className="blog-show-header-image-div"></div>
         <div className="blog-show-avatar-circle"></div>
         <div className="blog-header">
