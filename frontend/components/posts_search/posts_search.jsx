@@ -3,6 +3,7 @@ import PostFormContainer from '../posts_form/post_form_container';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { AuthRoute } from '../../util/route_util';
+import SearchField from '../search_field/search_field_container';
 
 const shuffle = (a) => {
   let ci = a.length;
@@ -64,6 +65,7 @@ class PostsSearch extends React.Component {
     return (
       <div>
           {newPostForm}
+          <SearchField />
           <div className="search-header-div"></div>
           <div className="search-header-links-div">
             <ul className="search-header-links-ul">
