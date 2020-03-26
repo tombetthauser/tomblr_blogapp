@@ -86,6 +86,7 @@ class PostsSearch extends React.Component {
         if (
             !STOP_WORDS.includes(word) && 
             !RELATED_WORDS.includes(word) &&
+            word !== this.props.searchTerm.toLowerCase() &&
             !word.includes(",") &&
             !word.includes(".") &&
             !word.includes("!") &&
@@ -103,20 +104,11 @@ class PostsSearch extends React.Component {
             !word.includes("?")
           ) {
           RELATED_WORDS.push(word)
-          if (RELATED_WORDS.length >= 5) { break; }
+          if (RELATED_WORDS.length >= 3) { break; }
         }
       }
-      if (RELATED_WORDS.length >= 5) { break; }
+      if (RELATED_WORDS.length >= 3) { break; }
     }
-
-    console.log(RELATED_WORDS)
-    
-    // shuffle(this.props.posts).forEach(post => {
-    //   let words = post.author.text.split(" ")
-    //   words.forEach(word => {
-    //     if (!ALL_RELATED_WORDS.includes(word) && )
-    //   })
-    // });
 
     const SELECT_USERS = [];
 
