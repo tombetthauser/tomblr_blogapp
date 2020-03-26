@@ -103,7 +103,7 @@ class PostsSearch extends React.Component {
             </ul>
           </div>
           <ul className="search-post-ul">
-            {this.props.posts.map(post => {
+            {shuffle(this.props.posts).map(post => {
               if (
                 post.text.toUpperCase().includes(searchTerm.toUpperCase()) || 
                 post.title.toUpperCase().includes(searchTerm.toUpperCase()) || 
