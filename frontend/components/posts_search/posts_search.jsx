@@ -41,7 +41,7 @@ class PostsSearch extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchTerm: "cats"
+      searchTerm: ""
     }
   }
 
@@ -68,8 +68,22 @@ class PostsSearch extends React.Component {
         deleteButtonText = "delete post"
       }
     }
+
+    const ALL_USERS = shuffle(this.props.posts).map(post => {
+      return `${post.author.username.toUpperCase()}`;
+    });
+
+    const SELECT_USERS = [];
+
+    ALL_USERS.forEach(ele => {
+      if (!SELECT_USERS.includes(ele)) {
+        SELECT_USERS.push(ele)
+      }
+    })
+
+    console.log(SELECT_USERS.slice(0, 5));
     
-    const searchTerm = this.props.searchTerm;
+    const searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
     // if (parseInt(post.blog_id) === parseInt(this.props.match.params.blogId)) {
 
@@ -81,24 +95,18 @@ class PostsSearch extends React.Component {
           <div className="search-header-div"></div>
           <div className="search-header-links-div">
             <ul className="search-header-links-ul">
-              <li>Trending</li>
-              <li>Staff picks</li>
-              <li>Text</li>
-              <li>Photos</li>
-              <li>GIFs</li>
-              <li>Quotes</li>
-              <li>Chats</li>
-              <li>Audio</li>
-              <li>Video</li>
-              <li>Asks</li>
+              <li>Trending Users:</li>
+              { SELECT_USERS.slice(0, 5).map( user => {
+                return(<li><Link to={`/search/${user}`}>{user.toLowerCase()}</Link></li>)
+              })}
             </ul>
           </div>
           <div className="search-header-searchterms-div">
           <h3 class="search-header-searchterms-title">{searchTerm.toUpperCase()}</h3>
-            <span class="search-header-searchterms-related">popular:</span>
+            <span class="search-header-searchterms-related">related:</span>
             <ul class="search-header-searchterms-ul">
               {POPULAR_LINKS.map( link => {
-                return(<li><Link to={`/search/${link}`}>{link}</Link></li>)
+                return(<li><Link to={`/search/${link}`}>#{link}</Link></li>)
               })}
             </ul>
           </div>
@@ -109,7 +117,6 @@ class PostsSearch extends React.Component {
                 post.title.toUpperCase().includes(searchTerm.toUpperCase()) || 
                 post.author.username.toUpperCase().includes(searchTerm.toUpperCase())
               ) {
-                console.log(post)
                 return (
                     <li className="search-post-li">
                       <div className="search-search-post-header-div">
@@ -117,7 +124,6 @@ class PostsSearch extends React.Component {
                           <img className="search-profile-user-image" src="https://hezway.ipower.com/poolsafeinc/wp-content/uploads/2017/06/profile.png" alt=""/>
                         </Link>
                         <h3 className="search-post-h3">{post.title}</h3>
-                        {/* <h3 className="search-post-h3">{post.author.username}</h3> */}
                       </div>
                       {console.log(post)}
                       <img className="search-image" src={post.pic_url} alt=""/>
@@ -125,7 +131,7 @@ class PostsSearch extends React.Component {
                         <p className="search-post-p">{post.text}</p>
                         <p className="search-post-author">posted by 
                           <Link to={`/search/${post.author.username}`}>
-                          <span className="search-post-author-link">
+                            <span className="search-post-author-link">
                               {" " + post.author.username}
                             </span>
                           </Link>

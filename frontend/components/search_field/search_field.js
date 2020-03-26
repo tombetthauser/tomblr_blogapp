@@ -17,6 +17,8 @@ class PostForm extends React.Component {
     event.preventDefault();
     if (this.state.searchText !== "") {
       this.props.history.push(`/search/${this.state.searchText}`)
+    } else {
+      this.props.history.push(`/search/`)
     }
   }
 

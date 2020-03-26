@@ -729,8 +729,7 @@ a.header-link {
 .search-header-links-ul li {
   color: hsla(0,0%,100%,.65);
   display: inline-block;
-  margin: 0 10px;
-  cursor: pointer;
+  margin: 0 5px;
   letter-spacing: .5px;
 }
 
