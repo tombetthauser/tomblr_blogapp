@@ -4,6 +4,9 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { AuthRoute } from '../../util/route_util';
 import SearchField from '../search_field/search_field_container';
+import DemoButton from '../demo_user_button/demo_user_container';
+import LogoutButton from '../logout_button/logout_button_container';
+
 
 const shuffle = (a) => {
   let ci = a.length;
@@ -45,6 +48,14 @@ class PostsSearch extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
+
+  renderLogoutDemoButton() {
+    if (this.props.currentUser) {
+      return (<LogoutButton/>)
+    } else {
+      return (<DemoButton/>)
+    }
+  }
   
   render() {
     let thisBlog = this.props.blogs[this.props.match.params.blogId];
@@ -64,6 +75,7 @@ class PostsSearch extends React.Component {
 
     return (
       <div>
+          {this.renderLogoutDemoButton()}
           {newPostForm}
           <SearchField />
           <div className="search-header-div"></div>
