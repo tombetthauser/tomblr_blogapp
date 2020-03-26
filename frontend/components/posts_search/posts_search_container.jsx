@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import PostsSearch from './posts_search';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
-
+// import { selectBlog } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { match }) => ({
+  searchTerm: match.params.searchTerm,
   posts: Object.values(state.entities.posts),
   blogs: state.entities.blogs,
   currentUser: state.session.currentUser

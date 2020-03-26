@@ -734,6 +734,62 @@ a.header-link {
   letter-spacing: .5px;
 }
 
+.search-header-searchterms-div {
+  font-family: sans-serif;
+  /* height: 100px; */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.search-header-searchterms-title {
+  font-family: 'Raleway', sans-serif;
+  margin: 20px 0 5px 0;
+  font-size: 22.5px;
+  color: #dadde0;
+  font-weight: 300;
+}
+
+.search-header-searchterms-related {
+  display: inline-block;
+  color: #97a1ad;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.search-header-searchterms-ul {
+  text-transform: uppercase;
+  display: inline-block;
+  color: #97a1ad;
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 0 0;
+}
+
+.search-header-searchterms-ul li {
+  display: inline-block;
+  margin-left: 12px;
+  font-weight: 700;
+  color: #97a1ad;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+img.search-image {
+  max-width: 100%;
+  width: 100%;
+  margin-top: -1px;
+  z-index: -1;
+}
+
+.search-post-h3 {
+  font-family: sans-serif;
+  text-transform: lowercase;
+  margin: 0 0 0 10px;
+  font-size: 14px;
+  display: inline;
+}
+
 .search-post-ul {
   max-width: 300px;
 }
@@ -742,46 +798,42 @@ a.header-link {
   background-color: #fff;
   border-radius: 3px;
   margin-bottom: 20px;
+  /* padding: 15px; */
 }
 
-.search-header-searchterms-div {
-  /* height: 100px; */
-  text-align: center;
+.search-profile-user-image {
+  width: 30px;
+  border-radius: 2px;
+}
+
+.search-search-post-header-div {
+  /* background-color: tomato; */
+  display: flex;
+  align-items: center;
+  /* padding-bottom: 15px; */
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+}
+
+.search-post-bottom-div {
+  padding: 15px 15px 15px 15px;
   font-family: sans-serif;
-  margin-bottom: 30px;
+  font-weight: 50;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-.search-header-searchterms-title {
-  color: #dadde0;
-  font-weight: 300;
-  font-family: 'Raleway', sans-serif;
-  font-size: 22.5px;
-  margin: 20px 0 5px 0;
+.search-post-p {
+  margin: 0 0 10px 0;
 }
 
-.search-header-searchterms-related {
-  color: #97a1ad;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
+.search-post-author {
+  margin: 0;
 }
 
-.search-header-searchterms-ul {
-  color: #97a1ad;
-  display: inline-block;
-  list-style: none;
-  padding-left: 0;
-  text-transform: uppercase;
-  margin: 0 0 0 0;
-}
-
-.search-header-searchterms-ul li {
-  color: #97a1ad;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  margin-left: 12px;
-  cursor: pointer;
+.search-post-author-link {
+  color: #00b8ff;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 650px) {
