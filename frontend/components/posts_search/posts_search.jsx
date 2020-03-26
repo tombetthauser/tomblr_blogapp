@@ -21,6 +21,8 @@ const shuffle = (a) => {
   return a;
 };
 
+const STOP_WORDS = ["", "etc", "just", "a", "able", "about", "across", "after", "all", "almost", "also", "am", "among", "an", "and", "any", "are", "as", "at", "be", "because", "been", "but", "by", "can", "cannot", "could", "dear", "did", "do", "does", "either", "else", "ever", "every", "for", "from", "get", "got", "had", "has", "have", "he", "her", "hers", "him", "his", "how", "however", "i", "if", "in", "into", "is", "it", "its", "just", "least", "let", "like", "likely", "may", "me", "might", "most", "must", "my", "neither", "no", "nor", "not", "of", "off", "often", "on", "only", "or", "other", "our", "own", "rather", "said", "say", "says", "she", "should", "since", "so", "some", "than", "that", "the", "their", "them", "then", "there", "these", "they", "this", "tis", "to", "too", "twas", "us", "wants", "was", "we", "were", "what", "when", "where", "which", "while", "who", "whom", "why", "will", "with", "would", "yet", "you", "your", "ain't", "aren't", "can't", "could've", "couldn't", "didn't", "doesn't", "don't", "hasn't", "he'd", "he'll", "he's", "how'd", "how'll", "how's", "i'd", "i'll", "i'm", "i've", "isn't", "it's", "might've", "mightn't", "must've", "mustn't", "shan't", "she'd", "she'll", "she's", "should've", "shouldn't", "that'll", "that's", "there's", "they'd", "they'll", "they're", "they've", "wasn't", "we'd", "we'll", "we're", "weren't", "what'd", "what's", "when'd", "when'll", "when's", "where'd", "where'll", "where's", "who'd", "who'll", "who's", "why'd", "why'll", "why's", "won't", "would've", "wouldn't", "you'd", "you'll", "you're", "you've"];
+
 const POPULAR_LINKS = shuffle([
   "kitten",
   "coding",
@@ -73,6 +75,49 @@ class PostsSearch extends React.Component {
       return `${post.author.username.toUpperCase()}`;
     });
 
+    const RELATED_WORDS = [];
+
+    const SHUFFLED_POSTS = shuffle(this.props.posts);
+
+    for (let i = 0; i < SHUFFLED_POSTS.length; i++) {
+      let words = SHUFFLED_POSTS[i].text.split(" ");
+      for (let j = 0; j < words.length; j++) {
+        let word = words[j].toLowerCase();
+        if (
+            !STOP_WORDS.includes(word) && 
+            !RELATED_WORDS.includes(word) &&
+            !word.includes(",") &&
+            !word.includes(".") &&
+            !word.includes("!") &&
+            !word.includes("_") &&
+            !word.includes("0") &&
+            !word.includes("1") &&
+            !word.includes("2") &&
+            !word.includes("3") &&
+            !word.includes("4") &&
+            !word.includes("5") &&
+            !word.includes("6") &&
+            !word.includes("7") &&
+            !word.includes("8") &&
+            !word.includes("9") &&
+            !word.includes("?")
+          ) {
+          RELATED_WORDS.push(word)
+          if (RELATED_WORDS.length >= 5) { break; }
+        }
+      }
+      if (RELATED_WORDS.length >= 5) { break; }
+    }
+
+    console.log(RELATED_WORDS)
+    
+    // shuffle(this.props.posts).forEach(post => {
+    //   let words = post.author.text.split(" ")
+    //   words.forEach(word => {
+    //     if (!ALL_RELATED_WORDS.includes(word) && )
+    //   })
+    // });
+
     const SELECT_USERS = [];
 
     ALL_USERS.forEach(ele => {
@@ -105,8 +150,8 @@ class PostsSearch extends React.Component {
           <h3 class="search-header-searchterms-title">{searchTerm.toUpperCase()}</h3>
             <span class="search-header-searchterms-related">related:</span>
             <ul class="search-header-searchterms-ul">
-              {POPULAR_LINKS.map( link => {
-                return(<li><Link to={`/search/${link}`}>#{link}</Link></li>)
+              {RELATED_WORDS.map( word => {
+                return(<li><Link to={`/search/${word}`}>#{word}</Link></li>)
               })}
             </ul>
           </div>
