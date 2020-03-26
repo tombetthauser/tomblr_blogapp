@@ -58,12 +58,12 @@ class BlogsShow extends React.Component {
       <div className="blog-show-main-div">
         <div className="blog-show-header-image-div"></div>
         <div className="blog-show-avatar-circle"></div>
-        <h2 className="blog-show-title">{title}</h2>
+        <div className="blog-header">
+          <h2 className="blog-show-title">{title}</h2>
+          <p className="blog-show-subtitle">{description}</p>
+          <p className="blog-show-credits">Created by {author} on {month}/{day}/{year}</p>
+        </div>
         <div className="single-blog-show">
-          <div className="blog-header">
-            <h3>Created by {author} on {month}/{day}/{year}</h3>
-            <p>{description}</p>
-          </div>
           <PostsIndexContainer />
           { deleteButton }
         </div>

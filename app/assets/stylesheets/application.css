@@ -780,8 +780,8 @@ img.search-image {
 }
 .blog-show-title {
   /* border-bottom: 1px solid rgb(199, 199, 199); */
-  padding-bottom: 7.5px;
-  margin-bottom: 12.5px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
   font-size: 52.5px;
   font-family: sans-serif;
   color: #444;
@@ -852,9 +852,9 @@ img.search-image {
 }
 
 .blog-show-header-image-div {
-  background-color: #fff;
   background-image: url("https://i.pinimg.com/originals/4b/af/a6/4bafa60815e22b791214353890010f9b.jpg");
   background-position: center;
+  background-color: #fff;
   background-size: cover;
   height: 350px;
   width: 100%;
@@ -863,16 +863,31 @@ img.search-image {
 .blog-show-avatar-circle {
   background-image: url("https://66.media.tumblr.com/7d376efd024eadd902a8bb60c8155c94/tumblr_o51oavbMDx1ugpbmuo4_540.png");
   background-position: center;
-  background-size: cover;
-  z-index: 1;
-  width: 115px;
-  height: 115px;
-  border-radius: 75px;
-  /* background-color: tomato; */
-  margin-top: -62.5px;
-  margin-left: auto;
-  margin-right: auto;
   border: 5px solid #f9f9f9;
+  background-size: cover;
+  border-radius: 75px;
+  margin-top: -62.5px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 115px;
+  width: 115px;
+  z-index: 1;
+}
+
+.blog-show-subtitle {
+  text-align: center;
+  font-family: sans-serif;
+  color: #777;
+  margin-top: 12.5px;
+}
+
+.blog-show-credits {
+  text-align: center;
+  font-family: sans-serif;
+  color: #529ECC;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
 }
 
 @media only screen and (max-width: 650px) {
