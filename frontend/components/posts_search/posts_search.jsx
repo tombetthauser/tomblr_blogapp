@@ -104,7 +104,11 @@ class PostsSearch extends React.Component {
           </div>
           <ul className="search-post-ul">
             {this.props.posts.map(post => {
-              if (post.text.includes(searchTerm) || post.title.includes(searchTerm) || post.author.username.includes(searchTerm)) {
+              if (
+                post.text.toUpperCase().includes(searchTerm.toUpperCase()) || 
+                post.title.toUpperCase().includes(searchTerm.toUpperCase()) || 
+                post.author.username.toUpperCase().includes(searchTerm.toUpperCase())
+              ) {
                 console.log(post)
                 return (
                     <li className="search-post-li">
