@@ -3,6 +3,7 @@ import DemoButton from '../demo_user_button/demo_user_container';
 import { Link, Redirect } from 'react-router-dom';
 import React from 'react';
 import LogoutButton from '../logout_button/logout_button_container';
+import SearchField from '../search_field/search_field_container';
 
 
 const Greeting = ({ currentUser, logout }) => {
@@ -48,10 +49,7 @@ const Greeting = ({ currentUser, logout }) => {
         <a className="tom-links-link" target="new" href="https://github.com/tombetthauser">• GitHub</a>
       </div>
 
-      <form className="splashpage-searchbox-div">
-        <label className="splashpage-searchbox-t">t</label>
-        <input className="splashpage-searchbox-input" type="text" placeholder="Search Tomblr"></input>
-      </form>
+      <SearchField />
 
       <header>
         <Link to="/" className="header-link">

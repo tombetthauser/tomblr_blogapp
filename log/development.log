@@ -45906,3 +45906,318 @@ Processing by Api::PostsController#index as JSON
 Completed 200 OK in 58ms (Views: 44.0ms | ActiveRecord: 10.4ms)
 
 
+Started GET "/" for ::1 at 2020-03-25 20:38:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 497ms (Views: 491.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:39:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 586ms (Views: 583.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:40:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 591ms (Views: 588.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:42:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 953ms (Views: 950.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:44:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 408ms (Views: 405.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:45:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 406ms (Views: 401.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:49:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 431ms (Views: 427.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:50:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 498ms (Views: 495.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/posts/" for ::1 at 2020-03-25 20:50:04 -0700
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (5.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (12.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.2ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (4.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.7ms)
+  Rendered api/posts/index.json.jbuilder (60.6ms)
+Completed 200 OK in 76ms (Views: 57.7ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/api/posts/" for ::1 at 2020-03-25 20:50:09 -0700
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (4.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.8ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (5.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.4ms)
+  Rendered api/posts/index.json.jbuilder (42.5ms)
+Completed 200 OK in 55ms (Views: 43.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/posts/" for ::1 at 2020-03-25 20:50:17 -0700
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.5ms)
+  Rendered api/posts/index.json.jbuilder (33.9ms)
+Completed 200 OK in 44ms (Views: 39.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/posts/" for ::1 at 2020-03-25 20:50:24 -0700
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.4ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (4.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.7ms)
+  Rendered api/posts/index.json.jbuilder (40.1ms)
+Completed 200 OK in 52ms (Views: 43.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-25 20:51:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 431ms (Views: 427.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/posts/" for ::1 at 2020-03-25 20:51:50 -0700
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (5.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.4ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.5ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.5ms)
+  Rendered api/posts/index.json.jbuilder (51.2ms)
+Completed 200 OK in 68ms (Views: 55.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/posts/" for ::1 at 2020-03-25 20:51:54 -0700
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (5.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.9ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (6.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.5ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (4.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.3ms)
+  Rendered api/posts/index.json.jbuilder (54.7ms)
+Completed 200 OK in 73ms (Views: 58.6ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/api/posts/" for ::1 at 2020-03-25 20:51:59 -0700
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (5.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (3.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "blogs" ON "users"."id" = "blogs"."author_id" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/api/posts/_post.json.jbuilder:1
+  Rendered api/posts/_post.json.jbuilder (2.0ms)
+  Rendered api/posts/index.json.jbuilder (47.9ms)
+Completed 200 OK in 63ms (Views: 53.2ms | ActiveRecord: 4.8ms)
+
+
