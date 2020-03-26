@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from "react-router-dom";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class PostForm extends React.Component {
         onSubmit={this.handleSubmit}
       >
         <label className="splashpage-searchbox-t" onClick={() => this.props.history.push(`/`)}>
-          t
+          <Link to="/">t</Link>
         </label>
         <input 
           className="splashpage-searchbox-input" 

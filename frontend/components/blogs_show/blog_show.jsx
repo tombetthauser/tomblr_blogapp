@@ -50,7 +50,8 @@ class BlogsShow extends React.Component {
     }
 
     return (
-      <div>
+      <div className="blog-show-main-div">
+        <div className="blog-show-header-image-div"></div>
         {/* <button className="home-link-button" ><Link to="/">home</Link></button> */}
         <button className="home-link-button" ><Link to="/blogs">blogs index</Link></button>
         <div className="single-blog-show">

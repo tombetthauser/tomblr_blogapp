@@ -79,6 +79,8 @@ class PostsSearch extends React.Component {
 
     const SHUFFLED_POSTS = shuffle(this.props.posts);
 
+    let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
+
     for (let i = 0; i < SHUFFLED_POSTS.length; i++) {
       let words = SHUFFLED_POSTS[i].text.split(" ");
       for (let j = 0; j < words.length; j++) {
@@ -86,7 +88,7 @@ class PostsSearch extends React.Component {
         if (
             !STOP_WORDS.includes(word) && 
             !RELATED_WORDS.includes(word) &&
-            word !== this.props.searchTerm.toLowerCase() &&
+            word !== searchTerm.toLowerCase() &&
             !word.includes(",") &&
             !word.includes(".") &&
             !word.includes("!") &&
@@ -117,13 +119,7 @@ class PostsSearch extends React.Component {
         SELECT_USERS.push(ele)
       }
     })
-
-    console.log(SELECT_USERS.slice(0, 5));
     
-    const searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
-
-    // if (parseInt(post.blog_id) === parseInt(this.props.match.params.blogId)) {
-
     return (
       <div>
           {this.renderLogoutDemoButton()}
@@ -139,7 +135,7 @@ class PostsSearch extends React.Component {
             </ul>
           </div>
           <div className="search-header-searchterms-div">
-          <h3 class="search-header-searchterms-title">{searchTerm.toUpperCase()}</h3>
+          <h3 class="search-header-searchterms-title">{ searchTerm === "" ? "RECENT POSTS" : searchTerm.toUpperCase() }</h3>
             <span class="search-header-searchterms-related">related:</span>
             <ul class="search-header-searchterms-ul">
               {RELATED_WORDS.map( word => {

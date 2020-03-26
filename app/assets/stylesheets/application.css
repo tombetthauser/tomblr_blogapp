@@ -344,82 +344,6 @@ Link {
   border: none;
 }
 
-.single-blog-show {
-  width: 500px;
-  border-radius: 10px;
-  margin: 15px 0;
-  background-color: white;
-  /* border: 15px solid #d5d5d5; */
-  list-style: none;
-  opacity: .85;
-  padding: 10px 10px 27.5px 27.5px;
-  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
-  font-family: sans-serif;
-
-  border-radius: 2px;
-  margin: 35px 0;
-  background-color: white;
-  /* border: 15px solid #d5d5d5; */
-  list-style: none;
-  opacity: 1;
-  padding: 10px 40px 20px 30px;
-  box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25);
-
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-
-.single-blog-show p, .single-blog-show h3 {
-  color: black;
-  font-family: sans-serif;
-  text-shadow: none;
-}
-.single-blog-show h2 {
-  border-bottom: 1px solid rgb(199, 199, 199);
-  padding-bottom: 7.5px;
-  margin-bottom: 12.5px;
-}
-
-.single-blog-show h3 {
-  margin-bottom: 20px;
-  margin-top: 0px;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.single-blog-show p {
-  color: black;
-  text-shadow: none;
-  border-bottom: 1px solid rgb(231, 231, 231);
-  padding-bottom: 7.5px;
-  font-size: 14px;
-}
-
-.single-blog-show button {
-  display: block;  
-  margin: auto;
-  color: #fff;
-  padding: 10px 8px;
-  border-radius: 5px;
-  font-family: sans-serif;
-  width: 150px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  color: rgb(105, 188, 221);
-  font-size: 13px;
-  cursor: pointer;
-  border: none;
-}
-
-.single-blog-show a {
-  display: block;
-  margin-top: 25px;
-  color: rgb(105, 188, 221);
-  font-size: 14px;
-}
-
 img {
   max-width: 87.5%;
 }
@@ -431,19 +355,6 @@ img {
 a.header-link {
   background-color: rgba(0,0,0,0);
   font-weight: 100;
-}
-
-.mapped-post-li {
-  /* border: 2px solid pink; */
-  padding-top: 20px;
-
-}
-
-.mapped-post-ul {
-  list-style: none;
-}
-
-.mapped-blog-li p {
 }
 
 .home-link-button {
@@ -833,6 +744,114 @@ img.search-image {
 .search-post-author-link {
   color: #00b8ff;
   font-weight: 400;
+}
+
+.single-blog-show {
+  width: 500px;
+  border-radius: 10px;
+  /* background-color: white; */
+  /* border: 15px solid #d5d5d5; */
+  list-style: none;
+  opacity: .85;
+  padding: 10px 10px 27.5px 27.5px;
+  /* box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25); */
+  font-family: sans-serif;
+
+  border-radius: 2px;
+  /* background-color: white; */
+  /* border: 15px solid #d5d5d5; */
+  list-style: none;
+  opacity: 1;
+  padding: 10px 40px 20px 30px;
+  /* box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.25); */
+  
+  margin: 35px 0 0;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.single-blog-show p, .single-blog-show h3 {
+  color: black;
+  font-family: sans-serif;
+  text-shadow: none;
+  padding: 20px;
+}
+.single-blog-show h2 {
+  border-bottom: 1px solid rgb(199, 199, 199);
+  padding-bottom: 7.5px;
+  margin-bottom: 12.5px;
+}
+
+.single-blog-show h3 {
+  /* margin-bottom: 20px; */
+  margin-top: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.single-blog-show p {
+  /* color: black;
+  text-shadow: none;
+  border-bottom: 1px solid rgb(231, 231, 231);
+  padding-bottom: 7.5px;
+  font-size: 14px; */
+  margin: 0;
+}
+
+.single-blog-show button {
+  display: block;  
+  margin: auto;
+  color: #fff;
+  padding: 10px 8px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  width: 150px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  color: rgb(105, 188, 221);
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+}
+
+.single-blog-show a {
+  display: block;
+  margin-top: 25px;
+  color: rgb(105, 188, 221);
+  font-size: 14px;
+}
+
+.blog-show-main-div {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.mapped-post-li {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.mapped-post-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mapped-post-li img {
+  max-width: 100%;
+}
+
+.blog-show-header-image-div {
+  background-image: url("https://i.pinimg.com/originals/4b/af/a6/4bafa60815e22b791214353890010f9b.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 650px) {

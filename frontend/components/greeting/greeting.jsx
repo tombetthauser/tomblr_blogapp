@@ -27,7 +27,6 @@ const Greeting = ({ currentUser, logout }) => {
     <div>
       <hgroup className="header-group">
         <h2 className="header-name">welcome back {currentUser.username.toLowerCase()}</h2>
-        {/* <Link to="/"><button className="header-button" onClick={logout}>logout</button></Link> */}
         <LogoutButton />
       </hgroup>
     </div>
@@ -59,7 +58,7 @@ const Greeting = ({ currentUser, logout }) => {
 
       { currentUser ? personalGreeting() : sessionLinks() }
 
-      <Link className="blogs-index-link-button" to="/blogs">⎈ here's whats trending</Link>
+      <Link className="blogs-index-link-button" to="/search">⎈ here's whats trending</Link>
     </div>
   )
 };
