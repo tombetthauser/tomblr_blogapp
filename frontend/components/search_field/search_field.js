@@ -15,7 +15,9 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.history.push(`/search/${this.state.searchText}`)
+    if (this.state.searchText !== "") {
+      this.props.history.push(`/search/${this.state.searchText}`)
+    }
   }
 
   render() {
@@ -24,7 +26,7 @@ class PostForm extends React.Component {
         className="splashpage-searchbox-div" 
         onSubmit={this.handleSubmit}
       >
-        <label className="splashpage-searchbox-t">
+        <label className="splashpage-searchbox-t" onClick={() => this.props.history.push(`/`)}>
           t
         </label>
         <input 
