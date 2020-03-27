@@ -30,8 +30,8 @@ class BlogsShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchBlog(this.props.match.params.blogId);
-    document.querySelector(".blog-show-header-image-div").style.background = `url(${BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)]})`;
-    document.querySelector(".blog-show-avatar-circle").style.backgroundImage = `url(${AVATARS[Math.floor(Math.random() * AVATARS.length)]})`;
+    document.querySelector(".blog-show-header-image-div").style.background = `url(${BACKGROUNDS[(this.props.match.params.blogId * 50) % BACKGROUNDS.length]})`;
+    document.querySelector(".blog-show-avatar-circle").style.backgroundImage = `url(${AVATARS[(this.props.match.params.blogId * 50) % AVATARS.length]})`;
   }
 
   renderLogoutDemoButton() {

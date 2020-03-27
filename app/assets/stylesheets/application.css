@@ -695,6 +695,9 @@ img.search-image {
 .search-profile-user-image {
   width: 30px;
   border-radius: 2px;
+  height: 30px;
+  background-position: center;
+  background-size: cover;
 }
 
 .search-search-post-header-div {
