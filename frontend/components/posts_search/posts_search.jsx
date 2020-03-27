@@ -76,7 +76,6 @@ class PostsSearch extends React.Component {
     });
 
     const RELATED_WORDS = [];
-
     const SHUFFLED_POSTS = shuffle(this.props.posts);
 
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";

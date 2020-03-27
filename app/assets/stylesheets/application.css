@@ -532,20 +532,23 @@ a.header-link {
   padding-left: 20px;
   font-size: 40px;
   color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.3);
 }
 
 .splashpage-searchbox-input {
   background-color: rgba(255, 255, 255, 0.25);
+  text-shadow: 2px 2px 3px rgba(0,0,0,.2);
+  box-shadow: 1px 1px 7px rgba(0,0,0,.1);
   padding: 0 0 0 15px;
   border-radius: 4px;
   margin-left: 15px;
-  margin-top: 3px;
-  height: 35px;
-  border: none;
-  width: 450px;
-  color: #fff;
   font-size: 14px;
   transition: .4s;
+  margin-top: 3px;
+  color: #fff;
+  width: 450px;
+  height: 35px;
+  border: none;
 }
 
 .splashpage-searchbox-input:focus {
@@ -555,7 +558,6 @@ a.header-link {
 }
 
 .background-demo-user-button {
-  /* background-color: rgba(0,0,0,.35); */
   color: #eee;
   position: absolute;
   right: 15px;
@@ -568,13 +570,7 @@ a.header-link {
   font-weight: 500;
   background-color: #00b8ff;
   letter-spacing: .5px;
-
   display: none;
-  /* opacity: .9; */
-}
-
-.background-demo-user-button:hover {
-  /* opacity: 1; */
 }
 
 .demo-button-form-hidden {
@@ -582,35 +578,20 @@ a.header-link {
 }
 
 .demo-button-submit {
-  color: #eee;
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  cursor: pointer;
-  border-radius: 2px;
   padding: 10px 17.5px;font-family: sans-serif;
-  font-size: 13px;
-  transition: .2s;
-  font-weight: 500;
+  box-shadow: 1px 1px 7px rgba(0,0,0,.2);
   background-color: #00b8ff;
   letter-spacing: .5px;
-  border: none;
-}
-
-.header-button-component {
-  color: #eee;
   position: absolute;
-  right: 15px;
-  top: 10px;
-  cursor: pointer;
   border-radius: 2px;
-  padding: 10px 17.5px;font-family: sans-serif;
+  font-weight: 500;
   font-size: 13px;
   transition: .2s;
-  font-weight: 500;
-  background-color: #00b8ff;
-  letter-spacing: .5px;
+  cursor: pointer;
+  color: #eee;
   border: none;
+  right: 15px;
+  top: 10px;
 }
 
 .search-header-div {
@@ -910,6 +891,37 @@ img.search-image {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 13px;
+}
+
+.header-logout-welcome-span {
+  color: #fff;
+  white-space: nowrap;
+  font-weight: 400;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.3);
+}
+
+.header-button-component {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  padding: 10px 0px;
+  font-family: sans-serif;
+  font-size: 13px;
+  transition: .2s;
+  font-weight: 500;
+  letter-spacing: .5px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.header-logout-span {
+  color: #eee;
+  border-radius: 2px;
+  background-color: #00b8ff;
+  padding: 10px 17.5px;
+  margin-left: 10px;
+  box-shadow: 1px 1px 7px rgba(0,0,0,.2);
 }
 
 @media only screen and (max-width: 650px) {
