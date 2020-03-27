@@ -129,6 +129,7 @@ class PostsSearch extends React.Component {
     const columnUlCount = isSingleColumn ? 1 : 4;
 
     const thatsAllMessage = () => {
+      setTimeout(() => { }, 400)
       if (FILTERED_POSTS.length < 1) {
         return `Sorry! No posts for "${searchTerm}" yet ;(`
       } else {
@@ -142,6 +143,7 @@ class PostsSearch extends React.Component {
     }
 
     const rickRoll = () => {
+      setTimeout(() => { }, 400)
       if (FILTERED_POSTS.length < 1) {
         return (<div className="rick-roll-div"></div>)
       }
