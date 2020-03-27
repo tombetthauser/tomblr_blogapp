@@ -40,12 +40,14 @@ class PostsSearch extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchTerm: ""
+      searchTerm: "",
+      isLoaded: false,
     }
   }
 
   componentDidMount() {
     this.props.fetchPosts();
+    this.state.isLoaded = true;
   }
 
   renderLogoutDemoButton() {
@@ -108,6 +110,8 @@ class PostsSearch extends React.Component {
             !word.includes("7") &&
             !word.includes("8") &&
             !word.includes("9") &&
+            !word.includes("#") &&
+            !word.includes("@") &&
             !word.includes("?")
           ) {
           RELATED_WORDS.push(word)
@@ -129,7 +133,6 @@ class PostsSearch extends React.Component {
     const columnUlCount = isSingleColumn ? 1 : 4;
 
     const thatsAllMessage = () => {
-      setTimeout(() => { }, 400)
       if (FILTERED_POSTS.length < 1) {
         return `Sorry! No posts for "${searchTerm}" yet ;(`
       } else {
@@ -143,7 +146,6 @@ class PostsSearch extends React.Component {
     }
 
     const rickRoll = () => {
-      setTimeout(() => { }, 400)
       if (FILTERED_POSTS.length < 1) {
         return (<div className="rick-roll-div"></div>)
       }
@@ -198,10 +200,10 @@ class PostsSearch extends React.Component {
                       </li>
                     )
               }).reverse()}
-              { rickRoll() }
+              { this.state.isLoaded ? rickRoll() : null }
             </ul>
           </div>
-        <span className="posts-search-thatsall-text">{`${thatsAllMessage()}`}</span>
+        <span className="posts-search-thatsall-text">{`${ this.state.isLoaded ? thatsAllMessage() : null }`}</span>
       </div>
     )
   }
