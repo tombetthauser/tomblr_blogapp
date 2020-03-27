@@ -963,13 +963,32 @@ img.search-image {
   height: 150px;
   width: 150px;
   border-radius: 75px;
-  background-image: url("https://media.giphy.com/media/Vuw9m5wXviFIQ/giphy.gif");
+  /* background-image: url("https://media.giphy.com/media/Vuw9m5wXviFIQ/giphy.gif"); */
+  background-image: url("https://akns-images.eonline.com/eol_images/Entire_Site/2015118/rs_472x360-151208085601-sad_dawson.gif?fit=inside|900:auto&output-quality=90");
   background-position: center;
   background-size: cover;
   display: block;
   margin: 10px auto 20px;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 1300px) {
+  .search-post-ul-fourcolumns {
+    column-count: 3 !important;
+    max-width: 980px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .search-post-ul-fourcolumns {
+    column-count: 2 !important;
+    max-width: 660px;
+  }
+}
+
+@media only screen and (max-width: 660px) {
   .splashpage-searchbox-div, .background-author-div{ display: none; }
+  .search-post-ul-fourcolumns {
+    column-count: 1 !important;
+    max-width: 300px;
+  }
 }

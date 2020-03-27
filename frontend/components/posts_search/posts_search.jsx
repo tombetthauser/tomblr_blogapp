@@ -171,7 +171,7 @@ class PostsSearch extends React.Component {
             </ul>
           </div>
           <div className="search-ul-constrictor">
-            <ul className="search-post-ul" style={{ width: columnUlWidth, columnCount: columnUlCount }}>
+            <ul className={`search-post-ul ${ isSingleColumn ? null : "search-post-ul-fourcolumns"}`} style={{ width: columnUlWidth, columnCount: columnUlCount }}>
               {FILTERED_POSTS.map(post => {
                     return (
                       <li className="search-post-li">
