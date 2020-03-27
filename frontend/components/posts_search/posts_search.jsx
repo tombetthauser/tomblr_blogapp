@@ -23,22 +23,6 @@ const shuffle = (a) => {
 
 const STOP_WORDS = ["", "etc", "just", "a", "able", "about", "across", "after", "all", "almost", "also", "am", "among", "an", "and", "any", "are", "as", "at", "be", "because", "been", "but", "by", "can", "cannot", "could", "dear", "did", "do", "does", "either", "else", "ever", "every", "for", "from", "get", "got", "had", "has", "have", "he", "her", "hers", "him", "his", "how", "however", "i", "if", "in", "into", "is", "it", "its", "just", "least", "let", "like", "likely", "may", "me", "might", "most", "must", "my", "neither", "no", "nor", "not", "of", "off", "often", "on", "only", "or", "other", "our", "own", "rather", "said", "say", "says", "she", "should", "since", "so", "some", "than", "that", "the", "their", "them", "then", "there", "these", "they", "this", "tis", "to", "too", "twas", "us", "wants", "was", "we", "were", "what", "when", "where", "which", "while", "who", "whom", "why", "will", "with", "would", "yet", "you", "your", "ain't", "aren't", "can't", "could've", "couldn't", "didn't", "doesn't", "don't", "hasn't", "he'd", "he'll", "he's", "how'd", "how'll", "how's", "i'd", "i'll", "i'm", "i've", "isn't", "it's", "might've", "mightn't", "must've", "mustn't", "shan't", "she'd", "she'll", "she's", "should've", "shouldn't", "that'll", "that's", "there's", "they'd", "they'll", "they're", "they've", "wasn't", "we'd", "we'll", "we're", "weren't", "what'd", "what's", "when'd", "when'll", "when's", "where'd", "where'll", "where's", "who'd", "who'll", "who's", "why'd", "why'll", "why's", "won't", "would've", "wouldn't", "you'd", "you'll", "you're", "you've"];
 
-// const POPULAR_LINKS = shuffle([
-//   "kitten",
-//   "coding",
-//   "hotdog",
-//   "banana",
-//   "puppy",
-//   "jason",
-//   "pizza",
-//   "taco",
-//   "mike",
-//   "duck",
-//   "cat",
-//   "dog",
-//   "tom",
-// ]).slice(0, 3);
-
 const AVATARS = [
   "https://66.media.tumblr.com/7d376efd024eadd902a8bb60c8155c94/tumblr_o51oavbMDx1ugpbmuo4_540.png",
   "https://66.media.tumblr.com/ee9b9564d7e54380837579452cde04f6/tumblr_o51oavbMDx1ugpbmuo5_540.png",
@@ -73,6 +57,17 @@ class PostsSearch extends React.Component {
   }
   
   render() {
+    let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
+
+    // const FILTERED_POSTS = shuffle(this.props.posts).filter(post => (
+    const FILTERED_POSTS = this.props.posts.filter(post => (
+      post.text.toUpperCase().includes(searchTerm.toUpperCase()) ||
+      post.title.toUpperCase().includes(searchTerm.toUpperCase()) ||
+      post.author.username.toUpperCase().includes(searchTerm.toUpperCase())
+    ));
+
+    const isSingleColumn = FILTERED_POSTS.length < 5;
+
     let thisBlog = this.props.blogs[this.props.match.params.blogId];
     let deleteButtonText = null;
     let newPostForm = null;
@@ -90,8 +85,6 @@ class PostsSearch extends React.Component {
 
     const RELATED_WORDS = [];
     const SHUFFLED_POSTS = shuffle(this.props.posts);
-
-    let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
     for (let i = 0; i < SHUFFLED_POSTS.length; i++) {
       let words = SHUFFLED_POSTS[i].text.split(" ");
@@ -131,6 +124,28 @@ class PostsSearch extends React.Component {
         SELECT_USERS.push(ele)
       }
     })
+
+    const columnUlWidth = isSingleColumn ? 300 : 1260;
+    const columnUlCount = isSingleColumn ? 1 : 4;
+
+    const thatsAllMessage = () => {
+      if (FILTERED_POSTS.length < 1) {
+        return `Sorry! No posts for "${searchTerm}" yet ;(`
+      } else {
+        return [
+          "That's all folks! :0",
+          "That's it for now! :p",
+          "That's all for now! :3",
+          "That's all we got! :)",
+        ][Math.floor(Math.random() * 4)]
+      }
+    }
+
+    const rickRoll = () => {
+      if (FILTERED_POSTS.length < 1) {
+        return (<div className="rick-roll-div"></div>)
+      }
+    }
     
     return (
       <div>
@@ -155,40 +170,36 @@ class PostsSearch extends React.Component {
               })}
             </ul>
           </div>
-          <ul className="search-post-ul">
-            {shuffle(this.props.posts).map(post => {
-              if (
-                post.text.toUpperCase().includes(searchTerm.toUpperCase()) || 
-                post.title.toUpperCase().includes(searchTerm.toUpperCase()) || 
-                post.author.username.toUpperCase().includes(searchTerm.toUpperCase())
-              ) {
-                return (
-                    <li className="search-post-li">
-                      <div className="search-search-post-header-div">
-                        <Link to={`/blogs/${post.blog_id}`}>
-                        <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id * 50) % AVATARS.length]}")`}} alt=""></div>
-                        </Link>
-                        <h3 className="search-post-h3">{post.title}</h3>
-                      </div>
-                      {console.log(post)}
-                      <img className="search-image" src={post.pic_url} alt=""/>
-                      <div className="search-post-bottom-div">
-                        <p className="search-post-p">{post.text}</p>
-                        <p className="search-post-author">posted by 
-                          <Link to={`/search/${post.author.username}`}>
-                            <span className="search-post-author-link">
-                              {" " + post.author.username}
-                            </span>
+          <div className="search-ul-constrictor">
+            <ul className="search-post-ul" style={{ width: columnUlWidth, columnCount: columnUlCount }}>
+              {FILTERED_POSTS.map(post => {
+                    return (
+                      <li className="search-post-li">
+                        <div className="search-search-post-header-div">
+                          <Link to={`/blogs/${post.blog_id}`}>
+                          <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id * 50) % AVATARS.length]}")`}} alt=""></div>
                           </Link>
-                        </p>
-                      </div>
-                    </li>
-                )
-              } else {
-                return null
-              }
-            }).reverse()}
-          </ul>
+                          <h3 className="search-post-h3">{post.title}</h3>
+                        </div>
+                        {console.log(post)}
+                        <img className="search-image" src={post.pic_url} alt=""/>
+                        <div className="search-post-bottom-div">
+                          <p className="search-post-p">{post.text}</p>
+                          <p className="search-post-author">posted by 
+                            <Link to={`/search/${post.author.username}`}>
+                              <span className="search-post-author-link">
+                                {" " + post.author.username}
+                              </span>
+                            </Link>
+                          </p>
+                        </div>
+                      </li>
+                    )
+              }).reverse()}
+              { rickRoll() }
+            </ul>
+          </div>
+        <span className="posts-search-thatsall-text">{`${thatsAllMessage()}`}</span>
       </div>
     )
   }

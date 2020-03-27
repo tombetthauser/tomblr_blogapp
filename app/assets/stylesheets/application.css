@@ -681,17 +681,6 @@ img.search-image {
   display: inline;
 }
 
-.search-post-ul {
-  max-width: 300px;
-}
-
-.search-post-li {
-  background-color: #fff;
-  border-radius: 3px;
-  margin-bottom: 20px;
-  /* padding: 15px; */
-}
-
 .search-profile-user-image {
   width: 30px;
   border-radius: 2px;
@@ -925,6 +914,60 @@ img.search-image {
   padding: 10px 17.5px;
   margin-left: 10px;
   box-shadow: 1px 1px 7px rgba(0,0,0,.2);
+}
+
+.posts-search-thatsall-text {
+  text-align: center;
+  display: block;
+  margin: auto;
+  color: #fff;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  opacity: .15;
+  font-size: 12px;
+}
+
+.search-ul-constrictor {
+  /* max-width: 400px;
+  white-space: wrap;
+  overflow: visible;
+  background-color: darkgoldenrod; */
+}
+
+.search-post-ul {
+  /* column-count: 4; */
+  /* background-color: pink; */
+  /* min-width: 1260px;
+  max-width: 1260px; */
+  /* width: 300px !important; */
+  /* width: 300px; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.search-post-li {
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  /* margin-left: 20px; */
+  margin-right: 20px;
+  display: inline-block;
+  min-width: 300px;
+  max-width: 300px;
+  /* padding: 15px; */
+}
+
+.rick-roll-div {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  background-image: url("https://media.giphy.com/media/Vuw9m5wXviFIQ/giphy.gif");
+  background-position: center;
+  background-size: cover;
+  display: block;
+  margin: 10px auto 20px;
 }
 
 @media only screen and (max-width: 650px) {
