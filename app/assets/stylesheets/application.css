@@ -136,7 +136,7 @@ Link {
 .login-form-container {
   width: 275px;
   padding: 35px 70px 55px 0px;
-  border-radius: 2px;
+  border-radius: 3.5px;
   margin: 35px auto 15px;
   background-color: rgba(255, 255, 255, .7);
   box-shadow: -3px 7.5px 7.5px rgba(0,0,0,.15);
