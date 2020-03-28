@@ -1,10 +1,19 @@
 import React from "react";
+import { withRouter } from 'react-router';
 
 class DemoButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "tom", password: "password" }
+    this.state = { 
+      username: "tom",
+      password: "password",
+      blogs: null,
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    // this.props.fetchBlogs().then(blogs => this.state.blogs = "blogs").then(() => alert(this.state.blogs));
   }
 
   handleSubmit(event) {
@@ -12,9 +21,17 @@ class DemoButton extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
     this.props.requestUser(this.props.currenUser)
+    this.props.fetchBlogs().then(blogs => {
+      let keys = Object.keys(blogs.blogs);
+      keys.forEach(key => {
+        if (blogs.blogs[key].user.username === this.state.username) {
+          this.props.history.push(`/blogs/${key}`)
+        }
+      })
+    })
   }
 
-  render() {
+  render() {    
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -25,4 +42,4 @@ class DemoButton extends React.Component {
   }
 }
 
-export default DemoButton;
+export default withRouter(DemoButton);

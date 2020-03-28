@@ -10,7 +10,6 @@ class PostForm extends React.Component {
   }
 
   update(field) {
-    console.log(this.state.searchText)
     return event => this.setState({ [field]: event.target.value });
   }
 
