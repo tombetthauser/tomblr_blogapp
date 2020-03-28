@@ -379,42 +379,6 @@ a.header-link {
   margin-bottom: 10px;
 }
 
-.new-post-form {
-  background-color: #eee;
-  padding: 15px 25px;
-  font-size: 12px;
-  letter-spacing: .5px;
-  text-align: right;
-  padding-right: 100px;
-  border-radius: 4px;
-  margin-top: 15px;
-}
-
-.new-post-form label {
-  background-color: #eee;
-  padding: 7.5px 25px;
-  display: block;
-  font-weight: 100;
-}
-
-.new-post-form input {
-  margin-left: 5px;
-}
-
-.new-post-form h3 {
-  text-align: left;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.new-post-form button {
-    margin-right: 80px;
-    padding-top: 7.5px;
-    padding-bottom: 7.5px;
-    background-color: #fff;
-    display: inline;
-}
-
 .header-group {
   width: 215px;
   display: block;
@@ -969,6 +933,95 @@ img.search-image {
   background-size: cover;
   display: block;
   margin: 10px auto 20px;
+}
+
+
+.new-post-form {
+  background-color: #001935;
+  font-size: 12px;
+  letter-spacing: .5px;
+  /* text-align: right; */
+  border-radius: 4px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.new-post-form label {
+}
+
+.new-post-form input {
+}
+
+.new-post-form h3 {
+  text-align: left;
+  /* padding-bottom: 10px; */
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  text-transform: none;
+  font-weight: 800;
+}
+
+.new-post-form button {
+  /* margin-right: 80px; */
+  /* padding-top: 7.5px;
+  padding-bottom: 7.5px; */
+  padding: 7.5px 22.5px;
+  background-color: #00b8ff;
+  border-radius: 2px;
+  margin: 12.5px 17.5px;
+  width: auto;
+  /* display: inline; */
+}
+
+.post-field {
+  border: none;
+}
+
+.post-field-input-title {
+  /* background-color: pink; */
+  padding: 10px 0px 0px 15px;
+  font-size: 25px;
+  margin: 0 0 0 0;
+  border: none;
+  width: 482.5px;
+  color: #444;
+}
+
+.post-field-input-picurl {
+  /* background-color: gold; */
+  padding: 10px 10px 10px 17.5px;
+  margin: 0 0 0 0;
+  font-size: 14px;
+  border: none;
+  width: 467.5px;
+  color: #444;
+}
+
+.post-field-input-text {
+  padding: 10px 10px 10px 17.5px;
+  margin: 0 0 0 0;
+  font-size: 14px;
+  border: none;
+  width: 467.5px;
+  height: 75px;
+  resize: none;
+  /* background-color: tomato; */
+  font-family: sans-serif;
+  color: #444;
+}
+
+.new-post-top-div {
+  /* width: 100%; */
+}
+
+.new-post-bottom-div {
+  border-top: 1px solid #ddd;
+  justify-content: end;
+  align-items: center;
+  display: flex;
+  height: 50px;
 }
 
 @media only screen and (max-width: 1300px) {

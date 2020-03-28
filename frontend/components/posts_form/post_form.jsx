@@ -26,37 +26,43 @@ class PostForm extends React.Component {
   render() {
     return (
       <div>
-
         <div className="new-post-container">
           <div className="new-post-form">
-            <h3 className="new-post-title">Create a New Post</h3>
+            <div className="new-post-top-div">
+              <h3 className="new-post-title">Create a New Post</h3>
+            </div>
 
             <form onSubmit={this.handleSubmit}>
-              <label className="post-field">title:
+              <label className="post-field">
                 <input
+                  placeholder="Title"
                   type="text"
                   value={this.state.title}
                   onChange={this.update('title')}
-                  className="post-field"
+                  className="post-field-input-title"
                 />
               </label>
-              <label className="post-field">image url (optional):
+              <label className="post-field">
                 <input
+                  placeholder="Your image URL here..."
                   type="text"
                   value={this.state.pic_url}
                   onChange={this.update('pic_url')}
-                  className="post-field"
+                  className="post-field-input-picurl"
                 />
               </label>
-              <label className="post-field">post text (optional):
-                <input
+              <label className="post-field">
+                <textarea
+                  placeholder="Your text here..."
                   type="text"
                   value={this.state.text}
                   onChange={this.update('text')}
-                  className="post-field"
+                  className="post-field-input-text"
                 />
               </label>
-              <button type="submit">create post</button>
+              <div className="new-post-bottom-div">
+                <button type="submit">Post</button>
+              </div>
             </form>
 
           </div>
