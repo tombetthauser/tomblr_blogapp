@@ -9,7 +9,7 @@ import SearchField from '../search_field/search_field_container';
 const Greeting = ({ currentUser, logout }) => {
 
   if (currentUser) {
-    return <Redirect to="/search/cats" />
+    return <Redirect to="/search" />
   }
 
   const sessionLinks = () => (
