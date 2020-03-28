@@ -23,6 +23,10 @@ class PostForm extends React.Component {
     return event => this.setState({ [field]: event.target.value });
   }
 
+  componentDidMount() {
+    document.querySelector(".new-post-div-avatar-div").style.backgroundImage = `url(${AVATARS[(this.props.match.params.blogId * 50) % AVATARS.length]})`;
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const newState = this.state;
@@ -36,7 +40,7 @@ class PostForm extends React.Component {
         <div className="new-post-container">
           <div className="new-post-form">
             <div className="new-post-top-div">
-              <div class="new-post-div-avatar-div" style={{ backgroundImage: `url("${AVATARS[(this.props.match.params.blogId * 50) % AVATARS.length]}")`}}></div>
+              <div class="new-post-div-avatar-div"></div>
               <h3 className="new-post-title">Create a New Post</h3>
             </div>
 
