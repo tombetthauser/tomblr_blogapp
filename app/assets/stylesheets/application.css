@@ -792,6 +792,7 @@ img.search-image {
 }
 
 .mapped-post-li img {
+  width: 100%;
   max-width: 100%;
 }
 
