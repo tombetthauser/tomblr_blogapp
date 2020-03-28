@@ -1,6 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
+const AVATARS = [
+  "https://66.media.tumblr.com/7d376efd024eadd902a8bb60c8155c94/tumblr_o51oavbMDx1ugpbmuo4_540.png",
+  "https://66.media.tumblr.com/ee9b9564d7e54380837579452cde04f6/tumblr_o51oavbMDx1ugpbmuo5_540.png",
+  "https://66.media.tumblr.com/9f9b498bf798ef43dddeaa78cec7b027/tumblr_o51oavbMDx1ugpbmuo7_540.png",
+  "https://66.media.tumblr.com/2060fe62b7ed3b46e5789356942a305e/tumblr_o51oavbMDx1ugpbmuo2_540.png"
+];
+
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
@@ -29,6 +36,7 @@ class PostForm extends React.Component {
         <div className="new-post-container">
           <div className="new-post-form">
             <div className="new-post-top-div">
+              <div class="new-post-div-avatar-div" style={{ backgroundImage: `url("${AVATARS[(this.props.match.params.blogId * 50) % AVATARS.length]}")`}}></div>
               <h3 className="new-post-title">Create a New Post</h3>
             </div>
 

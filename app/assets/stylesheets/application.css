@@ -954,13 +954,20 @@ img.search-image {
 .new-post-form input {
 }
 
+.new-post-top-div {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
 .new-post-form h3 {
   text-align: left;
   /* padding-bottom: 10px; */
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   color: #555;
   text-transform: none;
   font-weight: 800;
+  display: inline;
 }
 
 .new-post-form button {
@@ -987,6 +994,7 @@ img.search-image {
   border: none;
   width: 482.5px;
   color: #444;
+  letter-spacing: .5px;
 }
 
 .post-field-input-picurl {
@@ -997,6 +1005,7 @@ img.search-image {
   border: none;
   width: 467.5px;
   color: #444;
+  letter-spacing: .2px;
 }
 
 .post-field-input-text {
@@ -1010,6 +1019,7 @@ img.search-image {
   /* background-color: tomato; */
   font-family: sans-serif;
   color: #444;
+  letter-spacing: .2px;
 }
 
 .new-post-top-div {
@@ -1022,6 +1032,20 @@ img.search-image {
   align-items: center;
   display: flex;
   height: 50px;
+}
+
+.new-post-div-avatar-div {
+  height: 35px;
+  width: 35px;
+  margin-left: 10px;
+  border-radius: 3px;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+
+.new-post-title {
+  margin-left: -5px;
 }
 
 @media only screen and (max-width: 1300px) {
