@@ -60,3 +60,10 @@ Tomblr is created with:
 * create different options for blog layout templates
 * create a search feature for the blogs index
 * so much more...
+
+
+<!-- DEV TODOS -->
+<!-- on blog show reset scroll to top of page -->
+<!-- fix avatar in blog show after repeated logout logins -->
+<!-- add create new post button -->
+<!-- go off tumblrs add new blog page if pos -->
