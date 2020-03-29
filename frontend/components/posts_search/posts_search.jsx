@@ -6,6 +6,7 @@ import { AuthRoute } from '../../util/route_util';
 import SearchField from '../search_field/search_field_container';
 import DemoButton from '../demo_user_button/demo_user_container';
 import LogoutButton from '../logout_button/logout_button_container';
+import BlogFormContainer from '../blogs_form/blog_form_container';
 
 
 const shuffle = (a) => {
@@ -150,9 +151,16 @@ class PostsSearch extends React.Component {
         return (<div className="rick-roll-div"></div>)
       }
     }
+
+    let newBlogForm;
+
+    if (this.props.currentUser) {
+      newBlogForm = <BlogFormContainer />;
+    }
     
     return (
       <div>
+          {newBlogForm}
           {this.renderLogoutDemoButton()}
           {newPostForm}
           <SearchField />
