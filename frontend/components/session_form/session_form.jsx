@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import BackgroundImages from '../background_images/background_images';
 import DemoButton from '../demo_user_button/demo_user_container';
 import SearchField from '../search_field/search_field_container';
+import { withRouter } from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -23,15 +24,10 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.processForm(user).then(respnse => {
+      this.props.history.push("/search")
+    })
     this.props.requestUser(this.props.currenUser)
-
-    // if (this.props.currentUser) {
-    //   alert('LOGGED IN')
-    // } else {
-    //   alert('NOT LOGGED IN')
-    //   console.log(state)
-    // }
   }
 
   renderErrors() {
@@ -93,8 +89,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
-
-
-
-
+export default withRouter(SessionForm);
