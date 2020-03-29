@@ -44,6 +44,7 @@ class PostsSearch extends React.Component {
       searchTerm: "",
       isLoaded: false,
     }
+    this.openModal = this.openModal.bind(this);
   }
 
   componentDidMount() {
@@ -59,6 +60,10 @@ class PostsSearch extends React.Component {
     }
   }
   
+  openModal() {
+    document.querySelector(".new-blog-outer-div").style.display = "flex";
+  }
+
   render() {
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
@@ -152,25 +157,31 @@ class PostsSearch extends React.Component {
       }
     }
 
-    let newBlogForm;
+    let newBlogButton;
 
     if (this.props.currentUser) {
-      newBlogForm = <BlogFormContainer />;
+      newBlogButton = <BlogFormContainer />;
     }
     
     return (
       <div>
-          {newBlogForm}
+          {newBlogButton}
           {this.renderLogoutDemoButton()}
           {newPostForm}
           <SearchField />
-          <div className="search-header-div"></div>
+          <div className="search-header-div">
+          </div>
           <div className="search-header-links-div">
             <ul className="search-header-links-ul">
               <li>Trending Users:</li>
               { SELECT_USERS.slice(0, 5).map( user => {
                 return(<li><Link to={`/search/${user}`}>{user.toLowerCase()}</Link></li>)
               })}
+            </ul>
+            <ul className="search-header-links-ul-right">
+            {this.props.currentUser ? (<li><a onClick={this.openModal} >Create a New Blog!</a></li>) : null }
+              { this.props.currentUser ? null : (<li><Link to="/login">Login</Link></li>) }
+              { this.props.currentUser ? null : (<li><Link to="/signup">Sign Up</Link></li>) }
             </ul>
           </div>
           <div className="search-header-searchterms-div">
