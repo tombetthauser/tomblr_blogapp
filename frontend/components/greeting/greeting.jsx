@@ -56,7 +56,7 @@ const Greeting = ({ currentUser, logout }) => {
         </Link>
       </header>
 
-      {/* { currentUser ? personalGreeting() : sessionLinks() } */}
+      { currentUser ? personalGreeting() : sessionLinks() }
 
       <Link className="blogs-index-link-button" to="/search">⎈ here's whats trending</Link>
     </div>

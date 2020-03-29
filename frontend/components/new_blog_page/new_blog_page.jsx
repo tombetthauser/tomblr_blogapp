@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import PostsIndexContainer from '../posts_index/posts_index_container';
-import SearchField from '../search_field/search_field_container';
-import DemoButton from '../demo_user_button/demo_user_container';
-import LogoutButton from '../logout_button/logout_button_container';
+// import { Link } from 'react-router-dom';
+// import PostsIndexContainer from '../posts_index/posts_index_container';
+// import SearchField from '../search_field/search_field_container';
+// import DemoButton from '../demo_user_button/demo_user_container';
+// import LogoutButton from '../logout_button/logout_button_container';
 import { withRouter } from 'react-router';
 
 const BACKGROUNDS = [
@@ -29,59 +29,60 @@ class NewBlogPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBlog(this.props.match.params.blogId);
-    document.querySelector(".blog-show-header-image-div").style.background = `url(${BACKGROUNDS[(this.props.match.params.blogId * 50) % BACKGROUNDS.length]})`;
-    document.querySelector(".blog-show-avatar-circle").style.backgroundImage = `url(${AVATARS[(this.props.match.params.blogId * 50) % AVATARS.length]})`;
+    // this.props.fetchBlog(this.props.match.params.blogId);
+    // document.querySelector(".blog-show-header-image-div").style.background = `url(${BACKGROUNDS[(this.props.match.params.blogId * 50) % BACKGROUNDS.length]})`;
+    // document.querySelector(".blog-show-avatar-circle").style.backgroundImage = `url(${AVATARS[(this.props.match.params.blogId * 50) % AVATARS.length]})`;
   }
 
   renderLogoutDemoButton() {
-    if (this.props.currentUser) {
-      return (<LogoutButton />)
-    } else {
-      return (<DemoButton />)
-    }
+    // if (this.props.currentUser) {
+    //   return (<LogoutButton />)
+    // } else {
+    //   return (<DemoButton />)
+    // }
   }
 
   render() {
-    let 
-      deleteButton,
-      description, 
-      blogAuthor, 
-      createdAt, 
-      authorId, 
-      author, 
-      title, 
-      month, 
-      year, 
-      pass,
-      day
-    ;
+    // let 
+    //   deleteButton,
+    //   description, 
+    //   blogAuthor, 
+    //   createdAt, 
+    //   authorId, 
+    //   author, 
+    //   title, 
+    //   month, 
+    //   year, 
+    //   pass,
+    //   day
+    // ;
     
-    if (this.props.blog) {
-      description = this.props.blog.description;
-      authorId = this.props.blog.author_id;
-      title = this.props.blog.title;
+    // if (this.props.blog) {
+    //   description = this.props.blog.description;
+    //   authorId = this.props.blog.author_id;
+    //   title = this.props.blog.title;
       
-      this.props.requestUser(authorId);
+    //   this.props.requestUser(authorId);
 
-      author = this.props.blog.user.username[0].toUpperCase() + this.props.blog.user.username.slice(1).toLowerCase();
-      createdAt = this.props.blog.created_at;
+    //   author = this.props.blog.user.username[0].toUpperCase() + this.props.blog.user.username.slice(1).toLowerCase();
+    //   createdAt = this.props.blog.created_at;
 
-      [month, year, day] = [createdAt.slice(5, 7), createdAt.slice(0, 4), createdAt.slice(8, 10)];
+    //   [month, year, day] = [createdAt.slice(5, 7), createdAt.slice(0, 4), createdAt.slice(8, 10)];
       
-      pass = this.props.blog.user.password_digest;
-      deleteButton = null;
+    //   pass = this.props.blog.user.password_digest;
+    //   deleteButton = null;
       
-      if (this.props.currentUser && (authorId === this.props.currentUser.id)) {
-        deleteButton = <Link onClick={() => {
-          this.props.deleteBlog(this.props.match.params.blogId);
-        }} to="/">delete blog</Link>
-      }
-    }
+    //   if (this.props.currentUser && (authorId === this.props.currentUser.id)) {
+    //     deleteButton = <Link onClick={() => {
+    //       this.props.deleteBlog(this.props.match.params.blogId);
+    //     }} to="/">delete blog</Link>
+    //   }
+    // }
 
     return (
       <div className="blog-show-main-div">
-        { this.renderLogoutDemoButton() }
+        <p>hello!</p>
+        {/* { this.renderLogoutDemoButton() }
         < SearchField />
         <div className="blog-show-header-image-div"></div>
         <div className="blog-show-avatar-circle"></div>
@@ -93,7 +94,7 @@ class NewBlogPage extends React.Component {
         <div className="single-blog-show">
           <PostsIndexContainer />
           { deleteButton }
-        </div>
+        </div> */}
       </div>
     );
   }
