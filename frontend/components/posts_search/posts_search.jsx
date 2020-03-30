@@ -207,7 +207,9 @@ class PostsSearch extends React.Component {
                           </Link>
                         </div>
                         {console.log(post)}
-                        <img className="search-image" src={post.pic_url} alt=""/>
+                        <Link to={`/blogs/${post.blog_id}`}>
+                          <img className="search-image" src={post.pic_url} alt=""/>
+                        </Link>
                         <div className="search-post-bottom-div">
                           <p className="search-post-p">{post.text}</p>
                           <p className="search-post-author">posted by 
