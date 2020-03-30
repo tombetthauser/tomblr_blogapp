@@ -200,9 +200,11 @@ class PostsSearch extends React.Component {
                       <li className="search-post-li">
                         <div className="search-search-post-header-div">
                           <Link to={`/blogs/${post.blog_id}`}>
-                          <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id * 50) % AVATARS.length]}")`}} alt=""></div>
+                            <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id * 50) % AVATARS.length]}")`}} alt=""></div>
                           </Link>
-                          <h3 className="search-post-h3">{post.title}</h3>
+                          <Link to={`/blogs/${post.blog_id}`}>
+                            <h3 className="search-post-h3">{post.title}</h3>
+                          </Link>
                         </div>
                         {console.log(post)}
                         <img className="search-image" src={post.pic_url} alt=""/>
