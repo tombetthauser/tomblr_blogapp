@@ -208,7 +208,7 @@ class PostsSearch extends React.Component {
                     !STOP_WORDS.includes(word)
                     && !word.toLowerCase().includes(this.props.currentUser.username.toLowerCase()) 
                     && !word.toLowerCase().includes("blog")
-                  )[0]}</Link></li>)
+                  ).slice(-1)[0]}</Link></li>)
                 })}
               </ul>
               { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog!</a></li>) : null }
