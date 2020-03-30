@@ -835,7 +835,7 @@ img.search-image {
 .header-logout-span {
   color: #eee;
   border-radius: 2px;
-  background-color: #00b8ff;
+  background-color: #aaa;
   padding: 10px 17.5px;
   margin-left: 10px;
   box-shadow: 1px 1px 7px rgba(0,0,0,.2);
@@ -1124,6 +1124,14 @@ button.new-blog-submit {
   color: #444;
 }
 
+.create-new-blog-button {
+  color: #fff;
+  background-color: #00b8ff;
+  padding: 5px 7.5px 3px 10px;
+  font-weight: 300;
+  border-radius: 2px;
+  font-size: 10px;
+}
 
 
 
@@ -1148,3 +1156,7 @@ button.new-blog-submit {
     max-width: 300px;
   }
 }
+
+/* DARK TUMBLR BLUE: #001935 */
+
+/* LIGHT TUMBLR BLUE: #00b8ff */

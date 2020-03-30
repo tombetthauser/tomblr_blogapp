@@ -175,7 +175,7 @@ class PostsSearch extends React.Component {
               })}
             </ul>
             <ul className="search-header-links-ul-right">
-            {this.props.currentUser ? (<li><a onClick={this.openModal} >Create a New Blog!</a></li>) : null }
+            {this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog!</a></li>) : null }
               { this.props.currentUser ? null : (<li><Link to="/login">Login</Link></li>) }
               { this.props.currentUser ? null : (<li><Link to="/signup">Sign Up</Link></li>) }
             </ul>
