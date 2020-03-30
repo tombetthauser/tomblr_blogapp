@@ -25,9 +25,19 @@ class SessionForm extends React.Component {
     event.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(respnse => {
+      this.props.fetchBlogs().then(blogs => {
+        let keys = Object.keys(blogs.blogs);
+        keys.forEach(key => {
+          if (blogs.blogs[key].user.username === this.state.username) {
+            this.props.history.push(`/blogs/${key}`)
+          }
+        })
+      })
       this.props.history.push("/search")
     })
     this.props.requestUser(this.props.currenUser)
+
+
   }
 
   renderErrors() {

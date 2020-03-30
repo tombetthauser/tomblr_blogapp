@@ -64,7 +64,6 @@ class PostsSearch extends React.Component {
   render() {
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
-    // const FILTERED_POSTS = shuffle(this.props.posts).filter(post => (
     const FILTERED_POSTS = this.props.posts.filter(post => (
       post.text.toUpperCase().includes(searchTerm.toUpperCase()) ||
       post.title.toUpperCase().includes(searchTerm.toUpperCase()) ||
@@ -154,24 +153,8 @@ class PostsSearch extends React.Component {
       }
     }
 
-    const yourBlogs = () => {
-      return (
-        <ul className="your-blogs-ul">
-          <li>Your Blogs:</li>
-          <li>Cats</li>
-          <li>03</li>
-          <li>Steves</li>
-        </ul>
-      )
-    }
-
     const YOUR_BLOGS = () => {
       if (this.props.currentUser) {
-        console.log("====================================")
-        console.log("====================================")
-        console.log(Object.values(this.props.blogs).filter(blog => blog.user.id === this.props.currentUser.id));
-        console.log("====================================")
-        console.log("====================================")
         return Object.values(this.props.blogs).filter(blog => blog.user.id === this.props.currentUser.id)
       } else {
         return [];
@@ -201,15 +184,18 @@ class PostsSearch extends React.Component {
             </ul>
             <ul className="search-header-links-ul-right">
               <ul className="your-blogs-ul">
-                {this.props.currentUser ? (<li>Your Blogs:</li>) : null}
-                { YOUR_BLOGS().map(blog => {
-                  return (<li><Link to={`/blogs/${blog.id}`}>{blog.title.toLowerCase().split(" ").filter(word => 
-                    // !STOP_WORDS.includes(word))[0]}</Link></li>)
+                { this.props.currentUser && Object.values(this.props.blogs).filter(blog => blog.user.id === this.props.currentUser.id).length > 0 ? (<li>Your Blogs:</li>) : null}
+                { this.props.currentUser ? Object.values(this.props.blogs).filter(blog => blog.user.id === this.props.currentUser.id).map(blog => {
+                  let nameArr = blog.title.toLowerCase().split(" ").filter(word =>
                     !STOP_WORDS.includes(word)
-                    && !word.toLowerCase().includes(this.props.currentUser.username.toLowerCase()) 
+                    && !word.toLowerCase().includes(this.props.currentUser.username.toLowerCase())
                     && !word.toLowerCase().includes("blog")
-                  ).slice(-1)[0]}</Link></li>)
-                })}
+                  );
+
+                  let name = nameArr.length > 0 ? nameArr.slice(-1)[0] : `No.${blog.id}`;
+
+                  return (<li><Link to={`/blogs/${blog.id}`}>{name}</Link></li>)
+                }) : null}
               </ul>
               { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog!</a></li>) : null }
               { this.props.currentUser ? null : (<li><Link to="/login">Login</Link></li>) }

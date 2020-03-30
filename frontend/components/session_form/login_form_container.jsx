@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import { requestUser } from '../../actions/user_actions'
 import SessionForm from './session_form';
+import { fetchBlogs } from '../../actions/blog_actions';
 // import { selectUser } from '../../reducers/selectors'
 
 const mapState = state => ({
@@ -16,7 +17,8 @@ const mapState = state => ({
 
 const mapDisp = dispatch => ({
     processForm: (user) => dispatch(login(user)),
-    requestUser: (userId) => dispatch(requestUser(userId))
+    requestUser: (userId) => dispatch(requestUser(userId)),
+    fetchBlogs: () => dispatch(fetchBlogs()),
 });
 
 export default connect(mapState, mapDisp)(SessionForm);
