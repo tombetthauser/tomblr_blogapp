@@ -29,12 +29,8 @@ const AVATARS = [
   "https://66.media.tumblr.com/ee9b9564d7e54380837579452cde04f6/tumblr_o51oavbMDx1ugpbmuo5_540.png",
   "https://66.media.tumblr.com/9f9b498bf798ef43dddeaa78cec7b027/tumblr_o51oavbMDx1ugpbmuo7_540.png",
   "https://66.media.tumblr.com/2060fe62b7ed3b46e5789356942a305e/tumblr_o51oavbMDx1ugpbmuo2_540.png",
-  // "https://66.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_540.png",
-  // "https://pbs.twimg.com/media/CHd03RhUcAAGSh_.jpg:large",
-  // "https://avatarfiles.alphacoders.com/652/65207.jpg",
-  // "https://lh3.googleusercontent.com/proxy/4mkUZBejmpG86RxZv6iy2lo90oZrBeNl8iqOKfPYGkiQtVES0H1-g2uckhvnAXYvBE1Vk9dfvk3S_ZOTdvTKP1BtPxxGPePz0nM7qKAoKLtf7vtTFP2pvilbfO__A5bkF51AFcFee4g0",
-  // "https://66.media.tumblr.com/0ccf409978e7b9744fa1bbeb5ff471f2/tumblr_peqyvckAmg1v1eo16_1280.jpg",
-  // "https://66.media.tumblr.com/699953199a7934e420f1793eb78109df/tumblr_peqyvd3q4n1v1eo16_1280.jpg",
+  "https://66.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_540.png",
+  "https://66.media.tumblr.com/699953199a7934e420f1793eb78109df/tumblr_peqyvd3q4n1v1eo16_1280.jpg",
 ];
 
 class PostsSearch extends React.Component {
