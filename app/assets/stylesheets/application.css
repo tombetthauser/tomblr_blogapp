@@ -640,6 +640,7 @@ img.search-image {
 .search-post-author-link {
   color: #00b8ff;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .single-blog-show {
