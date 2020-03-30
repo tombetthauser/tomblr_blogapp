@@ -8,6 +8,12 @@ import PostsSearchContainer from './posts_search/posts_search_container';
 import BlogShowContainer from './blogs_show/blog_show_container';
 import NewBlogPage from './new_blog_page/new_blog_page_container';
 
+import createHistory from "history/createBrowserHistory"
+export const history = createHistory()
+history.listen((location, action) => {
+  window.scrollTo(0, 0)
+})
+
 const App = () => {
   return (
     <div>
