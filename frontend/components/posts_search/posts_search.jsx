@@ -45,6 +45,7 @@ class PostsSearch extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts();
+    this.props.fetchBlogs();
     this.state.isLoaded = true;
   }
 
@@ -153,6 +154,30 @@ class PostsSearch extends React.Component {
       }
     }
 
+    const yourBlogs = () => {
+      return (
+        <ul className="your-blogs-ul">
+          <li>Your Blogs:</li>
+          <li>Cats</li>
+          <li>03</li>
+          <li>Steves</li>
+        </ul>
+      )
+    }
+
+    const YOUR_BLOGS = () => {
+      if (this.props.currentUser) {
+        console.log("====================================")
+        console.log("====================================")
+        console.log(Object.values(this.props.blogs).filter(blog => blog.user.id === this.props.currentUser.id));
+        console.log("====================================")
+        console.log("====================================")
+        return Object.values(this.props.blogs).filter(blog => blog.user.id === this.props.currentUser.id)
+      } else {
+        return [];
+      }
+    }
+
     let newBlogButton;
 
     if (this.props.currentUser) {
@@ -175,7 +200,18 @@ class PostsSearch extends React.Component {
               })}
             </ul>
             <ul className="search-header-links-ul-right">
-            {this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog!</a></li>) : null }
+              <ul className="your-blogs-ul">
+                {this.props.currentUser ? (<li>Your Blogs:</li>) : null}
+                { YOUR_BLOGS().map(blog => {
+                  return (<li><Link to={`/blogs/${blog.id}`}>{blog.title.toLowerCase().split(" ").filter(word => 
+                    // !STOP_WORDS.includes(word))[0]}</Link></li>)
+                    !STOP_WORDS.includes(word)
+                    && !word.toLowerCase().includes(this.props.currentUser.username.toLowerCase()) 
+                    && !word.toLowerCase().includes("blog")
+                  )[0]}</Link></li>)
+                })}
+              </ul>
+              { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog!</a></li>) : null }
               { this.props.currentUser ? null : (<li><Link to="/login">Login</Link></li>) }
               { this.props.currentUser ? null : (<li><Link to="/signup">Sign Up</Link></li>) }
             </ul>
