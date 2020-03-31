@@ -16,7 +16,7 @@ class PostForm extends React.Component {
     this.state = {
       title: "",
       pic_url: "",
-      text: ""
+      text: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -33,7 +33,13 @@ class PostForm extends React.Component {
     event.preventDefault();
     const newState = this.state;
     newState.blog_id = this.props.match.params.blogId
-    this.props.createPost(newState);
+    this.props.createPost(newState).then(() => {
+      this.setState({
+        title: "",
+        pic_url: "",
+        text: "",
+      });
+    });
   }
 
   render() {
