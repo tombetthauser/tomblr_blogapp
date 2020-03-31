@@ -177,7 +177,7 @@ class PostsSearch extends React.Component {
           </div>
           <div className="search-header-links-div">
             <ul className="search-header-links-ul">
-              <li>Trending Users:</li>
+              <li>Search Users:</li>
               { SELECT_USERS.slice(0, 5).map( user => {
                 return(<li><Link className="post-search-header-li-links" to={`/search/${user}`}>{user.toLowerCase()}</Link></li>)
               })}
@@ -204,10 +204,10 @@ class PostsSearch extends React.Component {
           </div>
           <div className="search-header-searchterms-div">
           <h3 class="search-header-searchterms-title">{ searchTerm === "" ? "RECENT POSTS" : searchTerm.toUpperCase() }</h3>
-            <span class="search-header-searchterms-related">related:</span>
+            <span class="search-header-searchterms-related">other searches:</span>
             <ul class="search-header-searchterms-ul">
               {RELATED_WORDS.map( word => {
-                return(<li><Link to={`/search/${word}`}>#{word}</Link></li>)
+                return(<li><Link to={`/search/${word}`}>{word}</Link></li>)
               })}
             </ul>
           </div>
