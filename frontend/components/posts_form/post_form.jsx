@@ -5,7 +5,9 @@ const AVATARS = [
   "https://66.media.tumblr.com/7d376efd024eadd902a8bb60c8155c94/tumblr_o51oavbMDx1ugpbmuo4_540.png",
   "https://66.media.tumblr.com/ee9b9564d7e54380837579452cde04f6/tumblr_o51oavbMDx1ugpbmuo5_540.png",
   "https://66.media.tumblr.com/9f9b498bf798ef43dddeaa78cec7b027/tumblr_o51oavbMDx1ugpbmuo7_540.png",
-  "https://66.media.tumblr.com/2060fe62b7ed3b46e5789356942a305e/tumblr_o51oavbMDx1ugpbmuo2_540.png"
+  "https://66.media.tumblr.com/2060fe62b7ed3b46e5789356942a305e/tumblr_o51oavbMDx1ugpbmuo2_540.png",
+  "https://66.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_540.png",
+  "https://66.media.tumblr.com/699953199a7934e420f1793eb78109df/tumblr_peqyvd3q4n1v1eo16_1280.jpg",
 ];
 
 class PostForm extends React.Component {
@@ -24,7 +26,7 @@ class PostForm extends React.Component {
   }
 
   componentDidMount() {
-    document.querySelector(".new-post-div-avatar-div").style.backgroundImage = `url(${AVATARS[(this.props.match.params.blogId * 50) % AVATARS.length]})`;
+    document.querySelector(".new-post-div-avatar-div").style.backgroundImage = `url(${AVATARS[(this.props.match.params.blogId) % AVATARS.length]})`;
   }
 
   handleSubmit(event) {
