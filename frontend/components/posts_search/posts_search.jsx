@@ -224,7 +224,6 @@ class PostsSearch extends React.Component {
                             <h3 className="search-post-h3">{post.title}</h3>
                           </Link>
                         </div>
-                        {console.log(post)}
                         <Link to={`/blogs/${post.blog_id}`}>
                           <img className="search-image" src={post.pic_url} alt=""/>
                         </Link>

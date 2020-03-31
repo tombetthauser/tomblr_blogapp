@@ -25,8 +25,6 @@ class BackgroundImages extends React.Component {
     let imageDivA;
     let imageDivB;
 
-    console.log("DOMContentLoaded")
-
     setTimeout(() => {
       imageDivA = document.querySelector(`.background-animation-div-1`);
       imageDivB = document.querySelector(`.background-animation-div-2`);
