@@ -1137,6 +1137,10 @@ button.new-blog-submit {
   display: inline-block;
 }
 
+.post-search-header-li-links {
+  text-transform: capitalize;
+}
+
 @media only screen and (max-width: 1300px) {
   .search-post-ul-fourcolumns {
     column-count: 3 !important;

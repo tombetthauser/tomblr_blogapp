@@ -179,7 +179,7 @@ class PostsSearch extends React.Component {
             <ul className="search-header-links-ul">
               <li>Trending Users:</li>
               { SELECT_USERS.slice(0, 5).map( user => {
-                return(<li><Link to={`/search/${user}`}>{user.toLowerCase()}</Link></li>)
+                return(<li><Link className="post-search-header-li-links" to={`/search/${user}`}>{user.toLowerCase()}</Link></li>)
               })}
             </ul>
             <ul className="search-header-links-ul-right">
@@ -194,7 +194,7 @@ class PostsSearch extends React.Component {
 
                   let name = nameArr.length > 0 ? nameArr.slice(-1)[0] : `No.${blog.id}`;
 
-                  return (<li><Link to={`/blogs/${blog.id}`}>{name}</Link></li>)
+                  return (<li><Link className="post-search-header-li-links" to={`/blogs/${blog.id}`}>{name}</Link></li>)
                 }) : null}
               </ul>
               { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog!</a></li>) : null }
