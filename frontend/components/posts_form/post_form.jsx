@@ -17,6 +17,7 @@ class PostForm extends React.Component {
       title: "",
       pic_url: "",
       text: "",
+      photoFile: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,16 +32,34 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const newState = this.state;
-    newState.blog_id = this.props.match.params.blogId
-    this.props.createPost(newState).then(() => {
-      this.setState({
-        title: "",
-        pic_url: "",
-        text: "",
-        photoFile: null,
-      });
-    });
+    const formData = new FormData();
+    formData.append('post[title]', this.state.title)
+    formData.append('post[pic_url]', this.state.pic_url)
+    formData.append('post[text]', this.state.text)
+    formData.append('post[photo]', this.state.photoFile)
+    formData.append('post[blog_id]', this.props.match.params.blogId)
+    $.ajax({
+      url: 'api/posts',
+      method: 'POST',
+      data: formData,
+      contentType: false,
+      processData: false
+    }).then(
+      (response) => console.log(response.message),
+      (response) => console.log(response.responseJSON)
+    );
+
+
+    // const newState = this.state;
+    // newState.blog_id = this.props.match.params.blogId
+    // this.props.createPost(newState).then(() => {
+    //   this.setState({
+    //     title: "",
+    //     pic_url: "",
+    //     text: "",
+    //     photoFile: null,
+    //   });
+    // });
   }
 
   handleFile(event) {
