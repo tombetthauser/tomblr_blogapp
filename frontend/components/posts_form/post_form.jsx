@@ -47,6 +47,15 @@ class PostForm extends React.Component {
     }).then(
       (response) => console.log(response.message),
       (response) => console.log(response.responseJSON)
+    ).then(
+      this.setState({
+        title: "",
+        pic_url: "",
+        text: "",
+        photoFile: null,
+      })
+    ).then(
+      this.props.createPost()
     );
 
 
