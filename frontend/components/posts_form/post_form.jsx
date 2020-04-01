@@ -38,11 +38,17 @@ class PostForm extends React.Component {
         title: "",
         pic_url: "",
         text: "",
+        photoFile: null,
       });
     });
   }
 
+  handleFile(event) {
+    this.setState({ photoFile: event.currentTarget.files[0] })
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div>
         <div className="new-post-container">
@@ -79,6 +85,9 @@ class PostForm extends React.Component {
                   onChange={this.update('text')}
                   className="post-field-input-text"
                 />
+              </label>
+              <label className="file-field">
+                <input type="file" onChange={this.handleFile.bind(this)}/>
               </label>
               <div className="new-post-bottom-div">
                 <button type="submit">Post</button>
