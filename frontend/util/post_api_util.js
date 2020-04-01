@@ -9,17 +9,30 @@ export const fetchPost = postId => (
   $.ajax({
     url: `/api/posts/${postId}/`,
     method: 'GET',
-    data: null
+    data: null,
   })
 );
 
-export const createPost = post => (
+
+// CREATE POST -------------------------------
+
+export const createPost = formData => (
   $.ajax({
     url: `api/posts/`,
     method: 'POST',
-    data: { post }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 );
+
+// export const createPost = post => (
+//   $.ajax({
+//     url: `api/posts/`,
+//     method: 'POST',
+//     data: { post }
+//   })
+// );
 
 export const updatePost = post => (
   $.ajax({

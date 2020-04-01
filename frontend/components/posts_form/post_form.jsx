@@ -31,13 +31,17 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(event) {
-    // event.preventDefault();
-    // const formData = new FormData();
-    // formData.append('post[title]', this.state.title)
-    // formData.append('post[pic_url]', this.state.pic_url)
-    // formData.append('post[text]', this.state.text)
-    // formData.append('post[photo]', this.state.photoFile)
-    // formData.append('post[blog_id]', this.props.match.params.blogId)
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('post[title]', this.state.title)
+    formData.append('post[pic_url]', this.state.pic_url)
+    formData.append('post[text]', this.state.text)
+    formData.append('post[photo]', this.state.photoFile)
+    formData.append('post[blog_id]', this.props.match.params.blogId)
+
+
+
+
     // $.ajax({
     //   url: 'api/posts',
     //   method: 'POST',
@@ -55,13 +59,12 @@ class PostForm extends React.Component {
     //     photoFile: null,
     //   })
     // ).then(
-    //   this.props.createPost()
+    //   // this.props.createPost()
     // );
 
-
-    const newState = this.state;
-    newState.blog_id = this.props.match.params.blogId
-    this.props.createPost(newState).then(() => {
+    // const newState = this.state;
+    // newState.blog_id = this.props.match.params.blogId;
+    this.props.createPost(formData).then(() => {
       this.setState({
         title: "",
         pic_url: "",
@@ -69,6 +72,17 @@ class PostForm extends React.Component {
         photoFile: null,
       });
     });
+
+    // const newState = this.state;
+    // newState.blog_id = this.props.match.params.blogId
+    // this.props.createPost(newState).then(() => {
+    //   this.setState({
+    //     title: "",
+    //     pic_url: "",
+    //     text: "",
+    //     photoFile: null,
+    //   });
+    // });
   }
 
   handleFile(event) {
@@ -76,7 +90,6 @@ class PostForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <div className="new-post-container">
@@ -96,7 +109,7 @@ class PostForm extends React.Component {
                   className="post-field-input-title"
                 />
               </label>
-              <label className="post-field">
+              {/* <label className="post-field">
                 <input
                   placeholder="Your image URL here..."
                   type="text"
@@ -104,11 +117,11 @@ class PostForm extends React.Component {
                   onChange={this.update('pic_url')}
                   className="post-field-input-picurl"
                 />
-              </label>
-              {/* <label className="file-field">
+              </label> */}
+              <label className="file-field">
                 <span className="file-field-span">Your image here...</span>
                 <input className="file-field-button" type="file" onChange={this.handleFile.bind(this)} />
-              </label> */}
+              </label>
               <label className="post-field">
                 <textarea
                   placeholder="Your text here..."

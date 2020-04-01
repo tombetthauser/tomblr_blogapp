@@ -29,10 +29,18 @@ export const fetchPost = postId => dispatch => (
     .then(post => dispatch(receivePost(post)))
 );
 
-export const createPost = post => dispatch => (
-  APIUtil.createPost(post)
-    .then(post => dispatch(receivePost(post)))
+
+// CREATE POST ----------------------------------------
+
+export const createPost = formData => dispatch => (
+  APIUtil.createPost(formData)
+    .then(formData => dispatch(receivePost(formData)))
 );
+
+// export const createPost = post => dispatch => (
+//   APIUtil.createPost(post)
+//     .then(post => dispatch(receivePost(post)))
+// );
 
 export const updatePost = post => dispatch => (
   APIUtil.updatePost(post)
