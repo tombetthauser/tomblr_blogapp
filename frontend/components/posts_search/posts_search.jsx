@@ -225,7 +225,8 @@ class PostsSearch extends React.Component {
                           </Link>
                         </div>
                         <Link to={`/blogs/${post.blog_id}`}>
-                          <img className="search-image" src={post.pic_url} alt=""/>
+                          <img className="search-image" src={ post.photoUrl ? post.photoUrl : post.pic_url } alt=""/>
+                          {/* <img className="search-image" src={post.pic_url} alt=""/> */}
                         </Link>
                         <div className="search-post-bottom-div">
                           <p className="search-post-p">{post.text}</p>
