@@ -34,7 +34,7 @@ class PostsIndex extends React.Component {
                 return (
                     <li className="mapped-post-li">
                       <h3>{post.title}</h3>
-                      <img src={post.pic_url} alt=""/>
+                      <img src={ post.photoUrl ? post.photoUrl : post.pic_url} alt=""/>
                       <p className="blog-post-p">
                         {post.text}
                         <a onClick={() => this.props.deletePost(post.id)}>
