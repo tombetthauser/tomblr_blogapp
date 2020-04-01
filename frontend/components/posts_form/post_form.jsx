@@ -87,7 +87,7 @@ class PostForm extends React.Component {
                   className="post-field-input-title"
                 />
               </label>
-              <label className="post-field">
+              {/* <label className="post-field">
                 <input
                   placeholder="Your image URL here..."
                   type="text"
@@ -95,6 +95,10 @@ class PostForm extends React.Component {
                   onChange={this.update('pic_url')}
                   className="post-field-input-picurl"
                 />
+              </label> */}
+              <label className="file-field">
+                <span className="file-field-span">Your image here...</span>
+                <input className="file-field-button" type="file" onChange={this.handleFile.bind(this)} />
               </label>
               <label className="post-field">
                 <textarea
@@ -104,9 +108,6 @@ class PostForm extends React.Component {
                   onChange={this.update('text')}
                   className="post-field-input-text"
                 />
-              </label>
-              <label className="file-field">
-                <input type="file" onChange={this.handleFile.bind(this)}/>
               </label>
               <div className="new-post-bottom-div">
                 <button type="submit">Post</button>
