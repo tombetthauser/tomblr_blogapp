@@ -167,6 +167,8 @@ class PostsSearch extends React.Component {
       newBlogButton = <BlogFormContainer />;
     }
     
+    let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
+
     return (
       <div>
           {newBlogButton}
@@ -203,7 +205,7 @@ class PostsSearch extends React.Component {
             </ul>
           </div>
           <div className="search-header-searchterms-div">
-          <h3 class="search-header-searchterms-title">{ searchTerm === "" ? "RECENT POSTS" : searchTerm.toUpperCase() }</h3>
+          <h3 class="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
             <span class="search-header-searchterms-related">other searches:</span>
             <ul class="search-header-searchterms-ul">
               {RELATED_WORDS.map( word => {

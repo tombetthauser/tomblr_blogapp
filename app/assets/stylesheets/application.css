@@ -810,37 +810,6 @@ img.search-image {
   font-size: 13px;
 }
 
-.header-logout-welcome-span {
-  color: #fff;
-  white-space: nowrap;
-  font-weight: 400;
-  text-shadow: 2px 2px 5px rgba(0,0,0,.3);
-}
-
-.header-button-component {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  cursor: pointer;
-  padding: 10px 0px;
-  font-family: sans-serif;
-  font-size: 13px;
-  transition: .2s;
-  font-weight: 500;
-  letter-spacing: .5px;
-  border: none;
-  background-color: rgba(0,0,0,0);
-}
-
-.header-logout-span {
-  color: #eee;
-  border-radius: 2px;
-  background-color: #aaa;
-  padding: 10px 17.5px;
-  margin-left: 10px;
-  box-shadow: 1px 1px 7px rgba(0,0,0,.2);
-}
-
 .posts-search-thatsall-text {
   text-align: center;
   display: block;
@@ -1124,15 +1093,6 @@ button.new-blog-submit {
   color: #444;
 }
 
-.create-new-blog-button {
-  color: #fff;
-  background-color: #00b8ff;
-  padding: 5px 12.5px 3px 17.5px;
-  font-weight: 300;
-  border-radius: 2px;
-  font-size: 12px;
-}
-
 .your-blogs-ul {
   display: inline-block;
 }
@@ -1200,6 +1160,67 @@ button.new-blog-submit {
   animation: loading-spin 2s linear infinite;
 }
 
+.header-logout-div {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.header-logout-welcome-span {
+  color: #fff;
+  white-space: nowrap;
+  font-weight: 400;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.3);
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.header-button-component {
+  cursor: pointer;
+  padding: 10px 0px;
+  font-family: sans-serif;
+  font-size: 13px;
+  transition: .2s;
+  font-weight: 500;
+  letter-spacing: .5px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.header-logout-span {
+  color: #eee;
+  border-radius: 2px;
+  background-color: #aaa;
+  padding: 10px 17.5px;
+  margin-left: 10px;
+  box-shadow: 1px 1px 7px rgba(0,0,0,.2);
+}
+
+.header-home-link {
+  font-family: sans-serif;
+  color: #eee;
+  border-radius: 2px;
+  background-color: #00b8ff;
+  padding: 10px 17.5px;
+  margin-left: 10px;
+  box-shadow: 1px 1px 7px rgba(0,0,0,.2);
+}
+
+.create-new-blog-button {
+  color: #fff;
+  background-color: #00b8ff;
+  padding: 5px 12.5px 3px 15px;
+  font-weight: 500;
+  border-radius: 2px;
+  font-size: 11px;
+}
+
+/* DARK TUMBLR BLUE: #001935 */
+/* LIGHT TUMBLR BLUE: #00b8ff */
+
+
+
+
 @media only screen and (max-width: 1300px) {
   .search-post-ul-fourcolumns {
     column-count: 3 !important;
@@ -1221,10 +1242,6 @@ button.new-blog-submit {
     max-width: 300px;
   }
 }
-
-/* DARK TUMBLR BLUE: #001935 */
-
-/* LIGHT TUMBLR BLUE: #00b8ff */
 
 
 
