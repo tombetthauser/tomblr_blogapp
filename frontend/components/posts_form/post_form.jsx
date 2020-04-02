@@ -32,15 +32,17 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+
+    document.querySelector(".form-submit-loading-div").style.display = "flex";
+    // let loader = document.querySelector(".form-submit-loading-div").style.display;
+    // loader = "flex";
+
     const formData = new FormData();
     formData.append('post[title]', this.state.title)
     formData.append('post[pic_url]', this.state.pic_url)
     formData.append('post[text]', this.state.text)
     formData.append('post[photo]', this.state.photoFile)
     formData.append('post[blog_id]', this.props.match.params.blogId)
-
-
-
 
     // $.ajax({
     //   url: 'api/posts',
@@ -64,6 +66,7 @@ class PostForm extends React.Component {
 
     // const newState = this.state;
     // newState.blog_id = this.props.match.params.blogId;
+
     this.props.createPost(formData).then(() => {
       this.setState({
         title: "",
@@ -71,6 +74,7 @@ class PostForm extends React.Component {
         text: "",
         photoFile: null,
       });
+      document.querySelector(".form-submit-loading-div").style.display = "none";
     });
 
     // const newState = this.state;
@@ -93,6 +97,9 @@ class PostForm extends React.Component {
     return (
       <div>
         <div className="new-post-container">
+          <div className="form-submit-loading-div">
+            <div className="form-submit-loading-gif"></div>
+          </div>
           <div className="new-post-form">
             <div className="new-post-top-div">
               <div class="new-post-div-avatar-div"></div>
