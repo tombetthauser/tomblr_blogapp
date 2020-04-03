@@ -32,10 +32,9 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    document.querySelector(".form-submit-loading-div").style.display = "flex";
-    // let loader = document.querySelector(".form-submit-loading-div").style.display;
-    // loader = "flex";
+    if (this.state.title.length > 0 && this.state.photoFile) {
+      document.querySelector(".form-submit-loading-div").style.display = "flex";
+    }
 
     const formData = new FormData();
     formData.append('post[title]', this.state.title)
@@ -43,29 +42,6 @@ class PostForm extends React.Component {
     formData.append('post[text]', this.state.text)
     formData.append('post[photo]', this.state.photoFile)
     formData.append('post[blog_id]', this.props.match.params.blogId)
-
-    // $.ajax({
-    //   url: 'api/posts',
-    //   method: 'POST',
-    //   data: formData,
-    //   contentType: false,
-    //   processData: false
-    // }).then(
-    //   (response) => console.log(response.message),
-    //   (response) => console.log(response.responseJSON)
-    // ).then(
-    //   this.setState({
-    //     title: "",
-    //     pic_url: "",
-    //     text: "",
-    //     photoFile: null,
-    //   })
-    // ).then(
-    //   // this.props.createPost()
-    // );
-
-    // const newState = this.state;
-    // newState.blog_id = this.props.match.params.blogId;
 
     this.props.createPost(formData).then(() => {
       this.setState({
@@ -76,17 +52,6 @@ class PostForm extends React.Component {
       });
       document.querySelector(".form-submit-loading-div").style.display = "none";
     });
-
-    // const newState = this.state;
-    // newState.blog_id = this.props.match.params.blogId
-    // this.props.createPost(newState).then(() => {
-    //   this.setState({
-    //     title: "",
-    //     pic_url: "",
-    //     text: "",
-    //     photoFile: null,
-    //   });
-    // });
   }
 
   handleFile(event) {

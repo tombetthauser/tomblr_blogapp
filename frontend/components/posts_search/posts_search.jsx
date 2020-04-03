@@ -61,6 +61,10 @@ class PostsSearch extends React.Component {
     document.querySelector(".new-blog-outer-div").style.display = "flex";
   }
 
+  followClick() {
+    alert("Followed!")
+  }
+
   render() {
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
@@ -223,15 +227,16 @@ class PostsSearch extends React.Component {
                             <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id) % AVATARS.length]}")`}} alt=""></div>
                           </Link>
                           <Link to={`/blogs/${post.blog_id}`}>
-                            <h3 className="search-post-h3">{this.props.blogs[post.blog_id].title}</h3>
+                            <h3 className="search-post-h3">{this.props.blogs[post.blog_id].title.length > 25 ? (this.props.blogs[post.blog_id].title.slice(0, 25) + "...") : this.props.blogs[post.blog_id].title }</h3>
                           </Link>
+                    <span className="search-follow-span" onClick={this.followClick} >{ this.props.currentUser ? "Follow" : null }</span>
                         </div>
                         <Link to={`/blogs/${post.blog_id}`}>
                           <img className="search-image" src={ post.photoUrl ? post.photoUrl : post.pic_url } alt=""/>
                           {/* <img className="search-image" src={post.pic_url} alt=""/> */}
                         </Link>
                         <div className="search-post-bottom-div">
-                          <h3 className="search-post-h3">{post.title}</h3>
+                          <h4 className="search-post-h4">{post.title}</h4>
                           <p className="search-post-p">{post.text}</p>
                           <p className="search-post-author">posted by 
                             <Link to={`/search/${post.author.username}`}>
