@@ -223,7 +223,7 @@ class PostsSearch extends React.Component {
                             <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id) % AVATARS.length]}")`}} alt=""></div>
                           </Link>
                           <Link to={`/blogs/${post.blog_id}`}>
-                            <h3 className="search-post-h3">{post.title}</h3>
+                            <h3 className="search-post-h3">{this.props.blogs[post.blog_id].title}</h3>
                           </Link>
                         </div>
                         <Link to={`/blogs/${post.blog_id}`}>
@@ -231,6 +231,7 @@ class PostsSearch extends React.Component {
                           {/* <img className="search-image" src={post.pic_url} alt=""/> */}
                         </Link>
                         <div className="search-post-bottom-div">
+                          <h3 className="search-post-h3">{post.title}</h3>
                           <p className="search-post-p">{post.text}</p>
                           <p className="search-post-author">posted by 
                             <Link to={`/search/${post.author.username}`}>

@@ -13,7 +13,7 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
-  fetchBlogs: () => dispatch(fetchPosts()),
+  fetchBlogs: () => dispatch(fetchBlogs()),
   deletePost: (postId) => dispatch(deletePost(postId))
 });
 
