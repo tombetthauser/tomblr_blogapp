@@ -39,6 +39,7 @@ class PostsSearch extends React.Component {
     this.state = {
       searchTerm: "",
       isLoaded: false,
+      followedBlogIds: [],
     }
     this.openModal = this.openModal.bind(this);
   }
@@ -46,6 +47,7 @@ class PostsSearch extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
     this.props.fetchBlogs();
+    this.props.fetchFollows();
     this.state.isLoaded = true;
   }
 
@@ -61,11 +63,27 @@ class PostsSearch extends React.Component {
     document.querySelector(".new-blog-outer-div").style.display = "flex";
   }
 
-  followClick() {
-    alert("Followed!")
+  followClick(blogId) {
+    if (this.state.followedBlogIds.includes(blogId)) {
+      // get follow ids
+      // this.props.deleteFollow()
+      alert("Unfollowed!")
+      this.setState({ followedBlogIds: this.state.followedBlogIds.filter(id => id !== blogId) });
+    } else {
+      // this.props.createFollow({ follower_id: this.props.currentUser.id, followed_blog_id: blogId }).then(() => {
+        alert("Followed!")
+        this.setState({ followedBlogIds: this.state.followedBlogIds.push(blogId) });
+      // });    
+    }
   }
 
   render() {
+    if (this.props.currentUser) {
+      this.state.followedBlogIds = this.props.follows.filter(follow => (
+        follow.follower_id === this.props.currentUser.id
+      )).map(follow => follow.followed_blog_id);
+    }
+
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
     const FILTERED_POSTS = this.props.posts.filter(post => (
@@ -229,11 +247,11 @@ class PostsSearch extends React.Component {
                           <Link to={`/blogs/${post.blog_id}`}>
                             <h3 className="search-post-h3">{this.props.blogs[post.blog_id].title.length > 25 ? (this.props.blogs[post.blog_id].title.slice(0, 25) + "...") : this.props.blogs[post.blog_id].title }</h3>
                           </Link>
-                    <span className="search-follow-span" onClick={this.followClick} >{ this.props.currentUser ? "Follow" : null }</span>
+                          <span className="search-follow-span" onClick={() => this.followClick(post.blog_id)} >{ this.props.currentUser ? (this.state.followedBlogIds.includes(post.blog_id) ? "Unfollow" : "Follow") : null }</span>
                         </div>
                         <Link to={`/blogs/${post.blog_id}`}>
                           <img className="search-image" src={ post.photoUrl ? post.photoUrl : post.pic_url } alt=""/>
-                          {/* <img className="search-image" src={post.pic_url} alt=""/> */}
+                          {/* <img className="search-image" src={post.pic_url} alt=""/> */}   
                         </Link>
                         <div className="search-post-bottom-div">
                           <h4 className="search-post-h4">{post.title}</h4>
