@@ -10,7 +10,15 @@ class Api::UsersController < ApplicationController
     end
     
     def show
-        @user = User.find(params[:id])
+        # prevents n+1 ?
+        @user = User.find(params[:id]).includes(:follows)
+    end
+
+    def follows
+        # @follows = User.find(params[:id]).follows
+        # respond_to do |format|
+        #     format.json 
+        # end
     end
 
     private

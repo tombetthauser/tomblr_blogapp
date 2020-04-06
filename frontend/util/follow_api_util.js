@@ -36,3 +36,11 @@ export const deleteFollow = followId => (
     data: null
   })
 )
+
+export const fetchUserFollows = userId => (
+  $.ajax({
+    url: `/api/users/${userId}/follows`,
+    method: 'GET',
+    data: null
+  })
+)

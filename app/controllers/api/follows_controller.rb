@@ -26,12 +26,22 @@ class Api::FollowsController < ApplicationController
     end
 
     def index
+        # follower_id = params.follower_id ? params.follower_id : null
+        # @follows = follower_id ? User.find(follower_id).follows : Follow.all
         @follows = Follow.all
-        render :index
+        # render :index
+        render json: Follow.all
     end
 
     def show
         @follow = Follow.find(params[:id])
+    end
+
+    def user
+        @follows = User.find(params[:id]).follows
+        # respond_to do |format|
+        #     format.json 
+        # end
     end
 
     private

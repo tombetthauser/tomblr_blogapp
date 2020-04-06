@@ -1,3 +1,4 @@
+import * as tomLibrary from '../../util/tom_library'
 import React from 'react';
 import PostFormContainer from '../posts_form/post_form_container';
 import { withRouter } from 'react-router';
@@ -7,31 +8,12 @@ import SearchField from '../search_field/search_field_container';
 import DemoButton from '../demo_user_button/demo_user_container';
 import LogoutButton from '../logout_button/logout_button_container';
 import BlogFormContainer from '../blogs_form/blog_form_container';
+import PostSearchCard from '../post_search_card/post_search_card_container';
 
 
-const shuffle = (a) => {
-  let ci = a.length;
-  let tv, ri;
-  while (0 !== ci) {
-    ri = Math.floor(Math.random() * ci);
-    ci -= 1;
-    tv = a[ci];
-    a[ci] = a[ri];
-    a[ri] = tv;
-  }
-  return a;
-};
-
-const STOP_WORDS = ["", "etc", "just", "a", "able", "about", "across", "after", "all", "almost", "also", "am", "among", "an", "and", "any", "are", "as", "at", "be", "because", "been", "but", "by", "can", "cannot", "could", "dear", "did", "do", "does", "either", "else", "ever", "every", "for", "from", "get", "got", "had", "has", "have", "he", "her", "hers", "him", "his", "how", "however", "i", "if", "in", "into", "is", "it", "its", "just", "least", "let", "like", "likely", "may", "me", "might", "most", "must", "my", "neither", "no", "nor", "not", "of", "off", "often", "on", "only", "or", "other", "our", "own", "rather", "said", "say", "says", "she", "should", "since", "so", "some", "than", "that", "the", "their", "them", "then", "there", "these", "they", "this", "tis", "to", "too", "twas", "us", "wants", "was", "we", "were", "what", "when", "where", "which", "while", "who", "whom", "why", "will", "with", "would", "yet", "you", "your", "ain't", "aren't", "can't", "could've", "couldn't", "didn't", "doesn't", "don't", "hasn't", "he'd", "he'll", "he's", "how'd", "how'll", "how's", "i'd", "i'll", "i'm", "i've", "isn't", "it's", "might've", "mightn't", "must've", "mustn't", "shan't", "she'd", "she'll", "she's", "should've", "shouldn't", "that'll", "that's", "there's", "they'd", "they'll", "they're", "they've", "wasn't", "we'd", "we'll", "we're", "weren't", "what'd", "what's", "when'd", "when'll", "when's", "where'd", "where'll", "where's", "who'd", "who'll", "who's", "why'd", "why'll", "why's", "won't", "would've", "wouldn't", "you'd", "you'll", "you're", "you've"];
-
-const AVATARS = [
-  "https://66.media.tumblr.com/7d376efd024eadd902a8bb60c8155c94/tumblr_o51oavbMDx1ugpbmuo4_540.png",
-  "https://66.media.tumblr.com/ee9b9564d7e54380837579452cde04f6/tumblr_o51oavbMDx1ugpbmuo5_540.png",
-  "https://66.media.tumblr.com/9f9b498bf798ef43dddeaa78cec7b027/tumblr_o51oavbMDx1ugpbmuo7_540.png",
-  "https://66.media.tumblr.com/2060fe62b7ed3b46e5789356942a305e/tumblr_o51oavbMDx1ugpbmuo2_540.png",
-  "https://66.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_540.png",
-  "https://66.media.tumblr.com/699953199a7934e420f1793eb78109df/tumblr_peqyvd3q4n1v1eo16_1280.jpg",
-];
+const shuffle = tomLibrary.shuffle;
+const STOP_WORDS = tomLibrary.STOP_WORDS;
+// const AVATARS = tomLibrary.AVATARS; 
 
 class PostsSearch extends React.Component {
   constructor(props) {
@@ -39,15 +21,16 @@ class PostsSearch extends React.Component {
     this.state = {
       searchTerm: "",
       isLoaded: false,
-      followedBlogIds: [],
+      followedBlogIds: null,
     }
     this.openModal = this.openModal.bind(this);
+    this.followBlog = this.followBlog.bind(this);
+    this.unFollowBlog = this.unFollowBlog.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPosts();
     this.props.fetchBlogs();
-    this.props.fetchFollows();
     this.state.isLoaded = true;
   }
 
@@ -63,26 +46,73 @@ class PostsSearch extends React.Component {
     document.querySelector(".new-blog-outer-div").style.display = "flex";
   }
 
-  followClick(blogId) {
-    if (this.state.followedBlogIds.includes(blogId)) {
-      // get follow ids
-      // this.props.deleteFollow()
-      alert("Unfollowed!")
-      this.setState({ followedBlogIds: this.state.followedBlogIds.filter(id => id !== blogId) });
-    } else {
-      // this.props.createFollow({ follower_id: this.props.currentUser.id, followed_blog_id: blogId }).then(() => {
-        alert("Followed!")
-        this.setState({ followedBlogIds: this.state.followedBlogIds.push(blogId) });
-      // });    
+  // followClick(blogId) {
+  //   if (this.state.followedBlogIds.includes(blogId)) {
+  //     this.props.deleteFollow()
+  //     alert("Unfollowed!")
+  //   } else {
+  //     this.props.createFollow({ follower_id: this.props.currentUser.id, followed_blog_id: blogId }).then(() => {
+  //       alert("Followed!")
+  //     });    
+  //   }
+  // }
+
+  // followText(blogId) {
+  //   if (this.props.currentUser) {
+  //     let followedBlogIds = this.props.currentUser.follows.map(follow => follow.followed_blog_id);
+  //     if (followedBlogIds.includes(blogId)) {
+  //       return 'Unfollow';
+  //     } else {
+  //       return 'Follow';
+  //     }
+  //   } else {
+  //     return null;
+  //   }
+  // }
+
+  followBlog(blogId) {
+    alert(`Followed Blog No.${blogId}!`)
+    this.props.createFollow({
+      follower_id: this.props.currentUser.id,
+      followed_blog_id: blogId,
+    })
+    // .then(result => {
+    //   alert(result);
+    //   console.log(result);
+    // })
+    // REQUIRES follower_id AND followed_blog_id
+  }
+  
+  unFollowBlog(blogId) {
+    alert(`Unfollowed Blog No.${blogId}!`)
+    this.state.followedBlogIds[blogId].forEach(followId => {
+      this.props.deleteFollow(followId);
+    })
+  }
+
+  setBlogIdHash() {
+    if (this.props.currentUser) {
+      if (this.state.followedBlogIds === null) {
+        this.state.followedBlogIds = { a: "cat" };
+        // alert("test")
+        let tempFollows = this.props.currentUser.follows.filter(follow => (
+          follow.follower_id === this.props.currentUser.id
+        ))
+        console.log(tempFollows)
+        tempFollows.forEach(follow => {
+          if (this.state.followedBlogIds[follow.followed_blog_id] === undefined) {
+            this.state.followedBlogIds[follow.followed_blog_id] = [];
+          }
+          this.state.followedBlogIds[follow.followed_blog_id].push(follow.id);
+        });
+        console.log(this.state.followedBlogIds)
+      }
     }
   }
 
   render() {
-    if (this.props.currentUser) {
-      this.state.followedBlogIds = this.props.follows.filter(follow => (
-        follow.follower_id === this.props.currentUser.id
-      )).map(follow => follow.followed_blog_id);
-    }
+    
+    this.setBlogIdHash();
 
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
@@ -93,17 +123,7 @@ class PostsSearch extends React.Component {
     ));
 
     const isSingleColumn = FILTERED_POSTS.length < 5;
-
-    let thisBlog = this.props.blogs[this.props.match.params.blogId];
-    let deleteButtonText = null;
     let newPostForm = null;
-
-    if (thisBlog && this.props.currentUser) {
-      if (thisBlog.author_id === this.props.currentUser.id) {
-        newPostForm = <PostFormContainer />;
-        deleteButtonText = "delete post"
-      }
-    }
 
     const ALL_USERS = shuffle(this.props.posts).map(post => {
       return `${post.author.username.toUpperCase()}`;
@@ -120,6 +140,8 @@ class PostsSearch extends React.Component {
             !STOP_WORDS.includes(word) && 
             !RELATED_WORDS.includes(word) &&
             word !== searchTerm.toLowerCase() &&
+            word.length <= 8 &&
+            word.length >= 3 &&
             !word.includes(",") &&
             !word.includes(".") &&
             !word.includes("!") &&
@@ -147,9 +169,9 @@ class PostsSearch extends React.Component {
 
     const SELECT_USERS = [];
 
-    ALL_USERS.forEach(ele => {
-      if (!SELECT_USERS.includes(ele)) {
-        SELECT_USERS.push(ele)
+    ALL_USERS.forEach(user => {
+      if (!SELECT_USERS.includes(user)) {
+        SELECT_USERS.push(user)
       }
     })
 
@@ -175,14 +197,6 @@ class PostsSearch extends React.Component {
       }
     }
 
-    const YOUR_BLOGS = () => {
-      if (this.props.currentUser) {
-        return Object.values(this.props.blogs).filter(blog => blog.user.id === this.props.currentUser.id)
-      } else {
-        return [];
-      }
-    }
-
     let newBlogButton;
 
     if (this.props.currentUser) {
@@ -190,6 +204,7 @@ class PostsSearch extends React.Component {
     }
     
     let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
+
 
     return (
       <div>
@@ -238,33 +253,38 @@ class PostsSearch extends React.Component {
           <div className="search-ul-constrictor">
             <ul className={`search-post-ul ${ isSingleColumn ? null : "search-post-ul-fourcolumns"}`} style={{ width: columnUlWidth, columnCount: columnUlCount }}>
               {FILTERED_POSTS.map(post => {
-                    return (
-                      <li className="search-post-li">
-                        <div className="search-search-post-header-div">
-                          <Link to={`/blogs/${post.blog_id}`}>
-                            <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id) % AVATARS.length]}")`}} alt=""></div>
-                          </Link>
-                          <Link to={`/blogs/${post.blog_id}`}>
-                            <h3 className="search-post-h3">{this.props.blogs[post.blog_id].title.length > 25 ? (this.props.blogs[post.blog_id].title.slice(0, 25) + "...") : this.props.blogs[post.blog_id].title }</h3>
-                          </Link>
-                          <span className="search-follow-span" onClick={() => this.followClick(post.blog_id)} >{ this.props.currentUser ? (this.state.followedBlogIds.includes(post.blog_id) ? "Unfollow" : "Follow") : null }</span>
-                        </div>
-                        <Link to={`/blogs/${post.blog_id}`}>
-                          <img className="search-image" src={ post.photoUrl ? post.photoUrl : post.pic_url } alt=""/>
-                          {/* <img className="search-image" src={post.pic_url} alt=""/> */}   
-                        </Link>
-                        <div className="search-post-bottom-div">
-                          <h4 className="search-post-h4">{post.title}</h4>
-                          <p className="search-post-p">{post.text}</p>
-                          <p className="search-post-author">posted by 
-                            <Link to={`/search/${post.author.username}`}>
-                              <span className="search-post-author-link">
-                                {" " + post.author.username}
-                              </span>
-                            </Link>
-                          </p>
-                        </div>
-                      </li>
+                return (
+                  // <li className="search-post-li">
+                    <PostSearchCard 
+                    post={post} 
+                    blog={this.props.blogs[post.blog_id]} 
+                    followBlog={this.followBlog}
+                    unFollowBlog={this.unFollowBlog}
+                  />
+                  //       <div className="search-search-post-header-div">
+                  //         <Link to={`/blogs/${post.blog_id}`}>
+                  //           <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id) % AVATARS.length]}")`}} alt=""></div>
+                  //         </Link>
+                  //         <Link to={`/blogs/${post.blog_id}`}>
+                  //           <h3 className="search-post-h3">{this.props.blogs[post.blog_id].title.length > 25 ? (this.props.blogs[post.blog_id].title.slice(0, 25) + "...") : this.props.blogs[post.blog_id].title }</h3>
+                  //         </Link>
+                  //         <span className="search-follow-span" onClick={() => this.followClick(post.blog_id)}>{ this.followText(post.blog_id) }</span>
+                  //       </div>
+                  //       <Link to={`/blogs/${post.blog_id}`}>
+                  //         <img className="search-image" src={ post.photoUrl ? post.photoUrl : post.pic_url } alt=""/>
+                  //       </Link>
+                  //       <div className="search-post-bottom-div">
+                  //         <h4 className="search-post-h4">{post.title}</h4>
+                  //         <p className="search-post-p">{post.text}</p>
+                  //         <p className="search-post-author">posted by 
+                  //           <Link to={`/search/${post.author.username}`}>
+                  //             <span className="search-post-author-link">
+                  //               {" " + post.author.username}
+                  //             </span>
+                  //           </Link>
+                  //         </p>
+                  //       </div>
+                  //     </li>
                     )
               }).reverse()}
               { this.state.isLoaded ? rickRoll() : null }

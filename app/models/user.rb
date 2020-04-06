@@ -11,6 +11,18 @@ class User < ApplicationRecord
     class_name: :Blog,
     foreign_key: :author_id
 
+  has_many :follows,
+    class_name: :Follow,
+    foreign_key: :follower_id
+
+  has_many :followed_blogs,
+    through: :follows,
+    source: :blog
+
+  # has_many :followed_blogs,
+  #   class_name: :element,
+  #   foreign_key: :element_id
+
   # has_many :posts
   # has_many :likes
   # has_many :follows / :followers ?

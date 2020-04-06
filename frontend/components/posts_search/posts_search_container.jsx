@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PostsSearch from './posts_search';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
-import { fetchFollows, createFollow, deleteFollow } from '../../actions/follow_actions';
+import { fetchFollows, createFollow, deleteFollow, fetchUserFollows } from '../../actions/follow_actions';
 import { fetchBlogs } from '../../actions/blog_actions';
 // import { selectBlog } from '../../reducers/selectors';
 
@@ -20,6 +20,7 @@ const mapDispatchToProps = dispatch => ({
   fetchFollows: () => dispatch(fetchFollows()),
   createFollow: follow => dispatch(createFollow(follow)),
   deleteFollow: followId => dispatch(deleteFollow(followId)),
+  fetchUserFollows: userId => dispatch(fetchUserFollows(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsSearch);
