@@ -46,50 +46,19 @@ class PostsSearch extends React.Component {
     document.querySelector(".new-blog-outer-div").style.display = "flex";
   }
 
-  // followClick(blogId) {
-  //   if (this.state.followedBlogIds.includes(blogId)) {
-  //     this.props.deleteFollow()
-  //     alert("Unfollowed!")
-  //   } else {
-  //     this.props.createFollow({ follower_id: this.props.currentUser.id, followed_blog_id: blogId }).then(() => {
-  //       alert("Followed!")
-  //     });    
-  //   }
-  // }
-
-  // followText(blogId) {
-  //   if (this.props.currentUser) {
-  //     let followedBlogIds = this.props.currentUser.follows.map(follow => follow.followed_blog_id);
-  //     if (followedBlogIds.includes(blogId)) {
-  //       return 'Unfollow';
-  //     } else {
-  //       return 'Follow';
-  //     }
-  //   } else {
-  //     return null;
-  //   }
-  // }
-
   followBlog(blogId) {
-    // alert(`Followed Blog No.${blogId}!`)
     this.props.createFollow({
       follower_id: this.props.currentUser.id,
       followed_blog_id: blogId,
-    }).then(follow => {
-      // alert("Follow complete");
     })
-    // REQUIRES follower_id AND followed_blog_id
   }
   
   unFollowBlog(blogId) {
-    // alert(`Unfollowed Blog No.${blogId}!`);
     console.log(blogId);
     if (this.state.followedBlogIds) {
       this.state.followedBlogIds[blogId].forEach(followId => {
-        // alert(`delete follow ${followId}`)
         console.log(followId)
         this.props.deleteFollow(followId).then(
-          // alert("Unfollow complete!")
         );
       })
     }
@@ -99,7 +68,6 @@ class PostsSearch extends React.Component {
     if (this.props.currentUser) {
       if (this.state.followedBlogIds === null) {
         this.state.followedBlogIds = { a: "cat" };
-        // alert("test")
         let tempFollows = this.props.currentUser.follows.filter(follow => (
           follow.follower_id === this.props.currentUser.id
         ))
@@ -214,11 +182,12 @@ class PostsSearch extends React.Component {
     return (
       <div>
           {newBlogButton}
-          {this.renderLogoutDemoButton()}
           {newPostForm}
+          {this.renderLogoutDemoButton()}
           <SearchField />
-          <div className="search-header-div">
-          </div>
+          
+          <div className="search-header-div"></div>
+
           <div className="search-header-links-div">
             <ul className="search-header-links-ul">
               <li>Search Users:</li>
@@ -246,6 +215,8 @@ class PostsSearch extends React.Component {
               { this.props.currentUser ? null : (<li><Link to="/signup">Sign Up</Link></li>) }
             </ul>
           </div>
+
+
           <div className="search-header-searchterms-div">
           <h3 class="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
             <span class="search-header-searchterms-related">other searches:</span>
@@ -255,46 +226,25 @@ class PostsSearch extends React.Component {
               })}
             </ul>
           </div>
+
+
           <div className="search-ul-constrictor">
             <ul className={`search-post-ul ${ isSingleColumn ? null : "search-post-ul-fourcolumns"}`} style={{ width: columnUlWidth, columnCount: columnUlCount }}>
               {FILTERED_POSTS.map(post => {
                 return (
-                  // <li className="search-post-li">
                     <PostSearchCard 
                     post={post} 
                     blog={this.props.blogs[post.blog_id]} 
                     followBlog={this.followBlog}
                     unFollowBlog={this.unFollowBlog}
                   />
-                  //       <div className="search-search-post-header-div">
-                  //         <Link to={`/blogs/${post.blog_id}`}>
-                  //           <div className="search-profile-user-image" style={{ backgroundImage: `url("${AVATARS[(post.blog_id) % AVATARS.length]}")`}} alt=""></div>
-                  //         </Link>
-                  //         <Link to={`/blogs/${post.blog_id}`}>
-                  //           <h3 className="search-post-h3">{this.props.blogs[post.blog_id].title.length > 25 ? (this.props.blogs[post.blog_id].title.slice(0, 25) + "...") : this.props.blogs[post.blog_id].title }</h3>
-                  //         </Link>
-                  //         <span className="search-follow-span" onClick={() => this.followClick(post.blog_id)}>{ this.followText(post.blog_id) }</span>
-                  //       </div>
-                  //       <Link to={`/blogs/${post.blog_id}`}>
-                  //         <img className="search-image" src={ post.photoUrl ? post.photoUrl : post.pic_url } alt=""/>
-                  //       </Link>
-                  //       <div className="search-post-bottom-div">
-                  //         <h4 className="search-post-h4">{post.title}</h4>
-                  //         <p className="search-post-p">{post.text}</p>
-                  //         <p className="search-post-author">posted by 
-                  //           <Link to={`/search/${post.author.username}`}>
-                  //             <span className="search-post-author-link">
-                  //               {" " + post.author.username}
-                  //             </span>
-                  //           </Link>
-                  //         </p>
-                  //       </div>
-                  //     </li>
-                    )
+                )
               }).reverse()}
               { this.state.isLoaded ? rickRoll() : null }
             </ul>
           </div>
+
+
         <span className="posts-search-thatsall-text">{`${ this.state.isLoaded ? thatsAllMessage() : null }`}</span>
       </div>
     )
