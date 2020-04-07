@@ -71,23 +71,28 @@ class PostsSearch extends React.Component {
   // }
 
   followBlog(blogId) {
-    alert(`Followed Blog No.${blogId}!`)
+    // alert(`Followed Blog No.${blogId}!`)
     this.props.createFollow({
       follower_id: this.props.currentUser.id,
       followed_blog_id: blogId,
+    }).then(follow => {
+      // alert("Follow complete");
     })
-    // .then(result => {
-    //   alert(result);
-    //   console.log(result);
-    // })
     // REQUIRES follower_id AND followed_blog_id
   }
   
   unFollowBlog(blogId) {
-    alert(`Unfollowed Blog No.${blogId}!`)
-    this.state.followedBlogIds[blogId].forEach(followId => {
-      this.props.deleteFollow(followId);
-    })
+    // alert(`Unfollowed Blog No.${blogId}!`);
+    console.log(blogId);
+    if (this.state.followedBlogIds) {
+      this.state.followedBlogIds[blogId].forEach(followId => {
+        // alert(`delete follow ${followId}`)
+        console.log(followId)
+        this.props.deleteFollow(followId).then(
+          // alert("Unfollow complete!")
+        );
+      })
+    }
   }
 
   setBlogIdHash() {
