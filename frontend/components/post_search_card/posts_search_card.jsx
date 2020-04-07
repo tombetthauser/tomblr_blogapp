@@ -57,7 +57,7 @@ class PostSearchCard extends React.Component {
           <Link to={`/blogs/${this.props.post.blog_id}`}>
             <h3 className="search-post-h3">{this.props.blog.title.length > 25 ? (this.props.blog.title.slice(0, 25) + "...") : this.props.blog.title}</h3>
           </Link>
-          <span className="search-follow-span" onClick={() => this.followClick(this.props.post.blog_id)}>{ this.state.followText }</span>
+          {/* <span className="search-follow-span" onClick={() => this.followClick(this.props.post.blog_id)}>{ this.state.followText }</span> */}
         </div>
         <Link to={`/blogs/${this.props.post.blog_id}`}>
           <img className="search-image" src={this.props.post.photoUrl ? this.props.post.photoUrl : this.props.post.pic_url} alt="" />

@@ -32,7 +32,12 @@ class PostsSearch extends React.Component {
   }
 
   renderLogoutDemoButton() {
-    return this.props.currentUser ? <LogoutButton/> : <DemoButton/>;
+    // return this.props.currentUser ? <LogoutButton/> : <DemoButton/>;
+    if (this.props.currentUser) {
+      return (<LogoutButton />)
+    } else {
+      return (<DemoButton />)
+    }
   }
   
   openModal() {
