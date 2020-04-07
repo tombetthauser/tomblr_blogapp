@@ -1,7 +1,7 @@
 import * as tomLibrary from '../../util/tom_library'
-import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 const AVATARS = tomLibrary.AVATARS; 
 
@@ -9,9 +9,9 @@ class PostSearchCard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      blogId: null,
-      isFollowed: null,
       followText: null,
+      isFollowed: null,
+      blogId: null,
     }
   }
 
@@ -20,18 +20,15 @@ class PostSearchCard extends React.Component {
     this.setFollowState(this.state.blogId);
   }
 
-
   followClick(blogId) {
-    
     if (this.state.isFollowed) {
-      this.props.unFollowBlog(this.props.blog.id);
+      // this.props.unFollowBlog(this.props.blog.id);
       this.state.isFollowed = false;
       this.setState({ followText: "Follow" })
     } else {
-      this.props.followBlog(this.props.blog.id);
+      // this.props.followBlog(this.props.blog.id);
       this.state.isFollowed = true;
-      this.setState({ followText: "Unfollow" })
-      // });    
+      this.setState({ followText: "Unfollow" })   
     }
   }
 
@@ -51,9 +48,6 @@ class PostSearchCard extends React.Component {
   }
 
   render() {
-
-    // this.setFollowText();
-
     return (
       <li className="search-post-li">
         <div className="search-search-post-header-div">
@@ -72,7 +66,7 @@ class PostSearchCard extends React.Component {
           <h4 className="search-post-h4">{this.props.post.title}</h4>
           <p className="search-post-p">{this.props.post.text}</p>
           <p className="search-post-author">posted by
-                            <Link to={`/search/${this.props.post.author.username}`}>
+              <Link to={`/search/${this.props.post.author.username}`}>
               <span className="search-post-author-link">
                 {" " + this.props.post.author.username}
               </span>

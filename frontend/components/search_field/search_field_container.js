@@ -2,15 +2,14 @@ import { connect } from 'react-redux';
 import SearchField from './search_field';
 
 const mapStateToProps = (state, { match }) => ({
-  // searchTerm: match.params.searchTerm,
   posts: Object.values(state.entities.posts),
+  currentUser: state.session.currentUser,
   blogs: state.entities.blogs,
-  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
+  deletePost: (postId) => dispatch(deletePost(postId)),
   fetchPosts: () => dispatch(fetchPosts()),
-  deletePost: (postId) => dispatch(deletePost(postId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchField);

@@ -1,27 +1,24 @@
-import * as tomLibrary from '../../util/tom_library'
-import React from 'react';
-import PostFormContainer from '../posts_form/post_form_container';
-import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
-import { AuthRoute } from '../../util/route_util';
-import SearchField from '../search_field/search_field_container';
-import DemoButton from '../demo_user_button/demo_user_container';
+import PostSearchCard from '../post_search_card/post_search_card_container';
 import LogoutButton from '../logout_button/logout_button_container';
 import BlogFormContainer from '../blogs_form/blog_form_container';
-import PostSearchCard from '../post_search_card/post_search_card_container';
+import SearchField from '../search_field/search_field_container';
+import DemoButton from '../demo_user_button/demo_user_container';
+import * as tomLibrary from '../../util/tom_library'
+import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+import React from 'react';
 
-
+const STOP_WORDS = tomLibrary.STOP_WORDS; 
 const shuffle = tomLibrary.shuffle;
-const STOP_WORDS = tomLibrary.STOP_WORDS;
-// const AVATARS = tomLibrary.AVATARS; 
 
 class PostsSearch extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchTerm: "",
-      isLoaded: false,
       followedBlogIds: null,
+      isLoaded: false,
+      posts: null,
+      searchTerm: "",
     }
     this.openModal = this.openModal.bind(this);
     this.followBlog = this.followBlog.bind(this);
@@ -35,11 +32,7 @@ class PostsSearch extends React.Component {
   }
 
   renderLogoutDemoButton() {
-    if (this.props.currentUser) {
-      return (<LogoutButton/>)
-    } else {
-      return (<DemoButton/>)
-    }
+    return this.props.currentUser ? <LogoutButton/> : <DemoButton/>;
   }
   
   openModal() {
@@ -71,7 +64,6 @@ class PostsSearch extends React.Component {
         let tempFollows = this.props.currentUser.follows.filter(follow => (
           follow.follower_id === this.props.currentUser.id
         ))
-        console.log(tempFollows)
         tempFollows.forEach(follow => {
           if (this.state.followedBlogIds[follow.followed_blog_id] === undefined) {
             this.state.followedBlogIds[follow.followed_blog_id] = [];
@@ -156,10 +148,10 @@ class PostsSearch extends React.Component {
         return `Sorry! No posts for "${searchTerm}" yet ;(`
       } else {
         return [
-          "That's all folks! :0",
-          "That's it for now! :p",
           "That's all for now! :3",
           "That's all we got! :)",
+          "That's it for now! :p",
+          "That's all folks! :0",
         ][Math.floor(Math.random() * 4)]
       }
     }
@@ -178,6 +170,18 @@ class PostsSearch extends React.Component {
     
     let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
 
+    this.state.posts = (
+      FILTERED_POSTS.map(post => {
+        return (
+          <PostSearchCard
+            post={post}
+            blog={this.props.blogs[post.blog_id]}
+            followBlog={this.followBlog}
+            unFollowBlog={this.unFollowBlog}
+          />
+        )
+      })
+    )
 
     return (
       <div>
@@ -216,7 +220,6 @@ class PostsSearch extends React.Component {
             </ul>
           </div>
 
-
           <div className="search-header-searchterms-div">
           <h3 class="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
             <span class="search-header-searchterms-related">other searches:</span>
@@ -227,23 +230,12 @@ class PostsSearch extends React.Component {
             </ul>
           </div>
 
-
           <div className="search-ul-constrictor">
             <ul className={`search-post-ul ${ isSingleColumn ? null : "search-post-ul-fourcolumns"}`} style={{ width: columnUlWidth, columnCount: columnUlCount }}>
-              {FILTERED_POSTS.map(post => {
-                return (
-                    <PostSearchCard 
-                    post={post} 
-                    blog={this.props.blogs[post.blog_id]} 
-                    followBlog={this.followBlog}
-                    unFollowBlog={this.unFollowBlog}
-                  />
-                )
-              }).reverse()}
+              { this.state.posts }
               { this.state.isLoaded ? rickRoll() : null }
             </ul>
           </div>
-
 
         <span className="posts-search-thatsall-text">{`${ this.state.isLoaded ? thatsAllMessage() : null }`}</span>
       </div>
