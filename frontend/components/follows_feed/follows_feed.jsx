@@ -188,7 +188,7 @@ class FollowsFeed extends React.Component {
       newBlogButton = <BlogFormContainer />;
     }
     
-    let defaultHeaderText = "YOUR FOLLOWED BLOGS FEED";
+    let defaultHeaderText = "YOUR FEED";
     // let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
 
     return (
@@ -222,7 +222,7 @@ class FollowsFeed extends React.Component {
                   return (<li><Link className="post-search-header-li-links" to={`/blogs/${blog.id}`}>{name}</Link></li>)
                 }) : null}
               </ul>
-            {this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={() => this.props.history.push('/feed')} >Your Followed Blogs</a></li>) : null}
+            {this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={() => this.props.history.push('/')}>Recent Posts</a></li>) : null}
               { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog</a></li>) : null }
               { this.props.currentUser ? null : (<li><Link to="/login">Login</Link></li>) }
               { this.props.currentUser ? null : (<li><Link to="/signup">Sign Up</Link></li>) }
@@ -231,12 +231,12 @@ class FollowsFeed extends React.Component {
 
           <div className="search-header-searchterms-div">
           <h3 class="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
-            <span class="search-header-searchterms-related">other searches:</span>
-            <ul class="search-header-searchterms-ul">
+          <span class="feed-sub-header-text">Recent Posts from your Followed Blogs</span>
+            {/* <ul class="search-header-searchterms-ul">
               {RELATED_WORDS.map( word => {
                 return(<li><Link to={`/search/${word}`}>{word}</Link></li>)
               })}
-            </ul>
+            </ul> */}
           </div>
 
           <div className="search-ul-constrictor">

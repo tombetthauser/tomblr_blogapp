@@ -1259,6 +1259,13 @@ button.new-blog-submit {
   margin-right: auto;
 }
 
+.feed-sub-header-text {
+  color: #97a1ad;
+  font-size: 13px;
+  text-transform: lowercase;
+  font-weight: 800;
+}
+
 /* DARK TUMBLR BLUE: #001935 */
 /* LIGHT TUMBLR BLUE: #00b8ff */
 
