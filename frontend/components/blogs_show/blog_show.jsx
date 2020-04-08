@@ -66,7 +66,7 @@ class BlogsShow extends React.Component {
       
       this.props.requestUser(authorId);
 
-      author = this.props.blog.user.username[0].toUpperCase() + this.props.blog.user.username.slice(1).toLowerCase();
+      author = this.props.currentUser && this.props.currentUser.username.toUpperCase() === this.props.blog.user.username.toUpperCase() ? "YOU" : this.props.blog.user.username[0].toUpperCase() + this.props.blog.user.username.slice(1).toLowerCase();
       createdAt = this.props.blog.created_at;
 
       [month, year, day] = [createdAt.slice(5, 7), createdAt.slice(0, 4), createdAt.slice(8, 10)];
