@@ -1257,6 +1257,7 @@ button.new-blog-submit {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  transition: 0s;
 }
 
 .feed-sub-header-text {
@@ -1264,6 +1265,23 @@ button.new-blog-submit {
   font-size: 13px;
   text-transform: lowercase;
   font-weight: 800;
+}
+
+.follow-loading-mask-div {
+  height: 75px;
+  width: 100%;
+  z-index: 5;
+  position: absolute;
+  top: 550px;
+  left: 0;
+  background-color: #f9f9f9;
+  opacity: .8;
+  cursor: auto;
+}
+
+.follow-loading-mask-class {
+  background-color: #008cc4;
+  color: #389bc2;
 }
 
 /* DARK TUMBLR BLUE: #001935 */
