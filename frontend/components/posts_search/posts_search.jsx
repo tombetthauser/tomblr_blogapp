@@ -220,7 +220,7 @@ class PostsSearch extends React.Component {
                   return (<li><Link className="post-search-header-li-links" to={`/blogs/${blog.id}`}>{name}</Link></li>)
                 }) : null}
               </ul>
-              { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Your Followed Blogs</a></li>) : null }
+            {this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={() => this.props.history.push('/feed')} >Your Followed Blogs</a></li>) : null}
               { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog</a></li>) : null }
               { this.props.currentUser ? null : (<li><Link to="/login">Login</Link></li>) }
               { this.props.currentUser ? null : (<li><Link to="/signup">Sign Up</Link></li>) }

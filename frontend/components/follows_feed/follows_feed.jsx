@@ -89,11 +89,26 @@ class FollowsFeed extends React.Component {
 
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
 
-    const FILTERED_POSTS = this.props.posts.filter(post => (
-      post.text.toUpperCase().includes(searchTerm.toUpperCase()) ||
-      post.title.toUpperCase().includes(searchTerm.toUpperCase()) ||
-      post.author.username.toUpperCase().includes(searchTerm.toUpperCase())
+    let FILTERED_POSTS = this.props.posts.filter(post => (
+      this.props.currentUser.follows.map(follow => follow.followed_blog_id).includes(post.blog_id) && post.author.id !== this.props.currentUser.id
     ));
+
+    this.state.posts = (
+      FILTERED_POSTS.map(post => {
+        if (this.props.currentUser.follows.map(follow => follow.followed_blog_id).includes(post.blog_id) && post.author.id !== this.props.currentUser.id) {
+          return (
+            <PostSearchCard
+              post={post}
+              blog={this.props.blogs[post.blog_id]}
+              followBlog={this.followBlog}
+              unFollowBlog={this.unFollowBlog}
+            />
+          )
+        }
+      })
+    )
+
+    FILTERED_POSTS = this.state.posts;
 
     const isSingleColumn = FILTERED_POSTS.length < 5;
     let newPostForm = null;
@@ -176,21 +191,8 @@ class FollowsFeed extends React.Component {
       newBlogButton = <BlogFormContainer />;
     }
     
-    let defaultHeaderText = "RECENT POSTS";
+    let defaultHeaderText = "YOUR FOLLOWED BLOGS FEED";
     // let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
-
-    this.state.posts = (
-      FILTERED_POSTS.map(post => {
-        return (
-          <PostSearchCard
-            post={post}
-            blog={this.props.blogs[post.blog_id]}
-            followBlog={this.followBlog}
-            unFollowBlog={this.unFollowBlog}
-          />
-        )
-      })
-    )
 
     return (
       <div>
@@ -223,7 +225,7 @@ class FollowsFeed extends React.Component {
                   return (<li><Link className="post-search-header-li-links" to={`/blogs/${blog.id}`}>{name}</Link></li>)
                 }) : null}
               </ul>
-              { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Your Followed Blogs</a></li>) : null }
+            {this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={() => this.props.history.push('/feed')} >Your Followed Blogs</a></li>) : null}
               { this.props.currentUser ? (<li><a className="create-new-blog-button" onClick={this.openModal} >Create a New Blog</a></li>) : null }
               { this.props.currentUser ? null : (<li><Link to="/login">Login</Link></li>) }
               { this.props.currentUser ? null : (<li><Link to="/signup">Sign Up</Link></li>) }
