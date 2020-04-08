@@ -92,7 +92,7 @@ class BlogsShow extends React.Component {
           <h2 className="blog-show-title">{title}</h2>
           <p className="blog-show-subtitle">{description}</p>
           <p className="blog-show-credits">Created by {author} on {month}/{day}/{year}</p>
-          <FollowButton blog={ this.props.blog } />
+          <FollowButton />
         </div>
         <div className="single-blog-show">
           <PostsIndexContainer />

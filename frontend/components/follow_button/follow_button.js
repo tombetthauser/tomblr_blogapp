@@ -22,7 +22,7 @@ class DemoButton extends React.Component {
     return (
       <div>
         <button className="blog-show-follow-button">
-          {this.props.blog.title ? this.props.blog.title : null }
+          FOLLOW THIS BLOG
         </button>
       </div>
     )

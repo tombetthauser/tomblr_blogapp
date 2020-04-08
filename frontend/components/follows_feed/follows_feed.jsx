@@ -46,7 +46,7 @@ class FollowsFeed extends React.Component {
 
   followBlog(blogId) {
     this.props.createFollow({
-      follower_id: this.props.currentUser.id,
+      follower_id: this.props.currentUser ? this.props.currentUser.id : null,
       followed_blog_id: blogId,
     })
   }
@@ -88,9 +88,9 @@ class FollowsFeed extends React.Component {
     this.setBlogIdHash();
 
     let searchTerm = this.props.searchTerm ? this.props.searchTerm : "";
-
+    
     let FILTERED_POSTS = this.props.posts.filter(post => (
-      this.props.currentUser.follows.map(follow => follow.followed_blog_id).includes(post.blog_id) && post.author.id !== this.props.currentUser.id
+      this.props.currentUser && this.props.currentUser.follows.map(follow => follow.followed_blog_id).includes(post.blog_id) && post.author.id !== this.props.currentUser.id
     ));
 
     this.state.posts = (
