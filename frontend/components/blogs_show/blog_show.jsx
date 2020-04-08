@@ -5,6 +5,7 @@ import SearchField from '../search_field/search_field_container';
 import DemoButton from '../demo_user_button/demo_user_container';
 import LogoutButton from '../logout_button/logout_button_container';
 import { withRouter } from 'react-router';
+import FollowButton from '../follow_button/follow_button_container';
 
 const BACKGROUNDS = [
   "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MCIgaGVpZ2h0PSIzMCI+CjxyZWN0IHdpZHRoPSI5MCIgaGVpZ2h0PSIzMCIgZmlsbD0iIzAwYTlmMSI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iOTAiIGhlaWdodD0iMTgiIGZpbGw9IiMyNmJhZjQiPjwvcmVjdD4KPC9zdmc+",
@@ -18,7 +19,7 @@ const BACKGROUNDS = [
 
 const AVATARS = [
   "https://66.media.tumblr.com/7d376efd024eadd902a8bb60c8155c94/tumblr_o51oavbMDx1ugpbmuo4_540.png",
-  "https://66.media.tumblr.com/ee9b9564d7e54380837579452cde04f6/tumblr_o51oavbMDx1ugpbmuo5_540.png",
+  "https://66.media.tumblr.com/ee9b95q164d7e54380837579452cde04f6/tumblr_o51oavbMDx1ugpbmuo5_540.png",
   "https://66.media.tumblr.com/9f9b498bf798ef43dddeaa78cec7b027/tumblr_o51oavbMDx1ugpbmuo7_540.png",
   "https://66.media.tumblr.com/2060fe62b7ed3b46e5789356942a305e/tumblr_o51oavbMDx1ugpbmuo2_540.png",
   "https://66.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_540.png",
@@ -84,13 +85,14 @@ class BlogsShow extends React.Component {
     return (
       <div className="blog-show-main-div">
         { this.renderLogoutDemoButton() }
-        < SearchField />
+        <SearchField />
         <div className="blog-show-header-image-div"></div>
         <div className="blog-show-avatar-circle"></div>
         <div className="blog-header">
           <h2 className="blog-show-title">{title}</h2>
           <p className="blog-show-subtitle">{description}</p>
           <p className="blog-show-credits">Created by {author} on {month}/{day}/{year}</p>
+          <FollowButton blog={ this.props.blog } />
         </div>
         <div className="single-blog-show">
           <PostsIndexContainer />
