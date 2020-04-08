@@ -173,7 +173,8 @@ class PostsSearch extends React.Component {
       newBlogButton = <BlogFormContainer />;
     }
     
-    let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
+    let defaultHeaderText = "RECENT POSTS";
+    // let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
 
     this.state.posts = (
       FILTERED_POSTS.map(post => {
