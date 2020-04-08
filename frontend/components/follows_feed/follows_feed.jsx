@@ -189,7 +189,6 @@ class FollowsFeed extends React.Component {
     }
     
     let defaultHeaderText = "YOUR FEED";
-    // let defaultHeaderText = this.props.currentUser ? "YOUR FEED" : "RECENT POSTS";
 
     return (
       <div>
@@ -232,11 +231,6 @@ class FollowsFeed extends React.Component {
           <div className="search-header-searchterms-div">
           <h3 class="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
           <span class="feed-sub-header-text">Recent Posts from your Followed Blogs</span>
-            {/* <ul class="search-header-searchterms-ul">
-              {RELATED_WORDS.map( word => {
-                return(<li><Link to={`/search/${word}`}>{word}</Link></li>)
-              })}
-            </ul> */}
           </div>
 
           <div className="search-ul-constrictor">
