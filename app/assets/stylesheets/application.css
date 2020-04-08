@@ -1277,6 +1277,7 @@ button.new-blog-submit {
   background-color: #f9f9f9;
   opacity: .8;
   cursor: auto;
+  display: none;
 }
 
 .follow-loading-mask-class {

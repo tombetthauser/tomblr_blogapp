@@ -21,13 +21,17 @@ class DemoButton extends React.Component {
   }
 
   handleClick() {
+    document.querySelector(".follow-loading-mask-div").style.display = "block";
     if (this.state.isFollowed) {
-      this.setState({ isFollowed: false, followText: "FOLLOW THIS BLOG" })
-      document.querySelector(".blog-show-follow-button").classList.add("follow-loading-mask-class");
-      document.querySelector(".blog-show-follow-button").onClick = null; 
+      setTimeout(() => {
+        this.setState({ isFollowed: false, followText: "FOLLOW THIS BLOG" })
+        document.querySelector(".follow-loading-mask-div").style.display = "none";
+      }, 1000)
     } else {
-      this.setState({ isFollowed: true, followText: "UNFOLLOW THIS BLOG" })
-      document.querySelector(".blog-show-follow-button").classList.remove("follow-loading-mask-class")
+      setTimeout(() => {
+        this.setState({ isFollowed: false, followText: "UNFOLLOW THIS BLOG" })
+        document.querySelector(".follow-loading-mask-div").style.display = "none";
+      }, 1000)
     }
   }
 
