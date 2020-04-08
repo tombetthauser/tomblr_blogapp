@@ -52,10 +52,8 @@ class FollowsFeed extends React.Component {
   }
   
   unFollowBlog(blogId) {
-    console.log(blogId);
     if (this.state.followedBlogIds) {
       this.state.followedBlogIds[blogId].forEach(followId => {
-        console.log(followId)
         this.props.deleteFollow(followId).then(
         );
       })
@@ -75,7 +73,6 @@ class FollowsFeed extends React.Component {
           }
           this.state.followedBlogIds[follow.followed_blog_id].push(follow.id);
         });
-        console.log(this.state.followedBlogIds)
       }
     }
   }

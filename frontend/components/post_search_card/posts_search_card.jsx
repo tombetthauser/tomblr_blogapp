@@ -56,7 +56,6 @@ class PostSearchCard extends React.Component {
           </Link>
           <Link to={`/blogs/${this.props.post.blog_id}`}>
             <h3 className="search-post-h3">{this.props.blog ? (this.props.blog.title.length > 25 ? (this.props.blog.title.slice(0, 25) + "...") : this.props.blog.title) : null }</h3>
-            {this.props.currentUser ? console.log(this.props.currentUser.follows) : null }
             <span className="search-follow-span-light">{ this.props.currentUser && this.props.post.author.id !== this.props.currentUser.id && this.props.currentUser.follows.map(follow => follow.followed_blog_id).includes(this.props.post.blog_id) ? 'Following' : '' }</span>
           </Link>
           {/* <span className="search-follow-span" onClick={() => this.followClick(this.props.post.blog_id)}>{ this.state.followText }</span> */}
