@@ -1209,6 +1209,7 @@ button.new-blog-submit {
 .create-new-blog-button {
   color: #fff;
   background-color: #1c3b5f;
+  /* background-color: #00b8ff; */
   padding: 5px 12.5px 3px 15px;
   font-weight: 500;
   border-radius: 2px;

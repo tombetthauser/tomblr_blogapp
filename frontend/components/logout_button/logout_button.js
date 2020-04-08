@@ -16,7 +16,7 @@ const LogoutButton = ({ logout, currentUser }) => {
           <span className="header-logout-span">Log Out</span>
         </button>
         <button className="header-button-component">
-          <Link className="header-home-link" to="/search">
+          <Link className="header-home-link" to="/feed">
             Home
           </Link>
         </button>

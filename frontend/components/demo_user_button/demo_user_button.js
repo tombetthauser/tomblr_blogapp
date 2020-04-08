@@ -19,16 +19,18 @@ class DemoButton extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
-    this.props.requestUser(this.props.currenUser)
-    this.props.fetchBlogs().then(blogs => {
-      let keys = Object.keys(blogs.blogs);
-      keys.forEach(key => {
-        if (blogs.blogs[key].user.username === this.state.username) {
-          this.props.history.push(`/blogs/${key}`)
-        }
-      })
+    this.props.processForm(user).then(() => {
+      this.props.history.push(`/feed`)
     })
+    this.props.requestUser(this.props.currenUser)
+    // this.props.fetchBlogs().then(blogs => {
+    //   let keys = Object.keys(blogs.blogs);
+    //   keys.forEach(key => {
+    //     if (blogs.blogs[key].user.username === this.state.username) {
+    //       // this.props.history.push(`/blogs/${key}`)
+    //     }
+    //   })
+    // })
   }
 
   render() {    

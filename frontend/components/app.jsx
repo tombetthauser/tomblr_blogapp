@@ -7,6 +7,7 @@ import BlogsIndexContainer from './blogs_index/blogs_index_container';
 import PostsSearchContainer from './posts_search/posts_search_container';
 import BlogShowContainer from './blogs_show/blog_show_container';
 import NewBlogPage from './new_blog_page/new_blog_page_container';
+import FollowsFeed from './follows_feed/follows_feed_container';
 
 // import PostIndex from './posts_index';
 
@@ -26,6 +27,7 @@ const App = () => {
       {/* <Route exact path="/blogs" component={BlogsIndexContainer}/> */}
       <Route exact path="/search" component={PostsSearchContainer}/>
       <Route path="/search/:searchTerm" component={PostsSearchContainer}/>
+      <Route path="/feed" component={FollowsFeed}/>
       <Route path="/blogs/:blogId" component={BlogShowContainer} />
     </div>
   )

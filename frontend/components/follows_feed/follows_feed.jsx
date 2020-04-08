@@ -11,7 +11,7 @@ import React from 'react';
 const STOP_WORDS = tomLibrary.STOP_WORDS; 
 const shuffle = tomLibrary.shuffle;
 
-class PostsSearch extends React.Component {
+class FollowsFeed extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -81,6 +81,9 @@ class PostsSearch extends React.Component {
   }
 
   render() {
+    if (!this.props.currentUser) {
+      this.props.history.push('/search')
+    }
     
     this.setBlogIdHash();
 
@@ -250,4 +253,4 @@ class PostsSearch extends React.Component {
   }
 }
 
-export default withRouter(PostsSearch);
+export default withRouter(FollowsFeed);
