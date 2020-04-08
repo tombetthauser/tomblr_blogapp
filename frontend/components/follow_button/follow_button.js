@@ -9,6 +9,12 @@ class DemoButton extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    if (!this.props.currentUser) {
+      document.querySelector(".blog-show-follow-button").style.display = "none";
+    }
+  }
+
   handleClick(event) {
     event.preventDefault();
     // const user = Object.assign({}, this.state);
@@ -21,8 +27,8 @@ class DemoButton extends React.Component {
   render() {
     return (
       <div>
-        <button className="blog-show-follow-button">
-          FOLLOW THIS BLOG
+        <button className="blog-show-follow-button" >
+          {this.props.currentUser && this.props.currentUser.follows.map(follow => follow.followed_blog_id).includes(parseInt(this.props.match.params.blogId)) ? "UNFOLLOW THIS BLOG" : "FOLLOW THIS BLOG" }
         </button>
       </div>
     )

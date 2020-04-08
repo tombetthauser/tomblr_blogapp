@@ -65,7 +65,7 @@ class FollowsFeed extends React.Component {
   setBlogIdHash() {
     if (this.props.currentUser) {
       if (this.state.followedBlogIds === null) {
-        this.state.followedBlogIds = { a: "cat" };
+        this.state.followedBlogIds = {};
         let tempFollows = this.props.currentUser.follows.filter(follow => (
           follow.follower_id === this.props.currentUser.id
         ))
