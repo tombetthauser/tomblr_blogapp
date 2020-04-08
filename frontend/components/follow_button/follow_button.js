@@ -10,7 +10,7 @@ class DemoButton extends React.Component {
   }
 
   componentDidMount() {
-    if (!this.props.currentUser) {
+    if (!this.props.currentUser || this.props.blogs[parseInt(this.props.match.params.blogId)].author_id === this.props.currentUser.id) {
       document.querySelector(".blog-show-follow-button").style.display = "none";
     }
   }
