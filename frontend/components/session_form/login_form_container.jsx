@@ -10,7 +10,7 @@ import { fetchBlogs } from '../../actions/blog_actions';
 const mapState = state => ({
     errors: state.errors.session,
     formType: 'login',
-    navLink: <Link class="login-signup-link" to="/signup">sign up</Link>,
+    navLink: <Link className="login-signup-link" to="/signup">sign up</Link>,
     // user: selectUser(state, state.session.id)
     // currentUser: state.entities.session.currentUser
 });

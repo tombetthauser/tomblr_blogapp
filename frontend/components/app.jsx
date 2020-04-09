@@ -11,8 +11,10 @@ import FollowsFeed from './follows_feed/follows_feed_container';
 
 // import PostIndex from './posts_index';
 
+// OLD ERRORY WAY
 import createHistory from "history/createBrowserHistory"
 export const history = createHistory()
+
 history.listen((location, action) => {
   window.scrollTo(0, 0)
 })

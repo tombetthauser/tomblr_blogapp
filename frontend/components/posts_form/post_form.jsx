@@ -67,7 +67,7 @@ class PostForm extends React.Component {
           </div>
           <div className="new-post-form">
             <div className="new-post-top-div">
-              <div class="new-post-div-avatar-div"></div>
+              <div className="new-post-div-avatar-div"></div>
               <h3 className="new-post-title">Create a New Post</h3>
             </div>
 

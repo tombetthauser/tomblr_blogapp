@@ -229,8 +229,8 @@ class FollowsFeed extends React.Component {
           </div>
 
           <div className="search-header-searchterms-div">
-          <h3 class="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
-          <span class="feed-sub-header-text">Recent Posts from your Followed Blogs</span>
+          <h3 className="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
+          <span className="feed-sub-header-text">Recent Posts from your Followed Blogs</span>
           </div>
 
           <div className="search-ul-constrictor">

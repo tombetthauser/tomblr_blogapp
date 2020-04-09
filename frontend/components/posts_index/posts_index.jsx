@@ -32,7 +32,7 @@ class PostsIndex extends React.Component {
             {this.props.posts.map(post => {
               if (parseInt(post.blog_id) === parseInt(this.props.match.params.blogId)) {
                 return (
-                    <li className="mapped-post-li">
+                    <li key={post.id} className="mapped-post-li">
                       <h3>{post.title}</h3>
                       <img src={ post.photoUrl ? post.photoUrl : post.pic_url} alt=""/>
                       <p className="blog-post-p">

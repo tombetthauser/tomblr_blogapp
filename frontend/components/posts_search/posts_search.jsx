@@ -199,7 +199,7 @@ class PostsSearch extends React.Component {
             <ul className="search-header-links-ul">
               <li>Search Users:</li>
               { SELECT_USERS.slice(0, 5).map( user => {
-                return(<li><Link className="post-search-header-li-links" to={`/search/${user}`}>{user.toLowerCase()}</Link></li>)
+                return(<li key={user.id}><Link className="post-search-header-li-links" to={`/search/${user}`}>{user.toLowerCase()}</Link></li>)
               })}
             </ul>
             <ul className="search-header-links-ul-right">
@@ -225,9 +225,9 @@ class PostsSearch extends React.Component {
           </div>
 
           <div className="search-header-searchterms-div">
-          <h3 class="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
-            <span class="search-header-searchterms-related">other searches:</span>
-            <ul class="search-header-searchterms-ul">
+          <h3 className="search-header-searchterms-title">{ searchTerm === "" ? defaultHeaderText : searchTerm.toUpperCase() }</h3>
+            <span className="search-header-searchterms-related">other searches:</span>
+            <ul className="search-header-searchterms-ul">
               {RELATED_WORDS.map( word => {
                 return(<li><Link to={`/search/${word}`}>{word}</Link></li>)
               })}

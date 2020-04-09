@@ -8,7 +8,7 @@ import SessionForm from './session_form';
 const mapState = ({ errors }) => ({
     errors: errors.session,
     formType: 'signup',
-    navLink: <Link class="login-signup-link" to="/login">log in</Link>,
+    navLink: <Link className="login-signup-link" to="/login">log in</Link>,
 });
 
 const mapDisp = dispatch => ({
