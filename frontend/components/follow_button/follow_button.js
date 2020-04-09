@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+// import { Link } from 'react-router-dom';
 
 class DemoButton extends React.Component {
   constructor(props) {
@@ -22,34 +22,30 @@ class DemoButton extends React.Component {
 
   handleClick() {
     document.querySelector(".follow-loading-mask-div").style.display = "block";
-    // console.log("===========================")
-    // console.log(this.props)
-    // console.log("===========================")
-    
-    if (!this.state.isFollowed) {
-      let newFollow = {
-        followed_blog_id: parseInt(this.props.match.params.blogId),
-        follower_id: this.props.currentUser.id,
-      };
-      alert("following!")
-      this.props.createFollow(newFollow).then(follow => {
-        console.log("===========================")
-        console.log(follow)
-        console.log("===========================")
-        this.setState({ isFollowed: false, followText: "UNFOLLOW THIS BLOG" })
-        document.querySelector(".follow-loading-mask-div").style.display = "none";
-        alert("followed!")
-      })
-    } else {
-      setTimeout(() => {
-        this.setState({ isFollowed: false, followText: "FOLLOW THIS BLOG" })
-        document.querySelector(".follow-loading-mask-div").style.display = "none";
-      }, 1000)
-    }
+    setTimeout(() => {
+      if (!this.state.isFollowed) {
+        let newFollow = {
+          followed_blog_id: parseInt(this.props.match.params.blogId),
+          follower_id: this.props.currentUser.id,
+        };
+        this.props.createFollow(newFollow).then(_follow => {
+          this.setState({ isFollowed: false, followText: "UNFOLLOW THIS BLOG" });
+          document.querySelector(".follow-loading-mask-div").style.display = "none";
+          // this.props.requestUser(this.props.currentUser.id);
+        })
+      } else {
+        this.props.fetchFollows().then(() => {
+          this.props.follows.forEach(follow => {
+            if (follow.follower_id === this.props.currentUser.id && follow.followed_blog_id === parseInt(this.props.match.params.blogId)) {
+              this.props.deleteFollow(follow.id);
+              this.setState({ isFollowed: false, followText: "FOLLOW THIS BLOG" })
+              document.querySelector(".follow-loading-mask-div").style.display = "none";
+            }
+          });
+        });
+      }
+    }, 750)
   }
-
-  // deleteFollow: followId
-  // createFollow: follow
 
   render() {
     return (
